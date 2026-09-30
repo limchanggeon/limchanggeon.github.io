@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>임창건 포트폴리오</title>
+<meta name="description" content="엣지 AI·YOLO 객체 탐지 연구자 임창건의 논문, 수상, 프로젝트 포트폴리오">
+<meta property="og:title" content="임창건 · Edge AI Portfolio">
+<meta property="og:description" content="엣지 디바이스에서 동작하는 YOLO 객체 탐지를 연구하고, 로봇과 웹 서비스로 만듭니다.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='7' width='26' height='22' fill='none' stroke='%23e0591a' stroke-width='3'/%3E%3Crect x='3' y='2' width='14' height='6' fill='%23e0591a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: sticky navbar + sticky profile sidebar + roomy main column. Readability first: 17px body, ink-colored copy, muted only for meta. */
+:root {
+  --bg: #f2f4f6;
+  --surface: #ffffff;
+  --surface-2: #e9edf0;
+  --ink: #111a22;
+  --text: #26323d;
+  --muted: #4d5a66;
+  --line: #d9dfe4;
+  --box: #d9531a;
+  --box-soft: #fbe7dc;
+  --box-ink: #ffffff;
+  --cool: #0a7480;
+  --cool-soft: #dcf0f1;
+  --nav-bg: rgba(242, 244, 246, .86);
+  --stage: #0f171e;
+  --f-display: "Archivo", "IBM Plex Sans KR", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --nav-h: 64px;
+  --r: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1318; --surface: #151d24; --surface-2: #1d2731; --ink: #eef3f6; --text: #d3dbe1; --muted: #9eabb6; --line: #27333e;
+    --box: #ff7d3a; --box-soft: #3a2215; --box-ink: #1a0d05; --cool: #4cc9d4; --cool-soft: #12303a; --nav-bg: rgba(13, 19, 24, .86); --stage: #0a1015;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1318; --surface: #151d24; --surface-2: #1d2731; --ink: #eef3f6; --text: #d3dbe1; --muted: #9eabb6; --line: #27333e;
+  --box: #ff7d3a; --box-soft: #3a2215; --box-ink: #1a0d05; --cool: #4cc9d4; --cool-soft: #12303a; --nav-bg: rgba(13, 19, 24, .86); --stage: #0a1015;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--f-body); font-size: 1.0625rem; line-height: 1.75; word-break: keep-all; overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2.5px solid var(--box); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; color: var(--ink); }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button { font: inherit; }
+.mono { font-family: var(--f-mono); font-size: .875rem; }
+.muted { color: var(--muted); }
+.container { max-width: 78rem; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+
+/* ───── navbar ───── */
+.navbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.navbar .container { height: var(--nav-h); display: flex; align-items: center; gap: 1.5rem; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; font-weight: 700; font-size: 1.0625rem; color: var(--ink); white-space: nowrap; }
+.brand .mark { width: 30px; height: 26px; border: 2.5px solid var(--box); position: relative; }
+.brand .mark::before { content: ""; position: absolute; left: -2.5px; top: -8px; width: 14px; height: 6px; background: var(--box); }
+.nav-links { display: flex; gap: .15rem; margin-left: auto; }
+.nav-links a {
+  text-decoration: none; color: var(--muted); font-size: 1rem; font-weight: 500;
+  padding: .45rem .85rem; border-radius: 8px; position: relative;
+}
+.nav-links a:hover { color: var(--ink); background: var(--surface-2); }
+.nav-links a.active { color: var(--ink); font-weight: 600; }
+.nav-links a.active::after { content: ""; position: absolute; left: .85rem; right: .85rem; bottom: -12px; height: 2.5px; background: var(--box); }
+.nav-actions { display: flex; align-items: center; gap: .5rem; }
+.icon-btn {
+  display: inline-grid; place-items: center; width: 40px; height: 40px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; text-decoration: none;
+}
+.icon-btn:hover { border-color: var(--box); color: var(--box); }
+.icon-btn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.icon-btn svg.fill { fill: currentColor; stroke: none; }
+.progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--box); transform-origin: 0 50%; transform: scaleX(0); }
+.menu-btn { display: none; }
+.drawer { display: none; }
+@media (max-width: 920px) {
+  .nav-links { display: none; }
+  .nav-actions { margin-left: auto; }
+  .menu-btn { display: inline-grid; }
+  .drawer { display: grid; padding-block: .25rem 1rem; border-top: 1px solid var(--line); }
+  .drawer a { text-decoration: none; padding: .85rem .25rem; font-weight: 500; font-size: 1.0625rem; border-bottom: 1px solid var(--line); color: var(--ink); }
+  .drawer a.active { color: var(--box); }
+}
+
+/* ───── shell ───── */
+.shell { display: grid; grid-template-columns: 17.5rem minmax(0, 1fr); gap: 3rem; padding-block: 2.25rem 5rem; align-items: start; }
+@media (max-width: 1080px) { .shell { grid-template-columns: minmax(0, 1fr); gap: 2rem; } }
+
+/* ───── sidebar ───── */
+.sidebar { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--nav-h) + 1.5rem); display: grid; gap: 1rem; }
+@media (max-width: 1080px) { .sidebar { position: static; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); } }
+@media (max-width: 680px) { .sidebar { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1.4rem; min-width: 0; }
+.profile { display: grid; gap: 1.1rem; padding-top: 2.4rem; }
+.avatar {
+  width: 84px; height: 84px; display: grid; place-items: center; position: relative;
+  background: var(--surface-2); border-radius: 12px; color: var(--ink);
+  font-family: var(--f-display); font-weight: 800; font-size: 1.9rem; font-stretch: 115%;
+}
+.avatar::before { content: ""; position: absolute; inset: -5px; border: 2.5px solid var(--box); border-radius: 15px; }
+.avatar .tag { position: absolute; left: -5px; top: -27px; background: var(--box); color: var(--box-ink); font: 500 .75rem/1 var(--f-mono); padding: .35rem .45rem; border-radius: 4px 4px 0 0; white-space: nowrap; }
+.profile h1 { font-size: 1.6rem; font-weight: 700; line-height: 1.25; }
+.profile h1 span { display: block; font-family: var(--f-display); font-weight: 600; font-size: 1rem; color: var(--muted); margin-top: .15rem; }
+.profile .role { font-size: 1rem; color: var(--text); margin-top: .35rem; }
+.status { display: flex; align-items: center; gap: .55rem; font-size: .9375rem; color: var(--text); background: var(--cool-soft); padding: .5rem .75rem; border-radius: 8px; line-height: 1.45; }
+.status i { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--cool); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--cool) 50%, transparent); } 50% { box-shadow: 0 0 0 5px transparent; } }
+.facts { display: grid; gap: .6rem; font-size: .9375rem; line-height: 1.55; }
+.facts li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: .65rem; align-items: start; }
+.facts svg { width: 17px; height: 17px; margin-top: .15rem; fill: none; stroke: var(--box); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.facts .email-line { color: var(--ink); overflow-wrap: anywhere; user-select: all; }
+.btn-row { display: flex; flex-wrap: wrap; gap: .55rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+  font-weight: 600; font-size: .9375rem; line-height: 1.2; padding: .65rem 1.05rem; border-radius: 10px; cursor: pointer; text-decoration: none;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); transition: border-color .15s, color .15s, transform .15s;
+}
+.btn:hover { border-color: var(--box); color: var(--box); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--box); border-color: var(--box); color: var(--box-ink); }
+.btn.primary:hover { filter: brightness(1.07); color: var(--box-ink); }
+.btn svg { width: 16px; height: 16px; fill: currentColor; }
+.side-h { font-size: .875rem; font-weight: 600; color: var(--muted); margin-bottom: .85rem; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem .75rem; }
+.stats div { display: grid; gap: .15rem; }
+.stats b { font-family: var(--f-display); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stats span { font-size: .875rem; line-height: 1.4; }
+.toc { display: grid; gap: .15rem; }
+.toc a { text-decoration: none; padding: .45rem .75rem; border-radius: 8px; font-size: .9375rem; color: var(--muted); border-left: 2.5px solid transparent; }
+.toc a:hover { background: var(--surface-2); color: var(--ink); }
+.toc a.active { color: var(--ink); font-weight: 600; border-left-color: var(--box); background: var(--surface-2); border-radius: 0 8px 8px 0; }
+@media (max-width: 1080px) { .toc-panel { display: none; } }
+
+/* ───── main ───── */
+main { display: grid; gap: 4.5rem; min-width: 0; }
+.sec { display: grid; gap: 1.5rem; scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: .75rem 1rem; }
+.eyebrow { display: block; font-family: var(--f-mono); font-size: .875rem; color: var(--box); margin-bottom: .3rem; }
+.sec-head h2 { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; line-height: 1.3; }
+.sec-head p { margin-top: .4rem; color: var(--muted); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 2.5rem; align-items: center; }
+@media (max-width: 860px) { .hero { grid-template-columns: minmax(0, 1fr); } }
+.hero-copy { display: grid; gap: 1.4rem; }
+.hero .kicker { display: inline-flex; gap: .5rem; align-items: center; font-size: .9375rem; font-weight: 600; color: var(--box); }
+.hero h2 { font-size: clamp(2rem, 4.2vw, 2.9rem); font-weight: 700; line-height: 1.3; letter-spacing: -.01em; }
+.hero h2 .hl { position: relative; white-space: nowrap; padding-inline: .15em; }
+.hero h2 .hl::before { content: ""; position: absolute; inset: .05em 0 0; border: 2.5px solid var(--box); pointer-events: none; }
+.hero h2 .hl::after { content: attr(data-label); position: absolute; left: 0; bottom: calc(100% - .05em); transform: translateX(-2.5px); background: var(--box); color: var(--box-ink); font: 500 .75rem/1 var(--f-mono); padding: .3rem .4rem; letter-spacing: 0; }
+.hero .lede { font-size: 1.125rem; line-height: 1.8; color: var(--text); max-width: 32em; }
+
+/* detection stage */
+.stage { background: var(--stage); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); color: #e8eef2; }
+.stage-top { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .7rem 1rem; border-bottom: 1px solid rgba(255,255,255,.08); font-size: .8125rem; }
+.stage-top .live { display: inline-flex; align-items: center; gap: .45rem; color: #ffb28a; }
+.stage-top .live i { width: 7px; height: 7px; border-radius: 50%; background: #ff6a2b; animation: pulse 1.6s infinite; }
+.stage-top .count { color: #b8c4cc; font-variant-numeric: tabular-nums; }
+.stage canvas { display: block; width: 100%; aspect-ratio: 16 / 10; max-width: 100%; cursor: crosshair; touch-action: manipulation; }
+.stage-ctrl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .75rem 1rem; align-items: center; padding: .85rem 1rem; border-top: 1px solid rgba(255,255,255,.08); font-size: .875rem; }
+.stage-ctrl label { display: grid; grid-template-columns: auto minmax(0, 1fr) 3.2em; gap: .75rem; align-items: center; color: #c9d3da; }
+.stage-ctrl output { font-family: var(--f-mono); color: #fff; text-align: right; font-variant-numeric: tabular-nums; }
+.stage-ctrl input[type="range"] { width: 100%; accent-color: #ff7d3a; }
+.stage-ctrl .mini { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; padding: .4rem .7rem; cursor: pointer; font-size: .8125rem; }
+.stage-ctrl .mini:hover { border-color: #ff7d3a; }
+.stage-note { padding: 0 1rem .85rem; font-size: .8125rem; color: #97a5af; }
+
+/* tabs / filter chips */
+.seg { display: inline-flex; flex-wrap: wrap; gap: .3rem; padding: .3rem; background: var(--surface-2); border-radius: 12px; }
+.seg button { border: 0; background: transparent; color: var(--muted); font-weight: 600; font-size: .9375rem; padding: .45rem .95rem; border-radius: 9px; cursor: pointer; }
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"], .seg button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+
+/* publications */
+.pubs { display: grid; gap: .9rem; }
+.pub { display: grid; gap: .55rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1.4rem 1.5rem; }
+.pub .meta { display: flex; flex-wrap: wrap; gap: .5rem .75rem; align-items: center; font-size: .875rem; color: var(--muted); }
+.pub h3 { font-size: 1.1875rem; font-weight: 700; line-height: 1.5; }
+.pub .au b { color: var(--ink); font-weight: 700; }
+.pub .src { color: var(--muted); font-size: .9375rem; }
+.pub .src em { font-style: normal; color: var(--text); font-weight: 500; }
+.pub a.doi { font-size: .875rem; color: var(--cool); text-decoration: none; font-family: var(--f-mono); }
+.pub a.doi:hover { text-decoration: underline; }
+.pill { display: inline-flex; align-items: center; gap: .3rem; font-size: .8125rem; font-weight: 600; line-height: 1; padding: .4rem .6rem; border-radius: 6px; white-space: nowrap; }
+.pill.kind { background: var(--cool-soft); color: var(--cool); }
+.pill.award { background: var(--box); color: var(--box-ink); }
+.pill.award::before { content: "★"; font-size: .75rem; }
+.pill.soft { background: var(--box-soft); color: var(--box); }
+
+/* projects */
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.filters .label { font-size: .9375rem; color: var(--muted); margin-right: .25rem; }
+.fchip { border: 1px solid var(--line); background: var(--surface); color: var(--text); font-size: .9375rem; font-weight: 500; padding: .4rem .85rem; border-radius: 999px; cursor: pointer; }
+.fchip:hover { border-color: var(--box); }
+.fchip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 760px) { .projects { grid-template-columns: minmax(0, 1fr); } }
+.proj {
+  display: grid; gap: .9rem; align-content: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1.5rem;
+  transition: opacity .25s, transform .25s, border-color .2s;
+}
+.proj.big { grid-column: span 1; }
+.proj.dim { opacity: .28; transform: scale(.985); }
+.proj .top { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.proj h3 { font-size: 1.375rem; font-weight: 700; line-height: 1.35; }
+.proj h3 .en { font-family: var(--f-mono); font-size: .875rem; font-weight: 400; color: var(--muted); margin-left: .4rem; }
+.proj .sum { color: var(--text); }
+.proj details { border-top: 1px solid var(--line); padding-top: .75rem; }
+.proj summary { cursor: pointer; font-weight: 600; font-size: .9375rem; color: var(--box); list-style: none; display: inline-flex; align-items: center; gap: .35rem; }
+.proj summary::-webkit-details-marker { display: none; }
+.proj summary::after { content: "+"; font-family: var(--f-mono); }
+.proj details[open] summary::after { content: "−"; }
+.proj .points { display: grid; gap: .6rem; margin-top: .75rem; font-size: 1rem; }
+.proj .points li { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: .6rem; }
+.proj .points li::before { content: ""; width: 7px; height: 7px; margin-top: .7rem; border: 2px solid var(--box); }
+.proj .points b { color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chips li { font-size: .8125rem; font-weight: 500; padding: .3rem .6rem; border-radius: 6px; background: var(--surface-2); color: var(--text); }
+.chips li.on { background: var(--ink); color: var(--bg); }
+.proj .btn-row { margin-top: .25rem; }
+
+/* awards */
+.awards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 760px) { .awards { grid-template-columns: minmax(0, 1fr); } }
+.award { display: grid; gap: .5rem; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1.3rem 1.4rem; }
+.award .row { display: flex; justify-content: space-between; align-items: center; gap: .75rem; }
+.award .when { font-size: .875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.award h3 { font-size: 1.0625rem; font-weight: 700; line-height: 1.5; }
+.award p { font-size: .9375rem; color: var(--muted); line-height: 1.7; }
+.award.top { border-color: color-mix(in srgb, var(--box) 45%, var(--line)); }
+
+/* activities & stack */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 1rem; }
+@media (max-width: 900px) { .two { grid-template-columns: minmax(0, 1fr); } }
+.acts { display: grid; gap: 1rem; }
+.act { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: .9rem; align-items: center; }
+.act .cc { display: grid; place-items: center; height: 3rem; border-radius: 10px; background: var(--cool-soft); font: 600 .9375rem var(--f-mono); color: var(--cool); }
+.act b { color: var(--ink); display: block; line-height: 1.45; }
+.act span { font-size: .875rem; color: var(--muted); }
+.stack { display: grid; gap: 1rem; margin: 0; }
+.stack div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .75rem; align-items: start; }
+.stack dt { font-size: .9375rem; font-weight: 600; color: var(--ink); padding-top: .15rem; }
+.stack dd { margin: 0; }
+.stack .chips button { border: 0; font-size: .875rem; font-weight: 500; padding: .3rem .65rem; border-radius: 6px; background: var(--surface-2); color: var(--text); cursor: pointer; }
+.stack .chips button:hover { background: var(--box-soft); color: var(--box); }
+.stack .chips button.linked::after { content: " ↗"; font-size: .75rem; color: var(--muted); }
+.stack-note { font-size: .875rem; color: var(--muted); margin-top: 1rem; }
+@media (max-width: 440px) { .stack div { grid-template-columns: minmax(0, 1fr); gap: .35rem; } }
+
+/* contact */
+.cta { border-radius: 18px; padding: clamp(1.75rem, 4vw, 2.75rem); background: var(--ink); color: var(--bg); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; align-items: center; }
+.cta h2 { color: var(--bg); font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 700; line-height: 1.35; }
+.cta p { color: color-mix(in srgb, var(--bg) 78%, var(--ink)); margin-top: .5rem; }
+.cta .mail { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.15rem, 2.6vw, 1.45rem); margin-top: 1rem; color: var(--bg); overflow-wrap: anywhere; user-select: all; }
+.cta .btn { background: transparent; border-color: color-mix(in srgb, var(--bg) 35%, var(--ink)); color: var(--bg); }
+.cta .btn:hover { border-color: var(--box); color: var(--box); }
+.cta .btn.primary { background: var(--box); border-color: var(--box); color: var(--box-ink); }
+@media (max-width: 640px) { .cta { grid-template-columns: minmax(0, 1fr); } }
+
+footer.site { border-top: 1px solid var(--line); padding-block: 1.75rem calc(1.75rem + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: .9375rem; }
+footer.site .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; }
+
+/* tracking box that follows hovered cards */
+.tracker { position: absolute; z-index: 40; pointer-events: none; border: 2.5px solid var(--box); border-radius: calc(var(--r) + 3px); opacity: 0;
+  transition: left .28s cubic-bezier(.2,.8,.2,1), top .28s cubic-bezier(.2,.8,.2,1), width .28s cubic-bezier(.2,.8,.2,1), height .28s cubic-bezier(.2,.8,.2,1), opacity .2s; }
+.tracker.on { opacity: 1; }
+.tracker span { position: absolute; left: 12px; top: -13px; background: var(--box); color: var(--box-ink); font: 500 .75rem/1 var(--f-mono); padding: .35rem .5rem; border-radius: 4px; white-space: nowrap; }
+
+.toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 1.5rem); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: .7rem 1.1rem; border-radius: 10px; font-size: .9375rem; z-index: 60; box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+.to-top { position: fixed; right: clamp(16px, 3vw, 28px); bottom: calc(env(safe-area-inset-bottom, 0px) + 1.25rem); z-index: 45; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .status i, .stage-top .live i { animation: none; }
+  .proj, .tracker, .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+  <symbol id="i-lab" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 20h16l-6-11V3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="navbar">
+  <div class="container">
+    <a class="brand" href="#home"><span class="mark" aria-hidden="true"></span>임창건</a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="#home" data-spy="home">홈</a>
+      <a href="#research" data-spy="research">연구</a>
+      <a href="#projects" data-spy="projects">프로젝트</a>
+      <a href="#awards" data-spy="awards">수상</a>
+      <a href="#about" data-spy="about">활동·기술</a>
+      <a href="#contact" data-spy="contact">연락</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="다크 모드로 전환"><svg><use href="#i-moon"/></svg></button>
+      <a class="icon-btn" href="https://github.com/limchanggeon" target="_blank" rel="noopener" aria-label="GitHub 프로필"><svg class="fill"><use href="#i-gh"/></svg></a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer container" id="drawer" aria-label="모바일 메뉴" hidden>
+    <a href="#home" data-spy="home">홈</a>
+    <a href="#research" data-spy="research">연구</a>
+    <a href="#projects" data-spy="projects">프로젝트</a>
+    <a href="#awards" data-spy="awards">수상</a>
+    <a href="#about" data-spy="about">활동·기술</a>
+    <a href="#contact" data-spy="contact">연락</a>
+  </nav>
+  <div class="progress" id="progress"></div>
+</header>
+
+<div class="container">
+  <div class="shell">
+
+    <aside class="sidebar" aria-label="프로필">
+      <div class="panel profile">
+        <div class="avatar" aria-hidden="true"><span class="tag">person 0.97</span>CG</div>
+        <div>
+          <h1>임창건<span>Chang Geon Lim</span></h1>
+          <p class="role">엣지 AI · 컴퓨터비전 연구자</p>
+        </div>
+        <p class="status"><i></i>YOLO 경량화와 TensorRT 추론 최적화를 연구하고 있어요</p>
+        <ul class="facts">
+          <li><svg><use href="#i-school"/></svg><span>목원대학교 컴퓨터융합학부<br>학·석사 연계과정</span></li>
+          <li><svg><use href="#i-lab"/></svg><span>SSC Lab</span></li>
+          <li><svg><use href="#i-pin"/></svg><span>대전광역시</span></li>
+          <li><svg><use href="#i-mail"/></svg><span class="email-line" id="side-email">ckdrjs0101@mokwon.ac.kr</span></li>
+        </ul>
+        <div class="btn-row">
+          <button class="btn primary" type="button" data-copy="ckdrjs0101@mokwon.ac.kr"><svg><use href="#i-copy"/></svg>이메일 복사</button>
+          <a class="btn" href="https://github.com/limchanggeon" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>GitHub</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p class="side-h">한눈에 보기</p>
+        <div class="stats">
+          <div><b>2</b><span>KCI 논문<br>(전 건 제1저자)</span></div>
+          <div><b>3</b><span>학술대회 수상</span></div>
+          <div><b>6</b><span>경진대회 수상</span></div>
+          <div><b>1</b><span>운영 중인<br>웹 서비스</span></div>
+        </div>
+      </div>
+
+      <div class="panel toc-panel">
+        <p class="side-h">이 페이지</p>
+        <nav class="toc" aria-label="섹션 바로가기">
+          <a href="#home" data-spy="home">소개</a>
+          <a href="#research" data-spy="research">논문 · 학술대회</a>
+          <a href="#projects" data-spy="projects">프로젝트</a>
+          <a href="#awards" data-spy="awards">경진대회 수상</a>
+          <a href="#about" data-spy="about">대외활동 · 기술</a>
+          <a href="#contact" data-spy="contact">연락</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main>
+      <section class="sec" id="home" aria-label="소개">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="kicker">Edge AI · Object Detection · Robotics</span>
+            <h2>작은 기기에서도 빠르게,<br><span class="hl" data-label="fire 0.91">불을 먼저 찾는</span> AI를 만듭니다.</h2>
+            <p class="lede">
+              화재·연기와 도로 파손을 탐지하는 YOLO 모델을 엣지 디바이스에 맞게 가볍게 만들고, TensorRT로 추론 속도를 끌어올립니다.
+              연구에서 끝내지 않고 ROS2 로봇 관제 시스템과 실제로 운영 중인 웹 서비스까지 직접 만들었습니다.
+            </p>
+            <div class="btn-row">
+              <a class="btn primary" href="#projects">프로젝트 보기</a>
+              <a class="btn" href="#research">논문 보기</a>
+            </div>
+          </div>
+
+          <figure class="stage" style="margin:0" aria-label="객체 탐지 시뮬레이션">
+            <div class="stage-top mono">
+              <span class="live"><i></i>detect.sim</span>
+              <span class="count" id="det-count">탐지 0개</span>
+            </div>
+            <canvas id="stage" width="640" height="400" aria-label="화재와 연기를 탐지하는 애니메이션. 클릭하면 불이 추가됩니다."></canvas>
+            <div class="stage-ctrl">
+              <label for="conf">신뢰도 기준 <input id="conf" type="range" min="0.1" max="0.9" step="0.05" value="0.4"><output id="conf-out" for="conf">0.40</output></label>
+              <button class="mini" type="button" id="reset-stage">초기화</button>
+            </div>
+            <figcaption class="stage-note">화면을 클릭하면 불이 붙고, 기준을 올리면 확신이 낮은 박스가 사라집니다. 연구 주제를 보여주는 시뮬레이션이며 실제 모델 출력은 아닙니다.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="sec" id="research">
+        <div class="sec-head">
+          <div><span class="eyebrow">Research</span><h2>논문 · 학술대회</h2><p>모두 제1저자로 참여했습니다.</p></div>
+          <div class="seg" role="tablist" aria-label="연구 실적 필터">
+            <button type="button" role="tab" id="tab-all" aria-selected="true" data-filter="all">전체 5</button>
+            <button type="button" role="tab" id="tab-journal" aria-selected="false" data-filter="journal">KCI 논문 2</button>
+            <button type="button" role="tab" id="tab-conf" aria-selected="false" data-filter="conf">학술대회 3</button>
+          </div>
+        </div>
+        <div class="pubs" id="pubs">
+          <article class="pub track" data-type="journal" data-cls="paper">
+            <div class="meta"><span class="pill kind">KCI 논문</span><span>2026 · 디지털콘텐츠학회논문지</span></div>
+            <h3>화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석</h3>
+            <p class="au"><b>임창건</b>, 최재명</p>
+            <p class="src"><em>디지털콘텐츠학회논문지(JDCS)</em> 제27권 제5호, pp. 1335–1343</p>
+          </article>
+          <article class="pub track" data-type="journal" data-cls="paper">
+            <div class="meta"><span class="pill kind">KCI 논문</span><span>2025 · Journal of Platform Technology</span></div>
+            <h3>RGB 채널 영상을 이용한 YOLOv8n 기반 실시간 화재·연기 감지 성능 평가</h3>
+            <p class="au"><b>임창건</b>, 최재명</p>
+            <p class="src"><em>Journal of Platform Technology(JPT)</em> 제13권 제6호, pp. 82–90</p>
+            <a class="doi" href="https://doi.org/10.23023/JPT.2025.13.6.082" target="_blank" rel="noopener">DOI 10.23023/JPT.2025.13.6.082 ↗</a>
+          </article>
+          <article class="pub track" data-type="conf" data-cls="talk">
+            <div class="meta"><span class="pill award">우수논문상</span><span>2026.07 · 한국디지털콘텐츠학회 하계종합학술대회</span></div>
+            <h3>엣지 디바이스 기반 화재·연기 감지를 위한 YOLOv26과 YOLOv8n 성능 비교 분석</h3>
+            <p class="au"><b>임창건</b>, 박기홍, 최재명</p>
+          </article>
+          <article class="pub track" data-type="conf" data-cls="talk">
+            <div class="meta"><span class="pill award">금상</span><span>2026.07 · 한국디지털콘텐츠학회 대학생논문경진대회</span></div>
+            <h3>ROS2기반 자율주행 로봇 관제 시스템의 설계 및 구현</h3>
+            <p class="au"><b>임창건</b>, 최서연, 서찬진, 최재명</p>
+          </article>
+          <article class="pub track" data-type="conf" data-cls="talk">
+            <div class="meta"><span class="pill award">우수논문상</span><span>2026 · 한국혁신산업학회·한국디지털정책학회 공동학술발표대회</span></div>
+            <h3>도로 파손 탐지를 위한 YOLOv8과 YOLO26의 학습 성능 및 TensorRT 기반 추론 성능 비교 분석</h3>
+            <p class="au"><b>임창건</b>, 최재명</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec" id="projects">
+        <div class="sec-head">
+          <div><span class="eyebrow">Projects</span><h2>프로젝트</h2><p>기술을 눌러 해당 기술을 쓴 프로젝트만 볼 수 있어요.</p></div>
+          <a class="btn" href="https://github.com/limchanggeon?tab=repositories" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>저장소 전체</a>
+        </div>
+        <div class="filters" role="group" aria-label="기술로 거르기" id="filters">
+          <button class="fchip" type="button" data-tag="all" aria-pressed="true">전체</button>
+          <button class="fchip" type="button" data-tag="YOLO" aria-pressed="false">YOLO</button>
+          <button class="fchip" type="button" data-tag="ROS2" aria-pressed="false">ROS2</button>
+          <button class="fchip" type="button" data-tag="React" aria-pressed="false">React</button>
+          <button class="fchip" type="button" data-tag="Python" aria-pressed="false">Python</button>
+          <button class="fchip" type="button" data-tag="TypeScript" aria-pressed="false">TypeScript</button>
+          <button class="fchip" type="button" data-tag="LLM" aria-pressed="false">LLM</button>
+          <button class="fchip" type="button" data-tag="AWS" aria-pressed="false">AWS</button>
+        </div>
+
+        <div class="projects" id="project-grid">
+          <article class="proj track" data-cls="service" data-tags="TypeScript React AWS">
+            <div class="top"><span class="pill soft">운영 중</span><span class="pill kind">개인 개발</span></div>
+            <h3>언제나가<span class="en">when-to-leave</span></h3>
+            <p class="sum">목적지와 도착 시각을 넣으면 언제 집을 나서야 하는지 거꾸로 계산해 알려주는 대중교통 이동 비서입니다.</p>
+            <ul class="chips"><li>TypeScript</li><li>React</li><li>Node.js</li><li>SQLite</li><li>AWS</li></ul>
+            <details>
+              <summary>어떻게 만들었나</summary>
+              <ul class="points">
+                <li><span><b>역산 스케줄링 엔진</b>: 시각표 구간마다 “이 편을 타려면 언제까지 도착해야 하는가”를 앞 구간으로 전파합니다. 화면 코드와 분리해 앱으로 옮길 수 있습니다.</span></li>
+                <li><span><b>외부 API 4종 통합</b>: 카카오, ODsay, 국토교통부 TAGO, Google Directions를 어댑터로 묶어 데이터 소스를 바꿔 끼울 수 있습니다.</span></li>
+                <li><span><b>인증·보안</b>: 이메일·카카오·구글 로그인, 구글 ID 토큰 서명 검증, 서명된 세션 쿠키, 로그인 시도 제한.</span></li>
+                <li><span><b>운영</b>: AWS EC2 HTTPS 배포, S3 일일 백업, 응답 캐시로 API 한도 대응, 접근성 검사 위반 0건.</span></li>
+              </ul>
+            </details>
+            <div class="btn-row">
+              <a class="btn primary" href="https://whenigo.p-e.kr" target="_blank" rel="noopener"><svg><use href="#i-ext"/></svg>서비스 열기</a>
+              <a class="btn" href="https://github.com/limchanggeon/when-to-leave" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>코드</a>
+            </div>
+          </article>
+
+          <article class="proj track" data-cls="robot" data-tags="ROS2 React Python">
+            <div class="top"><span class="pill award">금상</span><span class="pill kind">졸업작품</span></div>
+            <h3>YogiBot ControlTower</h3>
+            <p class="sum">ROS2 자율주행 로봇이 스스로 지도를 그리며 돌아다니고, 웹에서 실시간으로 관제하는 시스템입니다.</p>
+            <ul class="chips"><li>ROS2</li><li>Nav2</li><li>SLAM</li><li>MQTT</li><li>FastAPI</li><li>React</li></ul>
+            <details>
+              <summary>어떻게 만들었나</summary>
+              <ul class="points">
+                <li><span><b>ROS2–MQTT–WebSocket</b> 구조로 로봇과 FastAPI + React 관제 웹을 연결했습니다.</span></li>
+                <li><span><b>자율 매핑</b>: TurtleBot3 Waffle에서 Nav2와 SLAM Toolbox로 아직 안 가본 곳을 찾아가며 지도를 만듭니다.</span></li>
+                <li><span><b>원격 제어</b>: Tailscale VPN으로 Jetson을 원격 제어하고 Raspberry Pi GPIO로 릴레이를 다룹니다.</span></li>
+              </ul>
+            </details>
+            <div class="btn-row">
+              <a class="btn" href="https://github.com/limchanggeon/ros2-robot-control-system" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>관제 시스템</a>
+              <a class="btn" href="https://github.com/limchanggeon/YOGIBOT" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>로봇</a>
+            </div>
+          </article>
+
+          <article class="proj track" data-cls="app" data-tags="Python">
+            <div class="top"><span class="pill soft">배포 중</span><span class="pill kind">데스크톱 앱</span></div>
+            <h3>나만의빛<span class="en">namanuibit</span></h3>
+            <p class="sum">사진을 외부로 보내지 않는 로컬 사진 편집 앱입니다. RAW 현상부터 내보내기까지, macOS와 Windows 설치본을 배포하고 있습니다.</p>
+            <ul class="chips"><li>Python</li><li>FastAPI</li><li>WebView</li></ul>
+            <div class="btn-row"><a class="btn" href="https://github.com/limchanggeon/namanuibit" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>코드 · 다운로드</a></div>
+          </article>
+
+          <article class="proj track" data-cls="assistant" data-tags="Python LLM">
+            <div class="top"><span class="pill soft">배포 중</span><span class="pill kind">AI 어시스턴트</span></div>
+            <h3>메피티<span class="en">MAGPT</span></h3>
+            <p class="sum">넥슨 Open API와 검토한 자료만 근거로 답하는 메이플스토리 어시스턴트입니다. 숫자는 앱이 계산하고 AI는 설명만 붙여, 근거 없는 답을 막습니다.</p>
+            <ul class="chips"><li>Python</li><li>Gemini</li><li>로컬 LLM</li></ul>
+            <div class="btn-row"><a class="btn" href="https://github.com/limchanggeon/MAGPT" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>코드 · 다운로드</a></div>
+          </article>
+
+          <article class="proj track" data-cls="robot" data-tags="ROS2 YOLO Python">
+            <div class="top"><span class="pill kind">로보틱스</span></div>
+            <h3>ROS2 자율주행 배송 로봇</h3>
+            <p class="sum">YOLOv8로 주변을 인식하고, GPS·IMU를 합쳐 위치를 잡아 목적지까지 배송합니다. QR 인증과 여러 대를 동시에 보는 웹 관제를 붙였습니다.</p>
+            <ul class="chips"><li>ROS2</li><li>YOLOv8</li><li>Nav2</li><li>EKF</li></ul>
+            <div class="btn-row"><a class="btn" href="https://github.com/limchanggeon/ros2-delivery-robot" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>코드</a></div>
+          </article>
+
+          <article class="proj track" data-cls="fire" data-tags="YOLO Python">
+            <div class="top"><span class="pill kind">컴퓨터비전</span></div>
+            <h3>화재 탐지 시스템</h3>
+            <p class="sum">영상을 올리면 YOLOv8이 불과 연기를 실시간으로 찾아냅니다. 10초 동안 면적을 누적해 연기 규모를 소·중·대로 나눕니다.</p>
+            <ul class="chips"><li>YOLOv8</li><li>Python</li><li>OpenCV</li></ul>
+            <div class="btn-row"><a class="btn" href="https://github.com/limchanggeon/fire-detection-system" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>코드</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec" id="awards">
+        <div class="sec-head">
+          <div><span class="eyebrow">Awards</span><h2>경진대회 수상</h2><p>로봇, 미디어아트, 위성, 창업까지 여섯 번 수상했습니다.</p></div>
+        </div>
+        <div class="awards">
+          <article class="award top track" data-cls="medal">
+            <div class="row"><span class="when">2026 · 도쿄</span><span class="pill award">동메달</span></div>
+            <h3>WCRC 국제대회</h3>
+          </article>
+          <article class="award track" data-cls="award">
+            <div class="row"><span class="when">2026</span><span class="pill soft">강대식 국회의원상</span></div>
+            <h3>ILRC 지능형 로봇 경진대회</h3>
+          </article>
+          <article class="award track" data-cls="award">
+            <div class="row"><span class="when">2025</span><span class="pill soft">대구일보사장상</span></div>
+            <h3>WCRC 국내대회</h3>
+          </article>
+          <article class="award top track" data-cls="award">
+            <div class="row"><span class="when">2021.12</span><span class="pill award">최우수상</span></div>
+            <h3>로컬 고객검증 소셜 해커톤</h3>
+            <p>KDB나눔재단 주최. 팀 ‘지농비’로 지역 문제를 바탕으로 고객을 검증하고 아이템을 찾았습니다.</p>
+          </article>
+          <article class="award top track" data-cls="award">
+            <div class="row"><span class="when">미디어아트</span><span class="pill award">최우수상</span></div>
+            <h3>아나모픽 미디어아트 콘텐츠</h3>
+            <p>Blender Python으로 영상 파이프라인을 직접 짰습니다. 90도로 꺾인 LED 두 면에 입체로 보이는 영상을 투영한 보이스피싱 예방 캠페인입니다. 유성경찰서·소상공인시장진흥공단 협력.</p>
+          </article>
+          <article class="award top track" data-cls="award">
+            <div class="row"><span class="when">특성화교육</span><span class="pill award">금상</span></div>
+            <h3>큐브위성 제작 및 위성데이터 활용 교육</h3>
+            <p>캔위성 임무 제안서를 썼습니다. 임무 목표, 개발 방법, 관측 데이터 활용 방안을 담았습니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec" id="about">
+        <div class="sec-head">
+          <div><span class="eyebrow">Activities &amp; Stack</span><h2>대외 활동 · 기술 스택</h2></div>
+        </div>
+        <div class="two">
+          <div class="panel track" data-cls="global">
+            <p class="side-h">글로벌 리빙랩</p>
+            <div class="acts">
+              <div class="act"><span class="cc">JP</span><div><b>오사카 글로벌 지역문제해결 리빙랩</b><span>일본 오사카</span></div></div>
+              <div class="act"><span class="cc">VN</span><div><b>베트남 글로벌 지역문제해결 리빙랩</b><span>베트남</span></div></div>
+            </div>
+          </div>
+          <div class="panel track" data-cls="stack">
+            <p class="side-h">기술 스택</p>
+            <dl class="stack" id="stack">
+              <div><dt>AI / CV</dt><dd><div class="chips"><button type="button" data-go="YOLO">Ultralytics YOLO</button><button type="button">PyTorch</button><button type="button">TensorRT</button><button type="button">NCNN</button><button type="button">OpenCV</button></div></dd></div>
+              <div><dt>로보틱스</dt><dd><div class="chips"><button type="button" data-go="ROS2">ROS2</button><button type="button">Nav2</button><button type="button">SLAM Toolbox</button><button type="button">MQTT</button></div></dd></div>
+              <div><dt>웹</dt><dd><div class="chips"><button type="button" data-go="React">React</button><button type="button">Vite</button><button type="button">Node.js</button><button type="button">FastAPI</button><button type="button">SQLite</button></div></dd></div>
+              <div><dt>엣지·인프라</dt><dd><div class="chips"><button type="button">Jetson Orin</button><button type="button">Raspberry Pi</button><button type="button" data-go="AWS">AWS</button></div></dd></div>
+              <div><dt>언어</dt><dd><div class="chips"><button type="button" data-go="Python">Python</button><button type="button" data-go="TypeScript">TypeScript</button></div></dd></div>
+              <div><dt>기타</dt><dd><div class="chips"><button type="button">Blender Python</button></div></dd></div>
+            </dl>
+            <p class="stack-note">↗ 표시가 있는 기술을 누르면 그 기술을 쓴 프로젝트로 이동합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="contact" aria-label="연락">
+        <div class="cta">
+          <div>
+            <h2>함께 연구하거나 만들 일이 있다면 연락 주세요</h2>
+            <p>엣지 AI, 객체 탐지, 로봇 관제, 웹 서비스 관련 협업과 문의를 환영합니다.</p>
+            <p class="mail">ckdrjs0101@mokwon.ac.kr</p>
+          </div>
+          <div class="btn-row">
+            <button class="btn primary" type="button" data-copy="ckdrjs0101@mokwon.ac.kr"><svg><use href="#i-copy"/></svg>이메일 복사</button>
+            <a class="btn" href="https://github.com/limchanggeon" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="container">
+    <span>© 2026 임창건 · 목원대학교 SSC Lab</span>
+    <span>최종 수정 2026.09.30</span>
+  </div>
+</footer>
+
+<div class="tracker" id="tracker" aria-hidden="true"><span></span></div>
+<button class="icon-btn to-top" id="to-top" type="button" aria-label="맨 위로" hidden><svg><use href="#i-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── theme ── */
+  var themeBtn = document.getElementById('theme-btn');
+  function isDark() {
+    var t = root.getAttribute('data-theme');
+    return t ? t === 'dark' : !!(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+  function syncIcon() {
+    themeBtn.querySelector('use').setAttribute('href', isDark() ? '#i-sun' : '#i-moon');
+    themeBtn.setAttribute('aria-label', isDark() ? '라이트 모드로 전환' : '다크 모드로 전환');
+  }
+  try { var saved = localStorage.getItem('cgl-theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  syncIcon();
+  themeBtn.addEventListener('click', function () {
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('cgl-theme', next); } catch (e) {}
+    syncIcon();
+  });
+
+  /* ── mobile drawer ── */
+  var menuBtn = document.getElementById('menu-btn'), drawer = document.getElementById('drawer');
+  function setDrawer(open) {
+    drawer.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    menuBtn.querySelector('use').setAttribute('href', open ? '#i-close' : '#i-menu');
+  }
+  menuBtn.addEventListener('click', function () { setDrawer(drawer.hidden); });
+  drawer.addEventListener('click', function (e) { if (e.target.closest('a')) setDrawer(false); });
+
+  /* ── scroll spy + progress + to-top ── */
+  var spyLinks = document.querySelectorAll('[data-spy]');
+  function activate(id) { spyLinks.forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-spy') === id); }); }
+  activate('home');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) activate(en.target.id); }); }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('main > .sec').forEach(function (s) { io.observe(s); });
+  }
+  var progress = document.getElementById('progress'), toTop = document.getElementById('to-top');
+  function onScroll() {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+    toTop.hidden = scrollY < 600;
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  toTop.addEventListener('click', function () { scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+
+  /* ── research tabs ── */
+  var tabs = document.querySelectorAll('#research [role="tab"]'), pubs = document.querySelectorAll('#pubs .pub');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var f = t.getAttribute('data-filter');
+      tabs.forEach(function (x) { x.setAttribute('aria-selected', String(x === t)); });
+      pubs.forEach(function (p) { p.hidden = f !== 'all' && p.getAttribute('data-type') !== f; });
+    });
+  });
+
+  /* ── project tech filter ── */
+  var fchips = document.querySelectorAll('#filters .fchip'), projs = document.querySelectorAll('#project-grid .proj');
+  function filterBy(tag) {
+    fchips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-tag') === tag)); });
+    projs.forEach(function (p) {
+      var hit = tag === 'all' || (' ' + p.getAttribute('data-tags') + ' ').indexOf(' ' + tag + ' ') > -1;
+      p.classList.toggle('dim', !hit);
+    });
+  }
+  fchips.forEach(function (c) { c.addEventListener('click', function () { filterBy(c.getAttribute('data-tag')); }); });
+  document.querySelectorAll('#stack [data-go]').forEach(function (b) {
+    b.classList.add('linked');
+    b.addEventListener('click', function () {
+      filterBy(b.getAttribute('data-go'));
+      document.getElementById('projects').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ── tracking box: follows hovered cards like a detector ── */
+  var tracker = document.getElementById('tracker'), tLabel = tracker.querySelector('span');
+  if (window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.track').forEach(function (el) {
+      el.addEventListener('mouseenter', function () {
+        var r = el.getBoundingClientRect(), pad = 4;
+        tracker.style.left = (r.left + scrollX - pad) + 'px';
+        tracker.style.top = (r.top + scrollY - pad) + 'px';
+        tracker.style.width = (r.width + pad * 2) + 'px';
+        tracker.style.height = (r.height + pad * 2) + 'px';
+        tLabel.textContent = el.getAttribute('data-cls') + ' ' + (0.86 + Math.random() * 0.13).toFixed(2);
+        tracker.classList.add('on');
+      });
+      el.addEventListener('mouseleave', function () { tracker.classList.remove('on'); });
+    });
+  }
+
+  /* ── copy email ── */
+  var toast = document.getElementById('toast'), toastTimer;
+  function showToast(msg) { toast.textContent = msg; toast.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.hidden = true; }, 2000); }
+  function selectEmail() {
+    var el = document.getElementById('side-email'), r = document.createRange(); r.selectNodeContents(el);
+    var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    showToast('이메일을 선택했어요. ⌘C 또는 Ctrl+C로 복사하세요');
+  }
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      try { navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function () { showToast('이메일을 복사했어요'); }, selectEmail); }
+      catch (e) { selectEmail(); }
+    });
+  });
+
+  /* ── detection stage (simulation) ── */
+  var cv = document.getElementById('stage'), ctx = cv.getContext('2d');
+  var W = 640, H = 400, confIn = document.getElementById('conf'), confOut = document.getElementById('conf-out'), countEl = document.getElementById('det-count');
+  var CLS = { fire: '#ff6a2b', smoke: '#9fb3c2', person: '#3cc3cf', car: '#c9d23a' };
+  var objs = [], t0 = performance.now(), visible = true;
+
+  function fire(x, y, s) { return { cls: 'fire', x: x, y: y, s: s || 1, base: 0.55 + Math.random() * 0.4, ph: Math.random() * 6, born: performance.now() }; }
+  function seed() {
+    objs = [
+      fire(170, 300, 1.1), fire(470, 318, .8),
+      { cls: 'smoke', x: 180, y: 180, s: 1.2, base: .62, ph: 1 },
+      { cls: 'smoke', x: 480, y: 215, s: .9, base: .34, ph: 2 },
+      { cls: 'person', x: 80, y: 300, vx: .35, base: .88, ph: 0 },
+      { cls: 'car', x: 700, y: 352, vx: -.9, base: .79, ph: 3 }
+    ];
+  }
+  seed();
+
+  function bgGround() {
+    ctx.fillStyle = '#0f171e'; ctx.fillRect(0, 0, W, H);
+    // horizon silhouette of buildings
+    ctx.fillStyle = '#16212a';
+    var xs = [0, 60, 110, 190, 240, 330, 380, 450, 520, 580, 640], hs = [150, 110, 170, 120, 190, 140, 100, 160, 130, 170];
+    for (var i = 0; i < hs.length; i++) ctx.fillRect(xs[i], H - 60 - hs[i], xs[i + 1] - xs[i] - 6, hs[i]);
+    ctx.fillStyle = '#1b2731'; ctx.fillRect(0, H - 60, W, 60);
+    ctx.strokeStyle = 'rgba(255,255,255,.05)'; ctx.lineWidth = 1;
+    for (var gx = 0; gx <= W; gx += 40) { ctx.beginPath(); ctx.moveTo(gx + .5, 0); ctx.lineTo(gx + .5, H); ctx.stroke(); }
+    for (var gy = 0; gy <= H; gy += 40) { ctx.beginPath(); ctx.moveTo(0, gy + .5); ctx.lineTo(W, gy + .5); ctx.stroke(); }
+  }
+  function drawFire(o, t) {
+    var fl = 1 + Math.sin(t * .012 + o.ph) * .08, r = 34 * o.s * fl;
+    var g = ctx.createRadialGradient(o.x, o.y - r * .3, 2, o.x, o.y - r * .2, r * 1.3);
+    g.addColorStop(0, 'rgba(255,240,180,.95)'); g.addColorStop(.35, 'rgba(255,140,40,.85)'); g.addColorStop(.75, 'rgba(220,60,20,.35)'); g.addColorStop(1, 'rgba(220,60,20,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.ellipse(o.x, o.y - r * .45, r * .75, r * 1.25, 0, 0, Math.PI * 2); ctx.fill();
+    return { x: o.x - r * .8, y: o.y - r * 1.75, w: r * 1.6, h: r * 1.8 };
+  }
+  function drawSmoke(o, t) {
+    var r = 52 * o.s, drift = Math.sin(t * .0008 + o.ph) * 10;
+    for (var i = 0; i < 5; i++) {
+      var yy = o.y + 40 - i * 22, xx = o.x + drift * (i / 4) + Math.sin(t * .001 + i) * 6;
+      ctx.fillStyle = 'rgba(150,165,178,' + (.18 - i * .02) + ')';
+      ctx.beginPath(); ctx.arc(xx, yy, r * (.55 + i * .12), 0, Math.PI * 2); ctx.fill();
+    }
+    return { x: o.x - r * 1.05 + drift * .5, y: o.y - 88 * o.s - 30, w: r * 2.1, h: 170 * o.s };
+  }
+  function drawPerson(o) {
+    ctx.fillStyle = '#6f8594';
+    ctx.beginPath(); ctx.arc(o.x, o.y - 42, 8, 0, Math.PI * 2); ctx.fill();
+    ctx.fillRect(o.x - 7, o.y - 33, 14, 26); ctx.fillRect(o.x - 6, o.y - 7, 5, 18); ctx.fillRect(o.x + 1, o.y - 7, 5, 18);
+    return { x: o.x - 12, y: o.y - 54, w: 24, h: 66 };
+  }
+  function drawCar(o) {
+    ctx.fillStyle = '#5b6f7d';
+    ctx.fillRect(o.x - 40, o.y - 18, 80, 18); ctx.fillRect(o.x - 24, o.y - 32, 46, 15);
+    ctx.fillStyle = '#0f171e'; ctx.beginPath(); ctx.arc(o.x - 24, o.y, 7, 0, 7); ctx.arc(o.x + 24, o.y, 7, 0, 7); ctx.fill();
+    return { x: o.x - 44, y: o.y - 36, w: 88, h: 44 };
+  }
+  function label(b, cls, c) {
+    var col = CLS[cls], jx = (Math.random() - .5) * 1.4, jy = (Math.random() - .5) * 1.4;
+    ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.strokeRect(b.x + jx, b.y + jy, b.w, b.h);
+    var txt = cls + ' ' + c.toFixed(2);
+    ctx.font = '500 12px "IBM Plex Mono", ui-monospace, monospace';
+    var tw = ctx.measureText(txt).width + 10, ly = Math.max(0, b.y + jy - 18);
+    ctx.fillStyle = col; ctx.fillRect(b.x + jx - 1, ly, tw, 18);
+    ctx.fillStyle = '#0f171e'; ctx.fillText(txt, b.x + jx + 4, ly + 13);
+  }
+
+  function frame(now) {
+    var t = now - t0, th = parseFloat(confIn.value), n = 0;
+    bgGround();
+    objs.forEach(function (o) {
+      if (o.vx) { o.x += o.vx; if (o.x > W + 60) o.x = -60; if (o.x < -60) o.x = W + 60; }
+      var b = o.cls === 'fire' ? drawFire(o, t) : o.cls === 'smoke' ? drawSmoke(o, t) : o.cls === 'person' ? drawPerson(o) : drawCar(o);
+      // detector confidence wobbles a little; a new fire ramps up as it grows
+      var ramp = o.born ? Math.min(1, (now - o.born) / 900) : 1;
+      var c = Math.max(0.05, Math.min(0.99, (o.base + Math.sin(t * .003 + o.ph * 3) * .06) * ramp));
+      if (c >= th) { label(b, o.cls, c); n++; }
+    });
+    countEl.textContent = '탐지 ' + n + '개 · conf ≥ ' + th.toFixed(2);
+  }
+  var running = false;
+  function loop(now) { frame(now); if (!reduce && visible) requestAnimationFrame(loop); else running = false; }
+  function kick() {
+    if (running) return;
+    if (!reduce && visible) { running = true; requestAnimationFrame(loop); } else requestAnimationFrame(frame);
+  }
+
+  confIn.addEventListener('input', function () { confOut.textContent = parseFloat(confIn.value).toFixed(2); kick(); });
+  cv.addEventListener('click', function (e) {
+    var r = cv.getBoundingClientRect(), x = (e.clientX - r.left) * W / r.width, y = (e.clientY - r.top) * H / r.height;
+    objs.push(fire(x, Math.max(y, 90), .6 + Math.random() * .6));
+    if (objs.filter(function (o) { return o.cls === 'fire'; }).length > 8) {
+      var i = objs.findIndex(function (o) { return o.cls === 'fire'; }); objs.splice(i, 1);
+    }
+    kick();
+  });
+  document.getElementById('reset-stage').addEventListener('click', function () { seed(); kick(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) kick(); }).observe(cv);
+  }
+  kick();
+})();
+</script>
+</body>
+</html>
