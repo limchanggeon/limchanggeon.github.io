@@ -1,0 +1,29 @@
+# Render Blueprint: 포트폴리오 + 기업 분석·자소서 서버
+# 대시보드에서 New → Blueprint로 이 저장소의 render 브랜치를 고르면 아래 설정으로 만들어진다.
+# sync: false 값(키·비밀번호)은 생성 화면에서 직접 입력하고,
+# 이력 파일은 Environment → Secret Files에 profile.md 라는 이름으로 올린다.
+services:
+  - type: web
+    name: cgl-career
+    runtime: python
+    plan: free
+    region: singapore
+    branch: render
+    buildCommand: python3 --version
+    startCommand: python3 scripts/server.py
+    healthCheckPath: /index.html
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: HOST
+        value: 0.0.0.0
+      - key: PROFILE_PATH
+        value: /etc/secrets/profile.md
+      - key: GEMINI_MODEL
+        value: gemini-flash-latest
+      - key: DART_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: APP_PASSWORD
+        sync: false

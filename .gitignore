@@ -1,0 +1,6 @@
+.env
+.cache/
+__pycache__/
+.DS_Store
+private/
+data/interests.json

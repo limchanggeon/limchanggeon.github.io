@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>자소서 작성 · 임창건</title>
+<meta name="description" content="지원 회사와 문항을 고르면 이력을 근거로 자기소개서 초안을 씁니다">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='7' width='26' height='22' fill='none' stroke='%23e0591a' stroke-width='3'/%3E%3Crect x='3' y='2' width='14' height='6' fill='%23e0591a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* 자소서 작성: 왼쪽 저장 목록, 오른쪽 입력 폼 → 문항별 결과 편집기 */
+.page-head { display: grid; gap: .75rem; padding-block: 2.25rem 0; }
+.page-head h1 { font-size: clamp(1.8rem, 3.6vw, 2.4rem); font-weight: 700; line-height: 1.3; }
+.page-head .lede { max-width: 44em; font-size: 1.0625rem; }
+
+.l-shell { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: 2.5rem; padding-block: 2rem 5rem; align-items: start; }
+@media (max-width: 1000px) { .l-shell { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; } .l-shell > aside { order: 2; } }
+.l-shell > aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--nav-h) + 1.5rem); display: grid; gap: 1rem; }
+@media (max-width: 1000px) { .l-shell > aside { position: static; } }
+
+.hist { display: grid; gap: .25rem; }
+.hrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .1rem .4rem; align-items: center; padding: .55rem .65rem; border-radius: 10px; border: 1px solid transparent; }
+.hrow:hover { background: var(--surface-2); }
+.hrow.active { border-color: var(--box); background: var(--box-soft); }
+.hrow button.open { grid-column: 1; text-align: left; background: none; border: 0; padding: 0; cursor: pointer; color: var(--text); min-width: 0; }
+.hrow .nm { display: block; font-weight: 600; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hrow .dt { display: block; font-size: .8125rem; color: var(--muted); }
+.hrow .del { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 1.1rem; padding: .2rem .4rem; border-radius: 6px; }
+.hrow .del:hover { color: var(--box); background: var(--surface); }
+.side-empty { font-size: .9375rem; color: var(--muted); line-height: 1.6; }
+
+/* form */
+.form { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.step { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: 1rem; padding: 1.4rem 1.5rem; }
+.step + .step { border-top: 1px solid var(--line); }
+.step .n { width: 2rem; height: 2rem; display: grid; place-items: center; border: 2px solid var(--box); color: var(--box); font: 600 .875rem var(--f-mono); border-radius: 6px; }
+.step .body { display: grid; gap: .75rem; min-width: 0; }
+.step h2 { font-size: 1.0625rem; font-weight: 700; line-height: 2rem; }
+.step h2 small { font-weight: 400; font-size: .875rem; color: var(--muted); margin-left: .4rem; }
+@media (max-width: 520px) { .step { grid-template-columns: minmax(0, 1fr); gap: .5rem; } }
+.field { width: 100%; font: inherit; font-size: 1rem; padding: .6rem .8rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
+.field:focus { outline: 2px solid var(--box); outline-offset: 1px; border-color: transparent; }
+textarea.field { resize: vertical; line-height: 1.7; }
+.opts { display: flex; flex-wrap: wrap; gap: .4rem; }
+.opts .fchip { font-size: .875rem; padding: .35rem .8rem; }
+.search { position: relative; }
+.dd { position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 30; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,.14); max-height: 20rem; overflow-y: auto; padding: .3rem; }
+.dd button { display: flex; justify-content: space-between; gap: .75rem; width: 100%; text-align: left; background: transparent; border: 0; border-radius: 8px; padding: .6rem .75rem; cursor: pointer; color: var(--ink); font-weight: 500; }
+.dd button:hover, .dd button[aria-selected="true"] { background: var(--surface-2); }
+.dd button span { font-size: .8125rem; color: var(--muted); font-weight: 400; }
+.picked { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; padding: .7rem .9rem; border-radius: 12px; background: var(--box-soft); }
+.picked b { color: var(--ink); font-size: 1.05rem; }
+.picked .pc { font-family: var(--f-display); font-weight: 700; color: var(--box); }
+.picked .x { margin-left: auto; }
+.muted-sm { font-size: .875rem; color: var(--muted); }
+
+.qrows { display: grid; gap: .75rem; }
+.qrow { display: grid; grid-template-columns: minmax(0, 1fr) 7rem 2.5rem; gap: .5rem; align-items: start; }
+.qrow .lim { display: flex; align-items: center; gap: .3rem; }
+.qrow .lim input { text-align: right; font-variant-numeric: tabular-nums; }
+.qrow .lim span { font-size: .875rem; color: var(--muted); }
+.qrow .rm { height: 2.75rem; }
+@media (max-width: 560px) { .qrow { grid-template-columns: minmax(0, 1fr) 2.5rem; } .qrow .lim { grid-column: 1; grid-row: 2; } .qrow .rm { grid-column: 2; grid-row: 1; } }
+.presets { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.presets > span { font-size: .875rem; color: var(--muted); margin-right: .2rem; }
+.presets .fchip { font-size: .8125rem; padding: .3rem .7rem; }
+.form-foot { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between; padding: 1.1rem 1.5rem; background: var(--surface-2); }
+.form-foot .btn.primary { font-size: 1rem; padding: .75rem 1.4rem; }
+
+/* result */
+.res { margin-top: 1.75rem; display: grid; gap: 1rem; }
+.res-head { display: flex; flex-wrap: wrap; gap: .75rem; align-items: end; justify-content: space-between; }
+.res-head h2 { font-size: 1.5rem; font-weight: 700; line-height: 1.35; }
+.res-head p { color: var(--muted); font-size: .9375rem; }
+.ans { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem 1.5rem; display: grid; gap: .8rem; }
+.ans .qq { display: flex; gap: .6rem; align-items: baseline; font-size: .9375rem; color: var(--muted); }
+.ans .qq b { font-family: var(--f-mono); color: var(--box); font-weight: 500; }
+.ans input.title { font-weight: 700; font-size: 1.125rem; color: var(--ink); background: transparent; border: 0; border-bottom: 1.5px dashed var(--line); border-radius: 0; padding: .3rem 0; width: 100%; font-family: inherit; }
+.ans input.title:focus { outline: 0; border-bottom-color: var(--box); }
+.ans textarea { min-height: 12rem; font-size: 1.0625rem; line-height: 1.85; background: var(--bg); overflow: hidden; }
+.meter { display: grid; gap: .35rem; }
+.meter .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; font-size: .875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meter .row b { color: var(--ink); font-weight: 600; }
+.meter .row.over b { color: #c0392b; }
+.meter .bar { height: 5px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.meter .bar i { display: block; height: 100%; background: var(--cool); transition: width .2s; }
+.meter .row.over + .bar i { background: #c0392b; }
+.ans .foot { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; }
+.ans .used { display: flex; flex-wrap: wrap; gap: .35rem; }
+.ans .used li { font-size: .8125rem; padding: .25rem .55rem; border-radius: 6px; background: var(--cool-soft); color: var(--cool); font-weight: 500; }
+.rw { display: flex; gap: .5rem; width: 100%; }
+.rw input { flex: 1; min-width: 0; }
+.saved { font-size: .875rem; color: var(--muted); }
+
+.scan { position: relative; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 2.5rem 1.5rem; display: grid; gap: .6rem; justify-items: center; text-align: center; margin-top: 1.75rem; }
+.scan .sweep { position: absolute; top: 14%; bottom: 14%; width: 22%; border: 2.5px solid var(--box); border-radius: 6px; animation: sweep 1.8s ease-in-out infinite alternate; }
+.scan .sweep::after { content: "writing…"; position: absolute; left: -2.5px; top: -20px; background: var(--box); color: var(--box-ink); font: 500 .6875rem/1 var(--f-mono); padding: .25rem .4rem; border-radius: 3px; }
+@keyframes sweep { from { left: 4%; } to { left: 74%; } }
+.scan h2, .scan p { position: relative; }
+.scan h2 { font-size: 1.2rem; }
+.scan p { color: var(--muted); }
+.errbox { margin-top: 1.75rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; display: grid; gap: .6rem; }
+.errbox code { font-family: var(--f-mono); background: var(--surface-2); padding: .15rem .4rem; border-radius: 5px; font-size: .875rem; }
+@media (prefers-reduced-motion: reduce) { .scan .sweep { animation: none; left: 39%; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+
+<header class="navbar">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>임창건</a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="index.html#home">홈</a>
+      <a href="index.html#research">연구</a>
+      <a href="index.html#projects">프로젝트</a>
+      <a href="index.html#awards">수상</a>
+      <a href="companies.html">기업 매칭</a>
+      <a href="fit.html">적합도 검사</a>
+      <a href="letter.html" class="active" aria-current="page">자소서</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="다크 모드로 전환"><svg><use href="#i-moon"/></svg></button>
+      <a class="icon-btn" href="https://github.com/limchanggeon" target="_blank" rel="noopener" aria-label="GitHub 프로필"><svg class="fill"><use href="#i-gh"/></svg></a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer container" id="drawer" aria-label="모바일 메뉴" hidden>
+    <a href="index.html#home">홈</a>
+    <a href="index.html#research">연구</a>
+    <a href="index.html#projects">프로젝트</a>
+    <a href="index.html#awards">수상</a>
+    <a href="companies.html">기업 매칭</a>
+    <a href="fit.html">적합도 검사</a>
+    <a href="letter.html" class="active" aria-current="page">자소서</a>
+  </nav>
+  <div class="progress" id="progress"></div>
+</header>
+
+<div class="container">
+  <header class="page-head">
+    <span class="eyebrow">Cover Letter</span>
+    <h1>자기소개서 초안 쓰기</h1>
+    <p class="lede">지원할 회사와 문항을 넣으면, 제 이력과 회사 분석을 근거로 Gemini가 문항별 초안을 씁니다. 이력에 없는 경험이나 수치는 쓰지 않도록 했고, 결과는 바로 고치고 저장할 수 있어요.</p>
+  </header>
+
+  <div class="l-shell">
+    <aside aria-label="저장된 자기소개서">
+      <div class="panel">
+        <p class="side-h">저장된 자소서 <span id="h-count"></span></p>
+        <div class="hist" id="hist"><p class="side-empty">불러오는 중</p></div>
+        <button class="btn" type="button" id="new-btn" style="margin-top:.9rem;width:100%">새로 쓰기</button>
+      </div>
+    </aside>
+
+    <section aria-label="작성">
+      <form class="form" id="form" autocomplete="off">
+        <div class="step">
+          <span class="n">1</span>
+          <div class="body">
+            <h2>지원 회사 <small>고르지 않으면 직무 중심으로 씁니다</small></h2>
+            <div id="company-slot"></div>
+            <div class="search" id="search">
+              <input class="field" id="cq" type="search" role="combobox" aria-expanded="false" aria-controls="cdd" placeholder="회사 이름 검색 (비상장 포함)">
+              <div class="dd" id="cdd" role="listbox" hidden></div>
+            </div>
+            <div class="opts" id="quick"></div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <div class="body">
+            <h2>지원 직무</h2>
+            <input class="field" id="role" type="text" placeholder="예: 비전 AI 엔지니어, 로봇 SW 개발">
+            <div class="opts" id="role-sugg"></div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <div class="body">
+            <h2>문항 <small>공백 포함 글자 수 제한</small></h2>
+            <div class="qrows" id="qrows"></div>
+            <div class="presets" id="presets"><span>문항 추가</span></div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">4</span>
+          <div class="body">
+            <h2>강조할 경험 <small>고르지 않으면 문항마다 알아서 고릅니다</small></h2>
+            <div class="opts" id="focus"></div>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">5</span>
+          <div class="body">
+            <h2>문체</h2>
+            <div class="seg" id="tone" role="group" aria-label="문체">
+              <button type="button" data-v="담백" aria-pressed="true">담백하게</button>
+              <button type="button" data-v="논리" aria-pressed="false">논리적으로</button>
+              <button type="button" data-v="열정" aria-pressed="false">의지가 보이게</button>
+            </div>
+            <label for="notes" class="muted-sm">추가로 전하고 싶은 내용 (선택)</label>
+            <textarea class="field" id="notes" rows="2" maxlength="500" placeholder="예: 대전 근무를 희망한다는 점, 석사 과정에서 이어갈 연구 방향"></textarea>
+          </div>
+        </div>
+        <div class="form-foot">
+          <span class="muted-sm" id="form-hint">문항 2개 · 예상 소요 20~60초</span>
+          <button class="btn primary" type="submit" id="go">자소서 쓰기</button>
+        </div>
+      </form>
+      <div id="out"></div>
+    </section>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="container">
+    <span>© 2026 임창건 · 로컬 전용 도구</span>
+    <span>작성: Google Gemini · 근거: 이력 파일과 OpenDART</span>
+  </div>
+</footer>
+
+<div class="tracker" id="tracker" aria-hidden="true"><span></span></div>
+<button class="icon-btn to-top" id="to-top" type="button" aria-label="맨 위로" hidden><svg><use href="#i-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var toast = window.site.toast;
+  var PRESETS = [
+    ['지원동기', '우리 회사에 지원한 동기와 해당 직무를 선택한 이유를 기술해 주십시오.', 700],
+    ['직무 역량', '지원 직무와 관련된 역량을 쌓기 위해 노력한 경험과 그 결과를 구체적으로 기술해 주십시오.', 1000],
+    ['문제 해결', '어려운 문제를 해결하기 위해 스스로 방법을 찾고 실행했던 경험을 기술해 주십시오.', 800],
+    ['협업', '다른 사람과 함께 목표를 달성했던 경험과 그 과정에서 본인의 역할을 기술해 주십시오.', 800],
+    ['성장 과정', '본인의 가치관이 형성된 과정과 그것이 행동에 드러난 경험을 기술해 주십시오.', 700],
+    ['입사 후 포부', '입사 후 이루고 싶은 목표와 이를 위한 계획을 기술해 주십시오.', 600]
+  ];
+  var FOCUS = ['JDCS 논문 (커스텀 YOLOv8 엣지 성능)', 'JPT 논문 (YOLOv8n 실시간 화재·연기)', 'YOLO26 vs YOLOv8n 비교 (우수논문상)', '도로 파손 TensorRT 비교 (우수논문상)',
+    'YogiBot ControlTower (금상)', '언제나가 (운영 중인 웹 서비스)', '나만의빛 (사진 편집 앱)', '메피티 (근거 기반 AI 어시스턴트)', 'ROS2 자율주행 배송 로봇',
+    'WCRC 국제대회 동메달', 'ILRC 지능형 로봇 경진대회', '아나모픽 미디어아트 최우수상', '소셜 해커톤 최우수상', '글로벌 리빙랩 (오사카·베트남)'];
+  var company = null, interests = [], matches = [], currentLetter = null, saveTimer;
+
+  var api = window.site.api, store = window.site.store;
+  function post(path, body) { return api(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) }); }
+
+  /* ── 1. 회사 ── */
+  function renderCompany() {
+    $('company-slot').innerHTML = company ?
+      '<div class="picked"><b>' + esc(company.name) + '</b>' + (company.score != null ? '<span class="pc">적합도 ' + company.score + '%</span>' : '') +
+      '<button class="btn x" type="button" id="unpick">다른 회사</button></div>' : '';
+    $('search').hidden = !!company;
+    $('quick').hidden = !!company;
+    if (company) $('unpick').addEventListener('click', function () { company = null; renderCompany(); renderRoles(); });
+    renderRoles();
+  }
+  function choose(c) { company = c; $('cq').value = ''; closeDD(); renderCompany(); }
+  function renderQuick() {
+    var seen = {}, list = interests.concat(matches.slice(0, 6)).filter(function (c) { if (seen[c.corp_code]) return false; seen[c.corp_code] = 1; return true; }).slice(0, 8);
+    $('quick').innerHTML = list.length ? '<span class="muted-sm" style="align-self:center">빠른 선택</span>' + list.map(function (c) {
+      return '<button class="fchip" type="button" data-code="' + c.corp_code + '">' + esc(c.name) + ' ' + c.score + '%</button>';
+    }).join('') : '';
+  }
+  $('quick').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-code]'); if (!b) return;
+    var code = b.getAttribute('data-code');
+    choose(interests.concat(matches).find(function (c) { return c.corp_code === code; }));
+  });
+  var st, seq = 0, ddItems = [];
+  function closeDD() { $('cdd').hidden = true; $('cq').setAttribute('aria-expanded', 'false'); }
+  $('cq').addEventListener('input', function () {
+    var q = this.value.trim(); clearTimeout(st);
+    if (!q) return closeDD();
+    st = setTimeout(function () {
+      var my = ++seq;
+      api('/api/search?q=' + encodeURIComponent(q)).then(function (d) {
+        if (my !== seq) return;
+        ddItems = d.results;
+        $('cdd').innerHTML = ddItems.length ? ddItems.map(function (r, i) {
+          return '<button type="button" role="option" data-i="' + i + '">' + esc(r.name) + '<span>' + (r.listed ? '상장' : '비상장') + (r.p != null ? ' · ' + r.p + '%' : '') + '</span></button>';
+        }).join('') : '<p class="muted-sm" style="padding:.7rem">DART에서 찾지 못했어요</p>';
+        $('cdd').hidden = false; $('cq').setAttribute('aria-expanded', 'true');
+      }).catch(offline);
+    }, 180);
+  });
+  $('cdd').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-i]'); if (!b) return;
+    var r = ddItems[+b.getAttribute('data-i')];
+    choose({ corp_code: r.corp_code, name: r.name, score: r.p, roles: [] });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#search')) closeDD(); });
+
+  /* ── 2. 직무 ── */
+  function renderRoles() {
+    var roles = (company && company.roles && company.roles.length) ? company.roles : ['비전 AI 엔지니어', '엣지 AI 추론 최적화', '로봇 SW 엔지니어', '백엔드 개발'];
+    $('role-sugg').innerHTML = roles.map(function (r) { return '<button class="fchip" type="button" data-r="' + esc(r) + '">' + esc(r) + '</button>'; }).join('');
+  }
+  $('role-sugg').addEventListener('click', function (e) { var b = e.target.closest('[data-r]'); if (b) $('role').value = b.getAttribute('data-r'); });
+
+  /* ── 3. 문항 ── */
+  var qid = 0;
+  function addQ(q, limit) {
+    var id = ++qid, row = document.createElement('div');
+    row.className = 'qrow';
+    row.innerHTML = '<textarea class="field" rows="2" id="q-' + id + '" aria-label="문항 ' + id + '" placeholder="문항을 입력하세요">' + esc(q || '') + '</textarea>' +
+      '<label class="lim" for="l-' + id + '"><input class="field" type="number" id="l-' + id + '" min="100" max="3000" step="50" value="' + (limit || 700) + '"><span>자</span></label>' +
+      '<button class="icon-btn rm" type="button" aria-label="문항 빼기"><svg><use href="#i-close"/></svg></button>';
+    row.querySelector('.rm').addEventListener('click', function () { row.remove(); hint(); });
+    $('qrows').appendChild(row); hint();
+  }
+  $('presets').insertAdjacentHTML('beforeend', PRESETS.map(function (p, i) { return '<button class="fchip" type="button" data-p="' + i + '">+ ' + p[0] + '</button>'; }).join('') + '<button class="fchip" type="button" data-p="blank">+ 직접 입력</button>');
+  $('presets').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-p]'); if (!b) return;
+    var p = PRESETS[+b.getAttribute('data-p')];
+    p ? addQ(p[1], p[2]) : addQ('', 700);
+  });
+  function questions() {
+    return Array.prototype.map.call($('qrows').children, function (row) {
+      return { q: row.querySelector('textarea').value.trim(), limit: +row.querySelector('input').value || 700 };
+    }).filter(function (x) { return x.q; });
+  }
+  function hint() { var n = $('qrows').children.length; $('form-hint').textContent = '문항 ' + n + '개 · 예상 소요 ' + (n * 10 + 10) + '~' + (n * 25 + 20) + '초'; }
+
+  /* ── 4, 5. 경험·문체 ── */
+  $('focus').innerHTML = FOCUS.map(function (f) { return '<button class="fchip" type="button" aria-pressed="false">' + esc(f) + '</button>'; }).join('');
+  $('focus').addEventListener('click', function (e) { var b = e.target.closest('.fchip'); if (b) b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); });
+  $('tone').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    $('tone').querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+  });
+
+  /* ── 생성 ── */
+  $('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var qs = questions();
+    if (!qs.length) { toast('문항을 하나 이상 입력해 주세요'); return; }
+    var body = {
+      corp_code: company ? company.corp_code : '', role: $('role').value.trim(), questions: qs,
+      focus: Array.prototype.filter.call($('focus').children, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).map(function (b) { return b.textContent; }),
+      tone: $('tone').querySelector('[aria-pressed="true"]').getAttribute('data-v'), notes: $('notes').value.trim()
+    };
+    $('go').disabled = true;
+    $('out').innerHTML = '<div class="scan" aria-live="polite"><span class="sweep" aria-hidden="true"></span><h2>' + esc(company ? company.name : '직무') + ' 자소서 쓰는 중</h2><p>문항 ' + qs.length + '개 · 글자 수를 맞추느라 조금 걸려요</p></div>';
+    $('out').scrollIntoView({ behavior: window.site.reduce ? 'auto' : 'smooth', block: 'start' });
+    post('/api/letter', body).then(function (d) {
+      saved.unshift(d.letter); persist();
+      showLetter(d.letter); renderHistory();
+    }).catch(function (err) {
+      if (/Failed to fetch|NetworkError|Load failed/.test(err.message)) return offline();
+      $('out').innerHTML = '<div class="errbox"><h2 style="font-size:1.1rem">자소서를 쓰지 못했어요</h2><p>' + esc(err.message) + '</p><p class="muted-sm">Gemini가 혼잡하면 잠시 뒤 다시 눌러 주세요.</p></div>';
+    }).then(function () { $('go').disabled = false; });
+  });
+
+  /* ── 결과 편집기 ── */
+  function fit(ta) { ta.style.height = 'auto'; ta.style.height = (ta.scrollHeight + 4) + 'px'; }
+  function meter(card, a) {
+    var t = card.querySelector('textarea').value, n = t.length, nb = t.replace(/\s/g, '').length, over = n > a.limit;
+    card.querySelector('.meter').innerHTML = '<div class="row' + (over ? ' over' : '') + '"><span><b>' + n.toLocaleString('ko-KR') + '</b> / ' + a.limit.toLocaleString('ko-KR') + '자 (공백 포함)</span><span>공백 제외 ' + nb.toLocaleString('ko-KR') + '자' + (over ? ' · ' + (n - a.limit) + '자 초과' : '') + '</span></div><div class="bar"><i style="width:' + Math.min(100, n / a.limit * 100) + '%"></i></div>';
+  }
+  function showLetter(L) {
+    currentLetter = L;
+    var head = '<div class="res-head"><div><h2>' + esc(L.company ? L.company.name : '직무 중심') + (L.role ? ' · ' + esc(L.role) : '') + '</h2>' +
+      '<p>' + esc(L.created_at.replace('T', ' ')) + ' 작성 · ' + esc(L.model) + ' · 문체 ' + esc(L.tone) + '</p></div>' +
+      '<div class="btn-row"><span class="saved" id="saved"></span><button class="btn" type="button" id="copy-all"><svg><use href="#i-copy"/></svg>전체 복사</button></div></div>';
+    $('out').innerHTML = '<div class="res">' + head + L.answers.map(function (a, i) {
+      return '<article class="ans" data-i="' + i + '">' +
+        '<p class="qq"><b>Q' + (i + 1) + '</b><span>' + esc(a.q) + '</span></p>' +
+        '<input class="title" type="text" id="t-' + i + '" aria-label="소제목 ' + (i + 1) + '" value="' + esc(a.title) + '">' +
+        '<textarea class="field" id="a-' + i + '" aria-label="답변 ' + (i + 1) + '">' + esc(a.text) + '</textarea>' +
+        '<div class="meter"></div>' +
+        '<div class="foot"><ul class="used">' + (a.used || []).map(function (u) { return '<li>' + esc(u) + '</li>'; }).join('') + '</ul>' +
+          '<div class="btn-row"><button class="btn" type="button" data-act="copy"><svg><use href="#i-copy"/></svg>복사</button><button class="btn" type="button" data-act="rw">다시 쓰기</button></div></div>' +
+        '<div class="rw" hidden><input class="field" type="text" id="rw-' + i + '" placeholder="어떻게 고칠까요? (예: 협업 경험을 더 드러내 줘, 첫 문장을 더 강하게)"><button class="btn primary" type="button" data-act="rw-go">고쳐 쓰기</button></div>' +
+      '</article>';
+    }).join('') + '<p class="muted-sm">AI 초안입니다. 사실과 다른 부분이 없는지 확인하고, 제 말투로 다듬어 제출하세요.</p></div>';
+    document.querySelectorAll('.ans').forEach(function (card) {
+      var a = L.answers[+card.getAttribute('data-i')], ta = card.querySelector('textarea');
+      fit(ta); meter(card, a);
+      ta.addEventListener('input', function () { fit(ta); meter(card, a); queueSave(); });
+      card.querySelector('.title').addEventListener('input', queueSave);
+    });
+    $('copy-all').addEventListener('click', function () {
+      copy(L.answers.map(function (a, i) { return (i + 1) + '. ' + a.q + '\n[' + $('t-' + i).value + ']\n' + $('a-' + i).value; }).join('\n\n'));
+    });
+    markHistory();
+  }
+  $('out').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]'); if (!b) return;
+    var card = b.closest('.ans'), i = +card.getAttribute('data-i'), act = b.getAttribute('data-act');
+    if (act === 'copy') copy('[' + $('t-' + i).value + ']\n' + $('a-' + i).value);
+    if (act === 'rw') { var box = card.querySelector('.rw'); box.hidden = !box.hidden; if (!box.hidden) $('rw-' + i).focus(); }
+    if (act === 'rw-go') rewrite(card, i);
+  });
+  $('out').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target.id && e.target.id.indexOf('rw-') === 0) { e.preventDefault(); rewrite(e.target.closest('.ans'), +e.target.id.slice(3)); }
+  });
+  function rewrite(card, i) {
+    var btns = card.querySelectorAll('button'), ta = card.querySelector('textarea');
+    btns.forEach(function (x) { x.disabled = true; });
+    ta.style.opacity = .5;
+    var L = currentLetter, a = L.answers[i];
+    post('/api/letter/rewrite', {
+      corp_code: L.company ? L.company.corp_code : '', role: L.role, tone: L.tone, focus: L.focus,
+      q: a.q, limit: a.limit, text: ta.value, instruction: $('rw-' + i).value
+    }).then(function (d) {
+      currentLetter.answers[i] = d.answer; persist();
+      $('t-' + i).value = d.answer.title; ta.value = d.answer.text; fit(ta); meter(card, d.answer);
+      card.querySelector('.used').innerHTML = (d.answer.used || []).map(function (u) { return '<li>' + esc(u) + '</li>'; }).join('');
+      card.querySelector('.rw').hidden = true; $('rw-' + i).value = '';
+      toast('Q' + (i + 1) + '을 다시 썼어요');
+    }).catch(function (err) { toast('다시 쓰지 못했어요: ' + err.message); })
+      .then(function () { btns.forEach(function (x) { x.disabled = false; }); ta.style.opacity = ''; });
+  }
+  function queueSave() {
+    clearTimeout(saveTimer); $('saved').textContent = '편집 중';
+    saveTimer = setTimeout(function () {
+      var answers = currentLetter.answers.map(function (a, i) { return { title: $('t-' + i).value, text: $('a-' + i).value }; });
+      answers.forEach(function (x, i) { currentLetter.answers[i].title = x.title; currentLetter.answers[i].text = x.text; });
+      currentLetter.edited_at = new Date().toISOString().slice(0, 16);
+      $('saved').textContent = persist() ? '이 브라우저에 저장됨' : '저장 실패 (브라우저 저장소를 쓸 수 없어요)';
+    }, 800);
+  }
+  function copy(text) {
+    try { navigator.clipboard.writeText(text).then(function () { toast('복사했어요'); }, function () { toast('복사하지 못했어요. 직접 선택해 복사해 주세요'); }); }
+    catch (e) { toast('복사하지 못했어요. 직접 선택해 복사해 주세요'); }
+  }
+
+  /* ── 저장 목록 ── */
+  /* 자소서는 이 브라우저에 저장한다. 처음 열 때만 예전 버전이 서버에 남긴 자소서를 옮겨 온다. */
+  var saved = [];
+  function persist() { return store.set('letters', saved); }
+  function loadHistory() {
+    var local = store.get('letters', null);
+    if (local) { saved = local; renderHistory(); return Promise.resolve(); }
+    return api('/api/letters').then(function (d) { saved = d.letters || []; persist(); renderHistory(); });
+  }
+  function renderHistory() {
+      $('h-count').textContent = saved.length ? '· ' + saved.length : '';
+      $('hist').innerHTML = saved.length ? saved.map(function (L) {
+        return '<div class="hrow" data-id="' + L.id + '"><button type="button" class="open"><span class="nm">' + esc(L.company ? L.company.name : '직무 중심') + '</span>' +
+          '<span class="dt">' + esc(L.role || '직무 미지정') + ' · ' + esc(L.created_at.slice(5, 10).replace('-', '.')) + '</span></button>' +
+          '<button type="button" class="del" aria-label="삭제">×</button></div>';
+      }).join('') : '<p class="side-empty">아직 쓴 자소서가 없어요.</p>';
+      markHistory();
+  }
+  function markHistory() { document.querySelectorAll('.hrow').forEach(function (r) { r.classList.toggle('active', !!currentLetter && r.getAttribute('data-id') === currentLetter.id); }); }
+  $('hist').addEventListener('click', function (e) {
+    var row = e.target.closest('.hrow'); if (!row) return;
+    var id = row.getAttribute('data-id');
+    if (e.target.closest('.del')) {
+      if (row.classList.contains('confirm')) {
+        saved = saved.filter(function (x) { return x.id !== id; }); persist();
+        if (currentLetter && currentLetter.id === id) { currentLetter = null; $('out').innerHTML = ''; }
+        renderHistory(); toast('삭제했어요');
+      } else { row.classList.add('confirm'); e.target.textContent = '삭제?'; setTimeout(function () { row.classList.remove('confirm'); e.target.textContent = '×'; }, 2500); }
+      return;
+    }
+    var L = saved.find(function (x) { return x.id === id; });
+    if (L) { showLetter(L); $('out').scrollIntoView({ behavior: window.site.reduce ? 'auto' : 'smooth' }); }
+  });
+  $('new-btn').addEventListener('click', function () { currentLetter = null; $('out').innerHTML = ''; markHistory(); $('form').scrollIntoView({ behavior: window.site.reduce ? 'auto' : 'smooth' }); });
+
+  function offline() {
+    $('out').innerHTML = '<div class="errbox"><h2 style="font-size:1.1rem">작성 서버에 연결되지 않았어요</h2><p>이 기능은 API 키를 가진 서버에서만 동작합니다. 배포된 서버 주소로 열거나, 로컬에서는 <code>python3 scripts/server.py</code>를 실행한 뒤 <code>http://localhost:8982/letter.html</code>로 열어 주세요.</p></div>';
+  }
+
+  /* ── 시작 ── */
+  addQ(PRESETS[0][1], PRESETS[0][2]);
+  addQ(PRESETS[1][1], PRESETS[1][2]);
+  renderCompany();
+  interests = store.get('interests', []);
+  Promise.all([
+    fetch('data/companies.json').then(function (r) { return r.ok ? r.json() : { companies: [] }; }).then(function (d) { matches = d.companies || []; })
+  ]).then(function () {
+    renderQuick();
+    var h = location.hash.slice(1);
+    if (/^\d{8}$/.test(h)) {
+      var c = interests.concat(matches).find(function (x) { return x.corp_code === h; });
+      if (c) choose(c);
+    }
+    return loadHistory();
+  }).catch(function (err) { renderHistory(); if (/Failed to fetch|NetworkError|Load failed/.test(err.message)) offline(); });
+})();
+</script>
+</body>
+</html>

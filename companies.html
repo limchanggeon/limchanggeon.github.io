@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>기업 매칭 · 임창건</title>
+<meta name="description" content="OpenDART 공시 데이터와 Gemini로 찾은, 임창건의 이력에 맞는 상장사">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='7' width='26' height='22' fill='none' stroke='%23e0591a' stroke-width='3'/%3E%3Crect x='3' y='2' width='14' height='6' fill='%23e0591a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* 기업 매칭 페이지 전용: 왼쪽은 필터 사이드바, 오른쪽은 적합도 순 기업 카드 */
+.page-head { display: grid; gap: .75rem; padding-block: 2.25rem 0; }
+.page-head h1 { font-size: clamp(1.8rem, 3.6vw, 2.4rem); font-weight: 700; line-height: 1.3; }
+.page-head .lede { max-width: 44em; font-size: 1.0625rem; }
+.how { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font-size: .9375rem; color: var(--muted); }
+.how .step { display: inline-flex; align-items: center; gap: .4rem; background: var(--surface); border: 1px solid var(--line); padding: .35rem .7rem; border-radius: 8px; color: var(--text); }
+.how .step b { font-family: var(--f-mono); font-size: .8125rem; color: var(--box); font-weight: 500; }
+.how .arrow { color: var(--muted); }
+
+.m-shell { display: grid; grid-template-columns: 16.5rem minmax(0, 1fr); gap: 2.5rem; padding-block: 2rem 5rem; align-items: start; }
+@media (max-width: 1000px) { .m-shell { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; } }
+.fside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--nav-h) + 1.5rem); display: grid; gap: 1rem; }
+@media (max-width: 1000px) { .fside { position: static; } }
+.fgroup { display: grid; gap: .6rem; }
+.fgroup + .fgroup { border-top: 1px solid var(--line); padding-top: 1rem; }
+.fgroup > span { font-size: .875rem; font-weight: 600; color: var(--muted); }
+.field { width: 100%; font: inherit; font-size: 1rem; padding: .6rem .8rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
+.field:focus { outline: 2px solid var(--box); outline-offset: 1px; border-color: transparent; }
+.opts { display: flex; flex-wrap: wrap; gap: .4rem; }
+.opts .fchip { font-size: .875rem; padding: .35rem .75rem; }
+.range-row { display: grid; grid-template-columns: minmax(0, 1fr) 2.6em; gap: .6rem; align-items: center; }
+.range-row input { width: 100%; accent-color: var(--box); }
+.range-row output { font-family: var(--f-mono); font-size: .9375rem; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+.fside .reset { justify-self: start; }
+.meta-panel { font-size: .875rem; color: var(--muted); display: grid; gap: .35rem; line-height: 1.6; }
+.meta-panel b { color: var(--ink); font-weight: 600; }
+
+.results-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
+.results-bar .count { font-size: 1rem; color: var(--text); }
+.results-bar .count b { color: var(--ink); font-family: var(--f-display); font-size: 1.25rem; }
+.results-bar label { display: inline-flex; align-items: center; gap: .5rem; font-size: .9375rem; color: var(--muted); }
+.results-bar select { width: auto; padding-block: .45rem; }
+
+.clist { display: grid; gap: 1rem; }
+.co { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1.25rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1.35rem 1.5rem; }
+@media (max-width: 560px) { .co { grid-template-columns: minmax(0, 1fr); gap: .9rem; } }
+.score { position: relative; width: 4.5rem; height: 4.5rem; }
+.score svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.score circle { fill: none; stroke-width: 7; }
+.score .bg { stroke: var(--surface-2); }
+.score .fg { stroke: var(--box); stroke-linecap: round; transition: stroke-dashoffset .6s cubic-bezier(.2,.8,.2,1); }
+.score b { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 1.35rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+.score small { position: absolute; left: 0; right: 0; bottom: -1.35rem; text-align: center; font-size: .75rem; color: var(--muted); }
+@media (max-width: 560px) { .score { width: 3.5rem; height: 3.5rem; } .score b { font-size: 1.05rem; } .score small { display: none; } }
+.co-main { display: grid; gap: .7rem; min-width: 0; }
+.co-top { display: flex; flex-wrap: wrap; gap: .4rem .75rem; align-items: baseline; }
+.co-top h2 { font-size: 1.3rem; font-weight: 700; line-height: 1.35; }
+.co-top .sub { font-size: .9rem; color: var(--muted); }
+.co .biz { color: var(--text); }
+.facts-row { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; font-size: .9rem; color: var(--muted); }
+.facts-row span b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.facts-row .neg b { color: #c0392b; }
+.tagrow { display: flex; flex-wrap: wrap; gap: .35rem; }
+.tagrow .pill { cursor: pointer; border: 0; font: inherit; font-size: .8125rem; font-weight: 600; }
+.co details { border-top: 1px solid var(--line); padding-top: .7rem; }
+.co summary { cursor: pointer; font-weight: 600; font-size: .9375rem; color: var(--box); list-style: none; display: inline-flex; gap: .35rem; }
+.co summary::-webkit-details-marker { display: none; }
+.co summary::after { content: "+"; font-family: var(--f-mono); }
+.co details[open] summary::after { content: "−"; }
+.why { display: grid; gap: .55rem; margin-top: .75rem; }
+.why li { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: .6rem; }
+.why li::before { content: ""; width: 7px; height: 7px; margin-top: .7rem; border: 2px solid var(--box); }
+.detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1.5rem; margin-top: 1rem; font-size: .9375rem; }
+@media (max-width: 640px) { .detail-grid { grid-template-columns: minmax(0, 1fr); } }
+.detail-grid dt { font-size: .8125rem; font-weight: 600; color: var(--muted); margin-bottom: .15rem; }
+.detail-grid dd { margin: 0; }
+.caution { margin-top: 1rem; padding: .7rem .9rem; border-radius: 10px; background: var(--box-soft); color: var(--text); font-size: .9375rem; }
+.caution b { color: var(--box); }
+.co .btn-row { margin-top: .9rem; }
+
+.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--r); padding: 2.5rem 1.5rem; text-align: center; display: grid; gap: .6rem; justify-items: center; }
+.empty h2 { font-size: 1.2rem; }
+.empty code { font-family: var(--f-mono); font-size: .875rem; background: var(--surface-2); padding: .2rem .45rem; border-radius: 6px; }
+.disclaimer { margin-top: 1.5rem; font-size: .875rem; color: var(--muted); line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="navbar">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>임창건</a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="index.html#home">홈</a>
+      <a href="index.html#research">연구</a>
+      <a href="index.html#projects">프로젝트</a>
+      <a href="index.html#awards">수상</a>
+      <a href="companies.html" class="active" aria-current="page">기업 매칭</a>
+      <a href="fit.html">적합도 검사</a>
+      <a href="letter.html">자소서</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="다크 모드로 전환"><svg><use href="#i-moon"/></svg></button>
+      <a class="icon-btn" href="https://github.com/limchanggeon" target="_blank" rel="noopener" aria-label="GitHub 프로필"><svg class="fill"><use href="#i-gh"/></svg></a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer container" id="drawer" aria-label="모바일 메뉴" hidden>
+    <a href="index.html#home">홈</a>
+    <a href="index.html#research">연구</a>
+    <a href="index.html#projects">프로젝트</a>
+    <a href="index.html#awards">수상</a>
+    <a href="companies.html" class="active" aria-current="page">기업 매칭</a>
+    <a href="fit.html">적합도 검사</a>
+    <a href="letter.html">자소서</a>
+  </nav>
+  <div class="progress" id="progress"></div>
+</header>
+
+<div class="container">
+  <header class="page-head">
+    <span class="eyebrow">Company Match</span>
+    <h1>제 이력에 맞는 기업</h1>
+    <p class="lede">금융감독원 전자공시(OpenDART)에 올라온 상장사 정보를 모으고, Gemini가 제 연구·프로젝트와 각 회사의 사업을 비교해 적합도를 매겼습니다.</p>
+    <div class="how" aria-label="만드는 과정">
+      <span class="step"><b>1</b>DART 상장사 <span id="h-listed">–</span>곳</span><span class="arrow">→</span>
+      <span class="step"><b>2</b>관련 업종 <span id="h-pool">–</span>곳</span><span class="arrow">→</span>
+      <span class="step"><b>3</b>Gemini 1차 선별</span><span class="arrow">→</span>
+      <span class="step"><b>4</b>재무·인력 반영 평가 <span id="h-final">–</span>곳</span>
+    </div>
+  </header>
+
+  <div class="m-shell">
+    <aside class="fside" aria-label="필터">
+      <div class="panel" style="display:grid;gap:1rem">
+        <div class="fgroup">
+          <span>검색</span>
+          <input class="field" id="q" type="search" placeholder="회사명, 사업, 직무" autocomplete="off">
+        </div>
+        <div class="fgroup">
+          <span>최소 적합도</span>
+          <div class="range-row"><input id="min-score" type="range" min="0" max="90" step="5" value="0" aria-label="최소 적합도"><output id="min-out" for="min-score">0</output></div>
+        </div>
+        <div class="fgroup">
+          <span>분야</span>
+          <div class="opts" id="f-tags"></div>
+        </div>
+        <div class="fgroup">
+          <span>시장</span>
+          <div class="opts" id="f-market"></div>
+        </div>
+        <div class="fgroup">
+          <span>지역</span>
+          <div class="opts" id="f-region"></div>
+        </div>
+        <button class="btn reset" id="reset" type="button">필터 초기화</button>
+      </div>
+      <div class="panel meta-panel" id="meta"></div>
+    </aside>
+
+    <section aria-label="매칭 결과">
+      <div class="results-bar">
+        <p class="count" id="count" aria-live="polite">불러오는 중</p>
+        <label for="sort">정렬
+          <select class="field" id="sort">
+            <option value="score">적합도 높은 순</option>
+            <option value="revenue">매출 큰 순</option>
+            <option value="employees">직원 많은 순</option>
+            <option value="salary">평균 급여 높은 순</option>
+            <option value="name">이름순</option>
+          </select>
+        </label>
+      </div>
+      <div class="clist" id="list"></div>
+      <p class="disclaimer">
+        재무·인력 수치는 각 회사의 최근 사업보고서(OpenDART)에서 가져왔고, 평균 급여는 연간 급여 총액을 직원 수로 나눈 값입니다.
+        사업 설명·적합도·추천 직무는 Gemini가 공시 정보와 일반 지식을 바탕으로 작성한 참고 자료이며, 실제 채용 여부나 조직 구성과 다를 수 있습니다.
+        지원 전에는 회사 채용 페이지와 DART 원문을 꼭 확인하세요.
+      </p>
+    </section>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="container">
+    <span>© 2026 임창건 · 목원대학교 SSC Lab</span>
+    <span>데이터: 금융감독원 OpenDART · 분석: Google Gemini</span>
+  </div>
+</footer>
+
+<div class="tracker" id="tracker" aria-hidden="true"><span></span></div>
+<button class="icon-btn to-top" id="to-top" type="button" aria-label="맨 위로" hidden><svg><use href="#i-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var state = { q: '', min: 0, tags: new Set(), market: new Set(), region: new Set(), sort: 'score' };
+  var all = [];
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+
+  function money(v) {
+    if (typeof v !== 'number') return '–';
+    var eok = v / 1e8;
+    if (Math.abs(eok) >= 10000) return (eok / 10000).toFixed(1).replace(/\.0$/, '') + '조원';
+    return Math.round(eok).toLocaleString('ko-KR') + '억원';
+  }
+  function salary(v) { return typeof v === 'number' ? Math.round(v / 1e4).toLocaleString('ko-KR') + '만원' : '–'; }
+  function regionGroup(r) {
+    if (!r) return '기타';
+    if (/^서울/.test(r)) return '서울';
+    if (/^(경기|인천)/.test(r)) return '경기·인천';
+    if (/^(대전|세종|충청|충북|충남)/.test(r)) return '대전·충청';
+    if (/^(부산|대구|울산|경상|경북|경남)/.test(r)) return '영남';
+    if (/^(광주|전라|전북|전남)/.test(r)) return '호남';
+    return '기타';
+  }
+
+  function chipGroup(el, key, values, counts) {
+    el.innerHTML = values.map(function (v) {
+      return '<button class="fchip" type="button" aria-pressed="false" data-v="' + esc(v) + '">' + esc(v) + ' <span class="muted">' + counts[v] + '</span></button>';
+    }).join('');
+    el.addEventListener('click', function (e) {
+      var b = e.target.closest('.fchip'); if (!b) return;
+      var v = b.getAttribute('data-v'), set = state[key];
+      set.has(v) ? set.delete(v) : set.add(v);
+      b.setAttribute('aria-pressed', String(set.has(v)));
+      render();
+    });
+  }
+  function countBy(fn) {
+    var m = {}; all.forEach(function (c) { [].concat(fn(c)).forEach(function (k) { m[k] = (m[k] || 0) + 1; }); }); return m;
+  }
+  function order(m) { return Object.keys(m).sort(function (a, b) { return m[b] - m[a]; }); }
+
+  function ring(score) {
+    var r = 30, c = 2 * Math.PI * r, off = c * (1 - score / 100);
+    return '<div class="score" aria-label="적합도 ' + score + '점"><svg viewBox="0 0 72 72" aria-hidden="true"><circle class="bg" cx="36" cy="36" r="' + r + '"/><circle class="fg" cx="36" cy="36" r="' + r + '" stroke-dasharray="' + c.toFixed(1) + '" stroke-dashoffset="' + off.toFixed(1) + '"/></svg><b>' + score + '</b><small>적합도 %</small></div>';
+  }
+
+  function card(c) {
+    var op = typeof c.op_income === 'number' && c.op_income < 0;
+    var home = c.homepage ? (/^https?:/.test(c.homepage) ? c.homepage : 'https://' + c.homepage) : '';
+    return '<article class="co track" data-cls="' + esc(c.name) + '" data-conf="' + (c.score / 100).toFixed(2) + '">' +
+      ring(c.score) +
+      '<div class="co-main">' +
+        '<div class="co-top"><h2>' + esc(c.name) + '</h2><span class="sub">' + esc(c.market) + ' · ' + esc(c.sector) + ' · ' + esc(c.region || '지역 정보 없음') + '</span></div>' +
+        '<p class="biz">' + esc(c.business) + '</p>' +
+        '<div class="tagrow">' + c.fit_tags.map(function (t) { return '<button type="button" class="pill kind" data-tag="' + esc(t) + '">' + esc(t) + '</button>'; }).join('') + '</div>' +
+        '<div class="facts-row">' +
+          '<span>매출 <b>' + money(c.revenue) + '</b></span>' +
+          '<span class="' + (op ? 'neg' : '') + '">영업이익 <b>' + money(c.op_income) + '</b></span>' +
+          '<span>직원 <b>' + (c.employees ? c.employees.toLocaleString('ko-KR') + '명' : '–') + '</b></span>' +
+          '<span>평균 급여 <b>' + salary(c.avg_salary) + '</b></span>' +
+          (c.fiscal_year ? '<span>' + c.fiscal_year + '년 사업보고서</span>' : '') +
+        '</div>' +
+        '<details><summary>왜 맞는지 보기</summary>' +
+          '<ul class="why">' + c.reasons.map(function (r) { return '<li><span>' + esc(r) + '</span></li>'; }).join('') + '</ul>' +
+          '<dl class="detail-grid">' +
+            '<div><dt>추천 직무</dt><dd>' + c.roles.map(esc).join(', ') + '</dd></div>' +
+            '<div><dt>설립 · 종목코드</dt><dd>' + esc(c.est_year || '–') + '년 · ' + esc(c.stock_code) + '</dd></div>' +
+            '<div><dt>본사 주소</dt><dd>' + esc(c.address || '–') + '</dd></div>' +
+            '<div><dt>업종 코드</dt><dd>' + esc(c.industry_code) + ' (' + esc(c.sector) + ')</dd></div>' +
+          '</dl>' +
+          '<p class="caution"><b>확인할 점</b> ' + esc(c.caution) + '</p>' +
+          '<div class="btn-row">' +
+            '<a class="btn primary" href="fit.html#' + c.corp_code + '">적합도 자세히</a>' +
+            '<a class="btn" href="' + esc(c.dart_url) + '" target="_blank" rel="noopener"><svg><use href="#i-ext"/></svg>DART 공시</a>' +
+            (home ? '<a class="btn" href="' + esc(home) + '" target="_blank" rel="noopener"><svg><use href="#i-ext"/></svg>홈페이지</a>' : '') +
+          '</div>' +
+        '</details>' +
+      '</div></article>';
+  }
+
+  function render() {
+    var q = state.q.trim().toLowerCase();
+    var list = all.filter(function (c) {
+      if (c.score < state.min) return false;
+      if (state.tags.size && !c.fit_tags.some(function (t) { return state.tags.has(t); })) return false;
+      if (state.market.size && !state.market.has(c.market)) return false;
+      if (state.region.size && !state.region.has(c._rg)) return false;
+      if (q && c._hay.indexOf(q) === -1) return false;
+      return true;
+    });
+    var key = { score: 'score', revenue: 'revenue', employees: 'employees', salary: 'avg_salary' }[state.sort];
+    list.sort(function (a, b) {
+      if (state.sort === 'name') return a.name.localeCompare(b.name, 'ko');
+      return (b[key] || -Infinity) - (a[key] || -Infinity) || b.score - a.score;
+    });
+    $('count').innerHTML = '<b>' + list.length + '</b>곳 / 전체 ' + all.length + '곳';
+    $('list').innerHTML = list.length ? list.map(card).join('') :
+      '<div class="empty"><h2>조건에 맞는 기업이 없어요</h2><p class="muted">필터를 줄이거나 최소 적합도를 낮춰 보세요.</p><button class="btn" type="button" data-reset>필터 초기화</button></div>';
+  }
+
+  function resetAll() {
+    state.q = ''; state.min = 0; state.tags.clear(); state.market.clear(); state.region.clear();
+    $('q').value = ''; $('min-score').value = 0; $('min-out').textContent = '0';
+    document.querySelectorAll('.fside .fchip').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+    render();
+  }
+
+  $('q').addEventListener('input', function (e) { state.q = e.target.value; render(); });
+  $('min-score').addEventListener('input', function (e) { state.min = +e.target.value; $('min-out').textContent = e.target.value; render(); });
+  $('sort').addEventListener('change', function (e) { state.sort = e.target.value; render(); });
+  $('reset').addEventListener('click', resetAll);
+  $('list').addEventListener('click', function (e) {
+    if (e.target.closest('[data-reset]')) return resetAll();
+    var t = e.target.closest('.tagrow .pill'); if (!t) return;
+    var v = t.getAttribute('data-tag');
+    state.tags.clear(); state.tags.add(v);
+    document.querySelectorAll('#f-tags .fchip').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-v') === v)); });
+    render();
+    $('count').scrollIntoView({ behavior: window.site.reduce ? 'auto' : 'smooth', block: 'center' });
+  });
+
+  fetch('data/companies.json', { cache: 'no-cache' }).then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }).then(function (d) {
+    all = d.companies.map(function (c) {
+      c._rg = regionGroup(c.region);
+      c._hay = [c.name, c.legal_name, c.business, c.sector, c.region, c.roles.join(' '), c.fit_tags.join(' ')].join(' ').toLowerCase();
+      return c;
+    });
+    $('h-listed').textContent = d.listed_size.toLocaleString('ko-KR');
+    $('h-pool').textContent = d.pool_size.toLocaleString('ko-KR');
+    $('h-final').textContent = all.length;
+    var when = d.generated_at.replace('T', ' ').slice(0, 16);
+    $('meta').innerHTML = '<span>마지막 분석 <b>' + esc(when) + '</b></span><span>모델 <b>' + esc(d.model) + '</b></span><span>데이터 ' + esc(d.source) + '</span>';
+    var tc = countBy(function (c) { return c.fit_tags; }), mc = countBy(function (c) { return c.market; }), rc = countBy(function (c) { return c._rg; });
+    chipGroup($('f-tags'), 'tags', order(tc), tc);
+    chipGroup($('f-market'), 'market', order(mc), mc);
+    chipGroup($('f-region'), 'region', order(rc), rc);
+    render();
+  }).catch(function () {
+    $('count').textContent = '결과 없음';
+    $('list').innerHTML = '<div class="empty"><h2>아직 분석 결과가 없어요</h2><p class="muted">저장소 루트에서 <code>python3 scripts/match_companies.py</code>를 실행하면 <code>data/companies.json</code>이 만들어집니다.</p></div>';
+  });
+})();
+</script>
+</body>
+</html>

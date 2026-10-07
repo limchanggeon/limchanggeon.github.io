@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>적합도 검사 · 임창건</title>
+<meta name="description" content="관심 기업을 검색하면 AI가 임창건의 이력과 몇 % 맞는지 계산합니다">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='7' width='26' height='22' fill='none' stroke='%23e0591a' stroke-width='3'/%3E%3Crect x='3' y='2' width='14' height='6' fill='%23e0591a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* 적합도 검사: 왼쪽 관심 기업 사이드바, 오른쪽 검색 + 결과(큰 게이지, 항목별 막대, 근거) */
+.page-head { display: grid; gap: .75rem; padding-block: 2.25rem 0; }
+.page-head h1 { font-size: clamp(1.8rem, 3.6vw, 2.4rem); font-weight: 700; line-height: 1.3; }
+.page-head .lede { max-width: 44em; font-size: 1.0625rem; }
+
+.f-shell { display: grid; grid-template-columns: 17rem minmax(0, 1fr); gap: 2.5rem; padding-block: 2rem 5rem; align-items: start; }
+@media (max-width: 1000px) { .f-shell { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; } .f-shell > aside { order: 2; } }
+.f-shell > aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--nav-h) + 1.5rem); display: grid; gap: 1rem; }
+@media (max-width: 1000px) { .f-shell > aside { position: static; } }
+
+.ilist { display: grid; gap: .25rem; }
+.irow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .25rem .5rem; align-items: center; padding: .55rem .65rem; border-radius: 10px; cursor: pointer; border: 1px solid transparent; background: transparent; text-align: left; color: var(--text); width: 100%; }
+.irow:hover { background: var(--surface-2); }
+.irow.active { border-color: var(--box); background: var(--box-soft); }
+.irow .nm { font-weight: 600; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.irow .pc { font-family: var(--f-display); font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.irow .bar { grid-column: 1 / -1; height: 4px; border-radius: 2px; background: var(--surface-2); overflow: hidden; }
+.irow .bar i { display: block; height: 100%; background: var(--box); }
+.irow.active .bar { background: var(--surface); }
+.side-empty { font-size: .9375rem; color: var(--muted); line-height: 1.6; }
+.formula { font-size: .875rem; color: var(--muted); display: grid; gap: .3rem; }
+.formula b { color: var(--ink); font-weight: 600; }
+
+/* search */
+.search { position: relative; }
+.search-box { display: flex; align-items: center; gap: .6rem; background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: .35rem .4rem .35rem 1rem; }
+.search-box:focus-within { border-color: var(--box); box-shadow: 0 0 0 4px var(--box-soft); }
+.search-box svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; }
+.search-box input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 1.125rem; color: var(--ink); padding-block: .55rem; }
+.search-box input::placeholder { color: var(--muted); }
+.dd { position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 30; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,.14); max-height: 26rem; overflow-y: auto; padding: .35rem; }
+.dd button { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .75rem; align-items: center; width: 100%; text-align: left; background: transparent; border: 0; border-radius: 10px; padding: .65rem .8rem; cursor: pointer; color: var(--text); }
+.dd button:hover, .dd button[aria-selected="true"] { background: var(--surface-2); }
+.dd .nm { font-weight: 600; color: var(--ink); }
+.dd .nm mark { background: var(--box-soft); color: var(--box); border-radius: 3px; padding: 0 .1em; }
+.dd .sub { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .15rem; font-size: .8125rem; color: var(--muted); }
+.dd .pc { font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+.dd .pc small { display: block; font-family: var(--f-body); font-weight: 500; font-size: .75rem; color: var(--muted); }
+.dd .none { padding: .9rem; color: var(--muted); font-size: .9375rem; }
+.hint { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin-top: .9rem; font-size: .9375rem; color: var(--muted); }
+.hint .fchip { font-size: .875rem; padding: .3rem .75rem; }
+
+/* result */
+.result { margin-top: 1.75rem; display: grid; gap: 1rem; }
+.hero-r { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2rem; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: clamp(1.25rem, 3vw, 2rem); }
+@media (max-width: 640px) { .hero-r { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: 1.25rem; } }
+.gauge { position: relative; width: 12rem; aspect-ratio: 1; max-width: 100%; }
+.gauge svg { width: 100%; height: 100%; transform: rotate(135deg); }
+.gauge circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+.gauge .bg { stroke: var(--surface-2); }
+.gauge .fg { stroke: var(--box); transition: stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1); }
+.gauge .num { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.gauge .num b { font-family: var(--f-display); font-weight: 800; font-size: 3.4rem; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.gauge .num b small { font-size: 1.5rem; font-weight: 700; margin-left: .05em; }
+.gauge .num > span { font-size: .875rem; color: var(--muted); margin-top: .35rem; }
+.r-head { display: grid; gap: .6rem; min-width: 0; }
+.r-head .grade { justify-self: start; }
+.r-head h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.3; }
+.r-head .sub { color: var(--muted); font-size: .9375rem; }
+.r-head .biz { color: var(--text); font-size: 1.0625rem; }
+.r-head .pctl { font-size: .9375rem; color: var(--text); }
+.r-head .pctl b { color: var(--box); }
+.grade.g4 { background: var(--box); color: var(--box-ink); }
+.grade.g3 { background: var(--box-soft); color: var(--box); }
+.grade.g2 { background: var(--cool-soft); color: var(--cool); }
+.grade.g1 { background: var(--surface-2); color: var(--muted); }
+
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+@media (max-width: 860px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.bars { display: grid; gap: 1rem; }
+.brow { display: grid; gap: .4rem; }
+.brow .lab { display: flex; justify-content: space-between; gap: .5rem; font-size: .9375rem; }
+.brow .lab b { color: var(--ink); font-weight: 600; }
+.brow .lab span { font-family: var(--f-mono); font-size: .875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.brow .lab span em { font-style: normal; color: var(--ink); font-weight: 500; }
+.brow .track-bar { height: 10px; border-radius: 5px; background: var(--surface-2); overflow: hidden; }
+.brow .track-bar i { display: block; height: 100%; width: 0; border-radius: 5px; background: var(--box); transition: width .9s cubic-bezier(.2,.8,.2,1); }
+.brow:nth-child(2) .track-bar i { background: color-mix(in srgb, var(--box) 75%, var(--cool)); }
+.brow:nth-child(3) .track-bar i { background: color-mix(in srgb, var(--box) 40%, var(--cool)); }
+.brow:nth-child(4) .track-bar i { background: var(--cool); }
+.calc { margin-top: 1.1rem; padding-top: .9rem; border-top: 1px dashed var(--line); font-family: var(--f-mono); font-size: .8125rem; color: var(--muted); line-height: 1.8; overflow-x: auto; white-space: nowrap; }
+.calc b { color: var(--ink); font-weight: 500; }
+.reasons { display: grid; gap: .7rem; }
+.reasons li { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: .6rem; }
+.reasons li::before { content: ""; width: 7px; height: 7px; margin-top: .7rem; border: 2px solid var(--box); }
+.kv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 1.5rem; margin: 0; }
+@media (max-width: 520px) { .kv { grid-template-columns: minmax(0, 1fr); } }
+.kv dt { font-size: .8125rem; font-weight: 600; color: var(--muted); margin-bottom: .1rem; }
+.kv dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+.kv dd.neg { color: #c0392b; }
+.caution { padding: .8rem 1rem; border-radius: 10px; background: var(--box-soft); color: var(--text); font-size: .9375rem; }
+.caution b { color: var(--box); }
+.r-foot { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; justify-content: space-between; }
+.r-foot .muted { font-size: .875rem; }
+
+/* loading: scan box sweeping over the card */
+.scan { position: relative; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 2.5rem 1.5rem; display: grid; gap: .75rem; justify-items: center; text-align: center; margin-top: 1.75rem; }
+.scan .sweep { position: absolute; top: 12%; bottom: 12%; width: 22%; border: 2.5px solid var(--box); border-radius: 6px; animation: sweep 1.8s ease-in-out infinite alternate; }
+.scan .sweep::after { content: "analyzing…"; position: absolute; left: -2.5px; top: -20px; background: var(--box); color: var(--box-ink); font: 500 .6875rem/1 var(--f-mono); padding: .25rem .4rem; border-radius: 3px; }
+@keyframes sweep { from { left: 4%; } to { left: 74%; } }
+.scan h2 { font-size: 1.2rem; position: relative; }
+.scan p { position: relative; color: var(--muted); }
+.scan ol { position: relative; display: grid; gap: .3rem; font-size: .9375rem; color: var(--muted); text-align: left; }
+.scan ol li.on { color: var(--ink); font-weight: 600; }
+.scan ol li.done { color: var(--cool); }
+.scan ol li.done::before { content: "✓ "; }
+.errbox { margin-top: 1.75rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; display: grid; gap: .6rem; }
+.errbox code { font-family: var(--f-mono); background: var(--surface-2); padding: .15rem .4rem; border-radius: 5px; font-size: .875rem; }
+@media (prefers-reduced-motion: reduce) { .scan .sweep { animation: none; left: 39%; } .gauge .fg, .brow .track-bar i { transition: none; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+</svg>
+
+<header class="navbar">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>임창건</a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="index.html#home">홈</a>
+      <a href="index.html#research">연구</a>
+      <a href="index.html#projects">프로젝트</a>
+      <a href="index.html#awards">수상</a>
+      <a href="companies.html">기업 매칭</a>
+      <a href="fit.html" class="active" aria-current="page">적합도 검사</a>
+      <a href="letter.html">자소서</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="다크 모드로 전환"><svg><use href="#i-moon"/></svg></button>
+      <a class="icon-btn" href="https://github.com/limchanggeon" target="_blank" rel="noopener" aria-label="GitHub 프로필"><svg class="fill"><use href="#i-gh"/></svg></a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer container" id="drawer" aria-label="모바일 메뉴" hidden>
+    <a href="index.html#home">홈</a>
+    <a href="index.html#research">연구</a>
+    <a href="index.html#projects">프로젝트</a>
+    <a href="index.html#awards">수상</a>
+    <a href="companies.html">기업 매칭</a>
+    <a href="fit.html" class="active" aria-current="page">적합도 검사</a>
+    <a href="letter.html">자소서</a>
+  </nav>
+  <div class="progress" id="progress"></div>
+</header>
+
+<div class="container">
+  <header class="page-head">
+    <span class="eyebrow">Fit Check</span>
+    <h1>관심 기업 적합도 검사</h1>
+    <p class="lede">회사 이름을 검색해 고르면, DART 공시 정보와 제 이력을 Gemini가 비교해서 얼마나 맞는지 퍼센트로 알려줍니다. 상장사뿐 아니라 DART에 등록된 비상장사도 찾을 수 있어요.</p>
+  </header>
+
+  <div class="f-shell">
+    <aside aria-label="관심 기업">
+      <div class="panel">
+        <p class="side-h">내 관심 기업 <span id="i-count"></span></p>
+        <div class="ilist" id="ilist"><p class="side-empty">불러오는 중</p></div>
+      </div>
+      <div class="panel formula">
+        <p class="side-h" style="margin:0">적합도 계산법</p>
+        <span><b>기술 일치</b> 40% · 이력의 기술을 바로 쓰는 정도</span>
+        <span><b>사업 연관</b> 30% · 연구 주제와 사업의 거리</span>
+        <span><b>성장·학습 환경</b> 15% · R&amp;D 조직, 배울 여지</span>
+        <span><b>근무 여건</b> 15% · 재무 안정성, 근무지</span>
+      </div>
+    </aside>
+
+    <section aria-label="검사">
+      <div class="search" id="search">
+        <div class="search-box">
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <input id="q" type="search" role="combobox" aria-expanded="false" aria-controls="dd" aria-autocomplete="list" placeholder="회사 이름을 입력하세요 (예: 한화시스템, 레인보우로보틱스)" autocomplete="off">
+        </div>
+        <div class="dd" id="dd" role="listbox" hidden></div>
+      </div>
+      <div class="hint" id="hint"></div>
+      <div id="out"></div>
+    </section>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="container">
+    <span>© 2026 임창건 · 로컬 전용 도구</span>
+    <span>데이터: 금융감독원 OpenDART · 분석: Google Gemini</span>
+  </div>
+</footer>
+
+<div class="tracker" id="tracker" aria-hidden="true"><span></span></div>
+<button class="icon-btn to-top" id="to-top" type="button" aria-label="맨 위로" hidden><svg><use href="#i-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var reduce = window.site.reduce;
+  var KEYS = [['tech', '기술 일치', .4], ['domain', '사업 연관', .3], ['growth', '성장·학습 환경', .15], ['env', '근무 여건', .15]];
+  var current = null, interests = [], ddItems = [], ddIndex = -1, searchTimer, searchSeq = 0;
+
+  var api = window.site.api, store = window.site.store, indexPs = [];
+  function pctl(score) {
+    if (!indexPs.length) return null;
+    return Math.round(100 * indexPs.filter(function (p) { return p < score; }).length / indexPs.length);
+  }
+  function money(v) {
+    if (typeof v !== 'number') return '정보 없음';
+    var eok = v / 1e8;
+    return Math.abs(eok) >= 10000 ? (eok / 10000).toFixed(1).replace(/\.0$/, '') + '조원' : Math.round(eok).toLocaleString('ko-KR') + '억원';
+  }
+  function grade(p) {
+    if (p >= 80) return ['g4', '매우 잘 맞음'];
+    if (p >= 65) return ['g3', '잘 맞음'];
+    if (p >= 45) return ['g2', '보통'];
+    return ['g1', '거리가 있음'];
+  }
+
+  /* ── 관심 기업 사이드바 ── */
+  function renderInterests() {
+    $('i-count').textContent = interests.length ? '· ' + interests.length : '';
+    $('ilist').innerHTML = interests.length ? interests.map(function (c) {
+      return '<button type="button" class="irow' + (current && current.corp_code === c.corp_code ? ' active' : '') + '" data-code="' + c.corp_code + '">' +
+        '<span class="nm">' + esc(c.name) + '</span><span class="pc">' + c.score + '%</span>' +
+        '<span class="bar"><i style="width:' + c.score + '%"></i></span></button>';
+    }).join('') : '<p class="side-empty">아직 검사한 기업이 없어요. 위에서 회사를 검색해 검사하면 여기에 쌓입니다.</p>';
+  }
+  /* 관심 기업은 이 브라우저에 저장한다. 처음 열 때만 서버에 남은 분석 결과를 가져온다. */
+  function saveInterests() { interests.sort(function (a, b) { return b.score - a.score; }); store.set('interests', interests); renderInterests(); }
+  function loadInterests() {
+    var saved = store.get('interests', null);
+    if (saved) { interests = saved; renderInterests(); return Promise.resolve(); }
+    return api('/api/interests').then(function (d) { interests = d.companies || []; saveInterests(); });
+  }
+  $('ilist').addEventListener('click', function (e) {
+    var b = e.target.closest('.irow'); if (b) run(b.getAttribute('data-code'));
+  });
+
+  /* ── 검색 ── */
+  function closeDD() { $('dd').hidden = true; $('q').setAttribute('aria-expanded', 'false'); ddIndex = -1; }
+  function hl(name, q) {
+    var i = name.toLowerCase().indexOf(q.toLowerCase());
+    return i < 0 ? esc(name) : esc(name.slice(0, i)) + '<mark>' + esc(name.slice(i, i + q.length)) + '</mark>' + esc(name.slice(i + q.length));
+  }
+  function renderDD(q, res, total) {
+    ddItems = res; ddIndex = res.length ? 0 : -1;
+    $('dd').innerHTML = res.length ? res.map(function (r, i) {
+      return '<button type="button" role="option" id="opt-' + i + '" aria-selected="' + (i === 0) + '" data-i="' + i + '">' +
+        '<span><span class="nm">' + hl(r.name, q) + '</span><span class="sub">' +
+        '<span class="pill ' + (r.listed ? 'kind' : 'soft') + '">' + (r.listed ? '상장 ' + esc(r.stock_code) : '비상장') + '</span>' +
+        (r.analyzed ? '<span class="pill soft">분석됨</span>' : '') + '</span></span>' +
+        '<span class="pc">' + (r.p != null ? r.p + '%<small>예상 적합도</small>' : '<small>검사하기 →</small>') + '</span></button>';
+    }).join('') + (total > res.length ? '<p class="none">' + total + '곳 중 ' + res.length + '곳 표시 · 이름을 더 입력해 좁혀 보세요</p>' : '')
+      : '<p class="none">‘' + esc(q) + '’와 일치하는 회사가 DART에 없어요. 정식 법인명으로 다시 찾아보세요.</p>';
+    $('dd').hidden = false; $('q').setAttribute('aria-expanded', 'true');
+  }
+  $('q').addEventListener('input', function () {
+    var q = this.value.trim(); clearTimeout(searchTimer);
+    if (!q) return closeDD();
+    searchTimer = setTimeout(function () {
+      var seq = ++searchSeq;
+      api('/api/search?q=' + encodeURIComponent(q)).then(function (d) { if (seq === searchSeq) renderDD(q, d.results, d.total); })
+        .catch(function (err) { showOffline(err); });
+    }, 180);
+  });
+  $('q').addEventListener('keydown', function (e) {
+    if ($('dd').hidden || !ddItems.length) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      ddIndex = (ddIndex + (e.key === 'ArrowDown' ? 1 : -1) + ddItems.length) % ddItems.length;
+      $('dd').querySelectorAll('[role="option"]').forEach(function (b, i) { b.setAttribute('aria-selected', String(i === ddIndex)); if (i === ddIndex) b.scrollIntoView({ block: 'nearest' }); });
+    } else if (e.key === 'Enter' && ddIndex > -1) {
+      e.preventDefault(); pick(ddItems[ddIndex]);
+    } else if (e.key === 'Escape') closeDD();
+  });
+  $('dd').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-i]'); if (b) pick(ddItems[+b.getAttribute('data-i')]);
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#search')) closeDD(); });
+  function pick(r) { closeDD(); $('q').value = r.name; run(r.corp_code); }
+
+  /* ── 검사 실행 ── */
+  var stepTimers = [];
+  function showScan(name) {
+    var steps = ['DART 기업개황 확인', '최근 사업보고서 재무·인력 조회', 'Gemini가 이력과 사업 비교', '적합도 계산'];
+    $('out').innerHTML = '<div class="scan" aria-live="polite"><span class="sweep" aria-hidden="true"></span><h2>' + esc(name || '기업') + ' 분석 중</h2>' +
+      '<p>처음 검사하는 회사는 10~30초 정도 걸려요.</p><ol id="steps">' + steps.map(function (s, i) { return '<li' + (i === 0 ? ' class="on"' : '') + '>' + s + '</li>'; }).join('') + '</ol></div>';
+    stepTimers.forEach(clearTimeout); stepTimers = [];
+    [1500, 4000, 16000].forEach(function (t, i) {
+      stepTimers.push(setTimeout(function () {
+        var li = document.querySelectorAll('#steps li'); if (!li.length) return;
+        li[i].className = 'done'; li[i + 1].className = 'on';
+      }, t));
+    });
+  }
+  function run(code, refresh) {
+    if (!/^\d{8}$/.test(code)) return;
+    var known = interests.find(function (c) { return c.corp_code === code; });
+    try { history.replaceState(null, '', '#' + code); } catch (e) {}
+    if (known && !refresh) {
+      current = known;
+      return renderResult({ company: known, percentile: known.stock_code ? pctl(known.score) : null, index_size: indexPs.length });
+    }
+    showScan(known ? known.name : $('q').value);
+    api('/api/fit?corp_code=' + code + (refresh ? '&refresh=1' : '')).then(function (d) {
+      stepTimers.forEach(clearTimeout);
+      current = d.company;
+      interests = interests.filter(function (c) { return c.corp_code !== code; }).concat([d.company]);
+      saveInterests();
+      renderResult(d);
+    }).catch(function (err) {
+      stepTimers.forEach(clearTimeout);
+      if (/Failed to fetch|NetworkError|Load failed/.test(err.message)) return showOffline(err);
+      $('out').innerHTML = '<div class="errbox"><h2 style="font-size:1.1rem">분석하지 못했어요</h2><p>' + esc(err.message) + '</p><div class="btn-row"><button class="btn primary" type="button" id="retry">다시 시도</button></div></div>';
+      $('retry').addEventListener('click', function () { run(code, true); });
+    });
+  }
+
+  function renderResult(d) {
+    var c = d.company, g = grade(c.score), home = c.homepage ? (/^https?:/.test(c.homepage) ? c.homepage : 'https://' + c.homepage) : '';
+    var R = 80, C = 2 * Math.PI * R, arc = C * .75;
+    var calc = KEYS.map(function (k) { return k[2] + '×<b>' + c.sub[k[0]] + '</b>'; }).join(' + ') + ' = <b>' + c.score + '%</b>';
+    $('out').innerHTML =
+      '<div class="result">' +
+        '<div class="hero-r track" data-cls="' + esc(c.name) + '" data-conf="' + (c.score / 100).toFixed(2) + '">' +
+          '<div class="gauge" role="img" aria-label="적합도 ' + c.score + '퍼센트"><svg viewBox="0 0 200 200" aria-hidden="true">' +
+            '<circle class="bg" cx="100" cy="100" r="' + R + '" stroke-dasharray="' + arc.toFixed(1) + ' ' + C.toFixed(1) + '"/>' +
+            '<circle class="fg" id="g-fg" cx="100" cy="100" r="' + R + '" stroke-dasharray="' + arc.toFixed(1) + ' ' + C.toFixed(1) + '" stroke-dashoffset="' + arc.toFixed(1) + '"/></svg>' +
+            '<div class="num"><b><span id="g-num">0</span><small>%</small></b><span>AI 적합도</span></div></div>' +
+          '<div class="r-head">' +
+            '<span class="pill grade ' + g[0] + '">' + g[1] + '</span>' +
+            '<h2>' + esc(c.name) + '</h2>' +
+            '<p class="sub">' + esc(c.market) + (c.stock_code ? ' ' + esc(c.stock_code) : '') + ' · ' + esc(c.sector) + ' · ' + esc(c.region || '지역 정보 없음') + '</p>' +
+            '<p class="biz">' + esc(c.business) + '</p>' +
+            (d.percentile != null && d.index_size ? '<p class="pctl">상장사 ' + d.index_size.toLocaleString('ko-KR') + '곳 가운데 <b>상위 ' + Math.max(1, 100 - d.percentile) + '%</b>에 해당합니다.</p>' : '') +
+            (c.fit_tags.length ? '<ul class="chips">' + c.fit_tags.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="grid2">' +
+          '<div class="panel"><p class="side-h">항목별 점수</p><div class="bars">' + KEYS.map(function (k) {
+            return '<div class="brow"><div class="lab"><b>' + k[1] + '</b><span><em>' + c.sub[k[0]] + '</em> / 100 · 가중치 ' + Math.round(k[2] * 100) + '%</span></div><div class="track-bar"><i data-w="' + c.sub[k[0]] + '"></i></div></div>';
+          }).join('') + '</div><p class="calc">' + calc + '</p></div>' +
+          '<div class="panel"><p class="side-h">이렇게 판단했어요</p><ul class="reasons">' + c.reasons.map(function (r) { return '<li><span>' + esc(r) + '</span></li>'; }).join('') + '</ul></div>' +
+        '</div>' +
+        '<div class="panel"><dl class="kv">' +
+          '<div><dt>추천 직무</dt><dd>' + c.roles.map(esc).join(', ') + '</dd></div>' +
+          '<div><dt>본사</dt><dd>' + esc(c.address || '정보 없음') + '</dd></div>' +
+          '<div><dt>매출' + (c.fiscal_year ? ' (' + c.fiscal_year + ')' : '') + '</dt><dd>' + money(c.revenue) + '</dd></div>' +
+          '<div><dt>영업이익</dt><dd class="' + (c.op_income < 0 ? 'neg' : '') + '">' + money(c.op_income) + '</dd></div>' +
+          '<div><dt>직원 수</dt><dd>' + (c.employees ? c.employees.toLocaleString('ko-KR') + '명' : '정보 없음') + '</dd></div>' +
+          '<div><dt>평균 급여</dt><dd>' + (c.avg_salary ? Math.round(c.avg_salary / 1e4).toLocaleString('ko-KR') + '만원' : '정보 없음') + '</dd></div>' +
+        '</dl></div>' +
+        '<p class="caution"><b>확인할 점</b> ' + esc(c.caution) + '</p>' +
+        '<div class="r-foot"><div class="btn-row">' +
+          '<a class="btn" href="' + esc(c.dart_url) + '" target="_blank" rel="noopener"><svg><use href="#i-ext"/></svg>DART 공시</a>' +
+          (home ? '<a class="btn" href="' + esc(home) + '" target="_blank" rel="noopener"><svg><use href="#i-ext"/></svg>홈페이지</a>' : '') +
+          '<a class="btn primary" href="letter.html#' + c.corp_code + '">이 회사로 자소서 쓰기</a>' +
+          '<button class="btn" type="button" id="re">다시 분석</button>' +
+          '<button class="btn" type="button" id="rm">관심 기업에서 빼기</button>' +
+        '</div><span class="muted">' + (c.analyzed_at ? esc(c.analyzed_at.replace('T', ' ')) + ' 분석' : '추천 매칭 결과') + ' · ' + esc(c.model || '') + '</span></div>' +
+        '<p class="muted" style="font-size:.875rem">AI가 공시 정보와 일반 지식으로 추정한 참고 점수예요. 실제 채용 여부나 조직 구성과 다를 수 있습니다.</p>' +
+      '</div>';
+    renderInterests();
+    $('re').addEventListener('click', function () { run(c.corp_code, true); });
+    if ($('rm')) $('rm').addEventListener('click', function () {
+      interests = interests.filter(function (x) { return x.corp_code !== c.corp_code; });
+      saveInterests();
+      $('rm').remove();
+      window.site.toast(c.name + '을(를) 관심 기업에서 뺐어요');
+    });
+    animate(c);
+  }
+  function animate(c) {
+    var fg = $('g-fg'), num = $('g-num'), arc = parseFloat(fg.getAttribute('stroke-dashoffset'));
+    var target = arc * (1 - c.score / 100);
+    requestAnimationFrame(function () {
+      fg.style.strokeDashoffset = target;
+      document.querySelectorAll('.track-bar i').forEach(function (i) { i.style.width = i.getAttribute('data-w') + '%'; });
+    });
+    if (reduce) { num.textContent = c.score; return; }
+    var t0 = performance.now();
+    (function tick(now) {
+      var k = Math.min(1, (now - t0) / 1100), e = 1 - Math.pow(1 - k, 3);
+      num.textContent = Math.round(c.score * e);
+      if (k < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  function showOffline() {
+    $('out').innerHTML = '<div class="errbox"><h2 style="font-size:1.1rem">분석 서버에 연결되지 않았어요</h2>' +
+      '<p>이 기능은 API 키를 가진 서버에서만 동작합니다. 배포된 서버 주소로 열거나, 로컬에서는 <code>python3 scripts/server.py</code>를 실행한 뒤 <code>http://localhost:8982/fit.html</code>로 열어 주세요.</p></div>';
+    if (!interests.length) $('ilist').innerHTML = '<p class="side-empty">서버에 연결되면 관심 기업이 여기에 나와요.</p>';
+  }
+
+  /* ── 추천 예시 칩 (전체 적합도 목록이 있으면 상위 기업) ── */
+  var indexReady = fetch('data/fit_index.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
+    indexPs = d.rows.map(function (r) { return r.p; });
+    var top = d.rows.slice(0, 6);
+    $('hint').innerHTML = '<span>AI가 꼽은 상위 기업</span>' + top.map(function (r) { return '<button class="fchip" type="button" data-code="' + r.c + '" data-name="' + esc(r.n) + '">' + esc(r.n) + ' ' + r.p + '%</button>'; }).join('');
+  }).catch(function () {});
+  $('hint').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-code]'); if (!b) return;
+    $('q').value = b.getAttribute('data-name'); run(b.getAttribute('data-code'));
+  });
+
+  Promise.all([indexReady, loadInterests().catch(function () {})]).then(function () {
+    var h = location.hash.slice(1);
+    if (/^\d{8}$/.test(h)) run(h);
+    else if (interests[0]) run(interests[0].corp_code);
+    else $('out').innerHTML = '<div class="errbox"><h2 style="font-size:1.1rem">어떤 회사가 궁금하세요?</h2><p class="muted">위 검색창에 회사 이름을 입력하고 목록에서 고르면 적합도 검사가 시작돼요. 검사한 회사는 이 브라우저에 저장됩니다.</p></div>';
+  });
+})();
+</script>
+</body>
+</html>
