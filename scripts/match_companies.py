@@ -251,39 +251,51 @@ def listed_records():
 
 
 # ───────── Gemini ─────────
-FALLBACK_MODELS = ["gemini-2.5-flash", "gemini-3.5-flash", "gemini-flash-lite-latest"]
+# 2026-10 기준 응답하는 모델 순서. gemini-2.5-flash 계열은 신규 사용자에게 404라 뺐다.
+FALLBACK_MODELS = ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-flash-lite-latest", "gemini-flash-latest"]
+_cooldown = {}  # 모델 → 다시 시도해도 되는 시각. 방금 혼잡했던 모델은 잠시 건너뛴다.
+
+
+class GeminiBusy(RuntimeError):
+    """모든 모델이 혼잡하거나 응답하지 않을 때."""
 
 
 def gemini(prompt, schema, temperature=0.3):
-    """Gemini 호출. 혼잡(503)·한도(429)가 이어지면 다른 모델로 넘어간다."""
-    primary = os.environ.get("GEMINI_MODEL", "gemini-flash-latest")
-    models = [primary] + [m for m in FALLBACK_MODELS if m != primary]
+    """Gemini 호출. 혼잡(503)·한도(429)·시간 초과면 짧게 한 번만 재시도하고 다음 모델로 넘어간다."""
+    primary = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
+    models = list(dict.fromkeys([primary] + FALLBACK_MODELS))
+    now = time.time()
+    ready = [m for m in models if _cooldown.get(m, 0) <= now]
+    order = ready + [m for m in models if m not in ready]  # 전부 쉬는 중이면 그래도 순서대로 시도
     body = json.dumps({
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": temperature, "responseMimeType": "application/json", "responseSchema": schema},
     }).encode()
-    for model in models:
+    for model in order:
         url = f"{GEMINI}/{model}:generateContent?key={urllib.parse.quote(os.environ['GOOGLE_API_KEY'])}"
         req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-        for attempt in range(3):
+        for attempt in range(2):
             try:
-                with urllib.request.urlopen(req, timeout=300) as r:
+                with urllib.request.urlopen(req, timeout=150) as r:
                     data = json.loads(r.read())
                 text = "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
+                _cooldown.pop(model, None)
                 return json.loads(text), model
             except urllib.error.HTTPError as e:
                 log(f"Gemini {model} 오류 {e.code}")
-                if e.code in (429, 500, 503):
-                    time.sleep(8 * (attempt + 1))
+                if e.code in (429, 500, 503) and attempt == 0:
+                    time.sleep(2)
                     continue
-                if e.code in (400, 404):
-                    break
-                raise
-            except (json.JSONDecodeError, KeyError, TimeoutError, urllib.error.URLError) as e:
-                log(f"Gemini {model} 응답 문제로 다시 시도합니다 ({type(e).__name__})")
-                time.sleep(4)
-        log(f"{model}이(가) 응답하지 않아 다음 모델로 넘어갑니다")
-    raise RuntimeError("Gemini 호출 실패 (모든 모델이 응답하지 않음)")
+                _cooldown[model] = time.time() + (3600 if e.code in (400, 403, 404) else 300)
+                break
+            except (TimeoutError, urllib.error.URLError) as e:
+                log(f"Gemini {model} 응답 없음 ({type(e).__name__})")
+                _cooldown[model] = time.time() + 300
+                break
+            except (json.JSONDecodeError, KeyError, IndexError) as e:
+                log(f"Gemini {model} 응답을 해석하지 못해 다시 시도합니다 ({type(e).__name__})")
+        log(f"{model} 대신 다음 모델로 넘어갑니다")
+    raise GeminiBusy("Gemini 서버가 혼잡해서 응답하지 않았어요. 1~2분 뒤 다시 시도해 주세요.")
 
 
 SUB_PROPS = {k: {"type": "INTEGER"} for k in WEIGHTS}

@@ -182,6 +182,8 @@ class Handler(SimpleHTTPRequestHandler):
             return self.send_json({"error": "없는 API입니다"}, 404)
         except LookupError as e:
             return self.send_json({"error": str(e)}, 404)
+        except mc.GeminiBusy as e:
+            return self.send_json({"error": str(e)}, 503)
         except Exception as e:
             traceback.print_exc()
             return self.send_json({"error": f"처리 중 오류가 났습니다: {type(e).__name__}"}, 500)
