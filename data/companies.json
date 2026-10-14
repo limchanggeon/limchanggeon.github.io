@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-30T15:14+09:00",
- "model": "gemini-flash-lite-latest",
+ "generated_at": "2026-10-14T14:18+09:00",
+ "model": "gemini-flash-latest",
  "source": "금융감독원 OpenDART (기업개황·단일회사 주요계정·직원현황)",
  "weights": {
   "기술 일치": 0.4,
@@ -32,997 +32,52 @@
    "avg_salary": 122859434,
    "score": 92,
    "sub": {
-    "tech": 95,
+    "tech": 92,
     "domain": 95,
     "growth": 90,
-    "env": 80
-   },
-   "business": "글로벌 영상보안 솔루션 및 엣지 AI 기반 지능형 CCTV 카메라 개발 기업입니다.",
-   "fit_tags": [
-    "엣지AI",
-    "컴퓨터비전",
-    "안전·재난"
-   ],
-   "reasons": [
-    "화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석 논문 실적이 한화비전의 지능형 재난 감시 카메라 개발 방향과 완벽히 일치합니다.",
-    "Jetson Orin 및 TensorRT를 활용한 엣지 추론 최적화 경험이 온디바이스 AI 카메라 제품군 고도화에 즉시 기여할 수 있습니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "대전 거주자로서 경기도 판교 근무에 따른 주거 이전 필요성을 고려해야 합니다."
-  },
-  {
-   "corp_code": "00883980",
-   "name": "아이디스",
-   "legal_name": "(주)아이디스",
-   "stock_code": "143160",
-   "market": "코스닥",
-   "industry_code": "26429",
-   "sector": "통신·방송장비",
-   "related": true,
-   "address": "대전 유성구 관평동 1301",
-   "region": "대전",
-   "homepage": "www.idisglobal.com",
-   "est_year": "2011",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9D%B4%EB%94%94%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 327595925715,
-   "op_income": 21242195723,
-   "employees": 438,
-   "avg_salary": 67294521,
-   "score": 92,
-   "sub": {
-    "tech": 95,
-    "domain": 90,
-    "growth": 85,
-    "env": 95
-   },
-   "business": "글로벌 영상보안 솔루션 및 AI 기반 네트워크 비디오 레코더 개발 기업입니다.",
-   "fit_tags": [
-    "엣지AI",
-    "컴퓨터비전",
-    "통신·네트워크"
-   ],
-   "reasons": [
-    "대전에 본사 및 연구소가 있어 대전 거주자인 후보자에게 최적의 근무 여건을 제공합니다.",
-    "화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석 논문과 TensorRT 최적화 역량이 아이디스의 AI NVR 및 보안 카메라 제품군 고도화에 직접 기여할 수 있습니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "임베디드 SW 개발자"
-   ],
-   "caution": "하드웨어 연계형 임베디드 개발 비중이 높으므로 순수 AI 모델링 외의 C/C++ 역량 요구 수준을 확인해야 합니다."
-  },
-  {
-   "corp_code": "00164742",
-   "name": "현대자동차",
-   "legal_name": "현대자동차(주)",
-   "stock_code": "005380",
-   "market": "코스피",
-   "industry_code": "30121",
-   "sector": "자동차",
-   "related": true,
-   "address": "서울특별시 서초구  헌릉로 12",
-   "region": "서울특별시",
-   "homepage": "www.hyundai.com",
-   "est_year": "1967",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8",
-   "fiscal_year": 2025,
-   "revenue": 186254472000000,
-   "op_income": 11467851000000,
-   "employees": 72598,
-   "avg_salary": 131137345,
-   "score": 90,
-   "sub": {
-    "tech": 90,
-    "domain": 90,
-    "growth": 95,
     "env": 85
    },
-   "business": "글로벌 완성차 제조사로, 로보틱스랩과 자율주행 조직을 통해 미래 모빌리티와 로봇 기술을 연구개발합니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "엣지AI"
-   ],
-   "reasons": [
-    "YogiBot ControlTower 졸업작품에서 TurtleBot3, Nav2, SLAM Toolbox를 활용해 자율 매핑을 구현한 경험은 로보틱스랩의 자율주행 로봇 제어 연구와 직결됩니다.",
-    "KCI 등재 논문에서 다룬 Jetson Orin 및 Raspberry Pi 환경에서의 YOLOv8 경량화 및 TensorRT 최적화 연구는 차량 및 로봇용 엣지 비전 AI 탑재에 필수적인 역량입니다."
-   ],
-   "roles": [
-    "로봇 SW",
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "남양연구소 또는 서울 근무가 필수적이므로 대전에서의 이주가 필요합니다."
-  },
-  {
-   "corp_code": "01810477",
-   "name": "노타",
-   "legal_name": "주식회사 노타",
-   "stock_code": "486990",
-   "market": "코스닥",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "대전광역시 유성구 문지로 272-16, 502호",
-   "region": "대전광역시",
-   "homepage": "/www.nota.ai",
-   "est_year": "2015",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%85%B8%ED%83%80",
-   "fiscal_year": 2025,
-   "revenue": 13100933426,
-   "op_income": -15279286074,
-   "employees": 131,
-   "avg_salary": 125697985,
-   "score": 88,
-   "sub": {
-    "tech": 95,
-    "domain": 85,
-    "growth": 80,
-    "env": 85
-   },
-   "business": "AI 모델 경량화 및 온디바이스 AI 최적화 플랫폼 개발 기업입니다.",
-   "fit_tags": [
-    "엣지AI",
-    "컴퓨터비전",
-    "클라우드"
-   ],
-   "reasons": [
-    "YOLOv8과 YOLO26의 TensorRT 기반 추론 성능 비교 분석 등 엣지 디바이스 최적화에 특화된 연구 이력이 노타의 핵심 사업인 NetsPresso 플랫폼 및 경량화 솔루션 개발과 완벽히 일치합니다.",
-    "대전에 연구소가 있어 거주지 접근성이 우수합니다."
-   ],
-   "roles": [
-    "엣지 추론 최적화",
-    "비전 AI 엔지니어"
-   ],
-   "caution": "기술성장기업 특성상 영업적자가 지속되고 있어 장기적인 재무 안정성을 모니터링해야 합니다."
-  },
-  {
-   "corp_code": "01784914",
-   "name": "클로봇",
-   "legal_name": "주식회사 클로봇",
-   "stock_code": "466100",
-   "market": "코스닥",
-   "industry_code": "58221",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "경기도 성남시 중원구 양현로405번길 4-5 (여수동, 마커스빌딩)",
-   "region": "경기도",
-   "homepage": "clobot.co.kr",
-   "est_year": "2017",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%81%B4%EB%A1%9C%EB%B4%87",
-   "fiscal_year": 2025,
-   "revenue": 41406081428,
-   "op_income": -3180595266,
-   "employees": 161,
-   "avg_salary": 44538851,
-   "score": 88,
-   "sub": {
-    "tech": 95,
-    "domain": 90,
-    "growth": 85,
-    "env": 70
-   },
-   "business": "실내외 자율주행 로봇 소프트웨어 및 이종 로봇 관제 시스템(FMS)을 개발하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "웹서비스"
-   ],
-   "reasons": [
-    "'YogiBot ControlTower'의 ROS2-MQTT-WebSocket 아키텍처와 React/FastAPI 관제 웹 구현 경험은 클로봇의 핵심 제품인 이종 로봇 관제 시스템(FMS) 개발과 완벽히 일치합니다.",
-    "개인 프로젝트 '언제나가'를 통해 입증한 TypeScript, React, Node.js 기반의 웹 서비스 설계 및 AWS 배포 역량은 클로봇의 클라우드 기반 로봇 관리 솔루션에 즉시 기여할 수 있습니다."
-   ],
-   "roles": [
-    "로봇 SW",
-    "웹서비스"
-   ],
-   "caution": "최근 코스닥 상장 이후 영업손실 상태이므로 비즈니스 성장세와 처우 수준을 확인해야 합니다."
-  },
-  {
-   "corp_code": "00612489",
-   "name": "아이쓰리시스템",
-   "legal_name": "아이쓰리시스템(주)",
-   "stock_code": "214430",
-   "market": "코스닥",
-   "industry_code": "2629",
-   "sector": "전자부품",
-   "related": true,
-   "address": "대전광역시 유성구 테크노5로 69",
-   "region": "대전광역시",
-   "homepage": "www.i3system.com",
-   "est_year": "1998",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9D%B4%EC%93%B0%EB%A6%AC%EC%8B%9C%EC%8A%A4%ED%85%9C",
-   "fiscal_year": 2025,
-   "revenue": 124275749815,
-   "op_income": 16458043794,
-   "employees": 507,
-   "avg_salary": 62366203,
-   "score": 88,
-   "sub": {
-    "tech": 80,
-    "domain": 95,
-    "growth": 90,
-    "env": 95
-   },
-   "business": "야간 감시 및 화재·재난 탐지에 필수적인 적외선 영상센서를 국산화한 대전 소재 방산 센서 기업입니다.",
-   "fit_tags": [
-    "안전·재난",
-    "방산",
-    "컴퓨터비전"
-   ],
-   "reasons": [
-    "화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석 논문 실적이 회사의 화재·재난 탐지용 적외선 영상센서 사업과 도메인 관점에서 완벽히 부합합니다.",
-    "대전광역시에 본사 및 연구소가 위치하여 대전 거주 중인 지원자에게 정주 여건과 출퇴근 편의성 면에서 최적의 선택지입니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "임베디드 SW 개발"
-   ],
-   "caution": "방산 분야 특성상 연구 개발의 보안 규정이 엄격하고 기술 스택의 변화가 보수적일 수 있습니다."
-  },
-  {
-   "corp_code": "01588897",
-   "name": "니어스랩",
-   "legal_name": "주식회사 니어스랩",
-   "stock_code": "417030",
-   "market": "코스닥",
-   "industry_code": "58221",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 송파구 정의로8길 9 AJ빌딩 3층 &nbsp",
-   "region": "서울특별시",
-   "homepage": "www.nearthlab.com",
-   "est_year": "2015",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%8B%88%EC%96%B4%EC%8A%A4%EB%9E%A9",
-   "fiscal_year": null,
-   "revenue": null,
-   "op_income": null,
-   "employees": null,
-   "avg_salary": null,
-   "score": 87,
-   "sub": {
-    "tech": 90,
-    "domain": 95,
-    "growth": 85,
-    "env": 65
-   },
-   "business": "자율비행 드론 기반 인프라 및 풍력발전 안전점검 비전 AI 솔루션을 개발하는 기업입니다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "엣지AI",
-    "안전·재난"
-   ],
-   "reasons": [
-    "KCI 등재 논문인 '화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 성능 분석' 및 '도로 파손 탐지' 연구는 니어스랩의 드론 기반 시설물 안전점검 비전 AI 솔루션과 도메인이 일치합니다.",
-    "Jetson Orin 및 Raspberry Pi 등 엣지 디바이스 환경에서의 YOLO 경량화 및 TensorRT 추론 최적화 경험은 드론 탑재용 임베디드 AI 개발에 직접 활용됩니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "드론 제어 분야로 확장 시 C++ 및 제어 이론에 대한 추가 학습이 필요할 수 있습니다."
-  },
-  {
-   "corp_code": "01134216",
-   "name": "트루엔",
-   "legal_name": "주식회사 트루엔",
-   "stock_code": "417790",
-   "market": "코스닥",
-   "industry_code": "265",
-   "sector": "영상·음향기기",
-   "related": true,
-   "address": "서울특별시 구로구 디지털로33길 28, 1108, 1309호(구로동, 우림이비지센터1차)",
-   "region": "서울특별시",
-   "homepage": "truen.co.kr",
-   "est_year": "2005",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8A%B8%EB%A3%A8%EC%97%94",
-   "fiscal_year": 2025,
-   "revenue": 49113803516,
-   "op_income": 13254533775,
-   "employees": 105,
-   "avg_salary": 66456286,
-   "score": 86,
-   "sub": {
-    "tech": 90,
-    "domain": 90,
-    "growth": 75,
-    "env": 75
-   },
-   "business": "지능형 IP 카메라 및 온디바이스 AI 영상분석 솔루션 개발 기업입니다.",
+   "business": "스마트시티, 팩토리, 리테일 등 다양한 산업에 최적화된 SoC 기반 영상 보안 및 AI 비전 솔루션을 공급하는 글로벌 기업이다.",
    "fit_tags": [
     "엣지AI",
     "컴퓨터비전",
     "안전·재난"
    ],
    "reasons": [
-    "RGB 채널 영상을 이용한 YOLOv8n 기반 실시간 화재·연기 감지 성능 평가 연구가 트루엔의 지능형 IP 카메라 객체 탐지 솔루션에 바로 적용 가능합니다.",
-    "Raspberry Pi 및 Jetson 기반의 엣지 디바이스 배포 경험이 온디바이스 AI 제품 라인업과 기술적으로 직결됩니다."
+    "논문에서 수행한 YOLOv8 기반 화재·연기 탐지 및 엣지 디바이스 분석 경험은 한화비전의 핵심 솔루션인 중대재해 예방 및 지능형 화재 감지 영상보안에 직접적으로 맞닿아 있다.",
+    "자체 개발 칩 Wisenet 9 SoC의 듀얼 NPU 아키텍처 환경에서 실시간 엣지 비전 추론 모델을 올리고 최적화하는 데 TensorRT/NCNN 경량화 연구 이력이 직접 활용될 수 있다.",
+    "학술대회에서 발표한 도로 파손 탐지 및 Jetson 배포 최적화 실증 경험이 지능형 교통 시스템(ITS) 및 공공 인프라 모니터링 카메라 제품군 개발에 부합한다."
    ],
    "roles": [
-    "비전 AI 엔지니어",
-    "임베디드 AI 개발자"
+    "엣지 비전 AI 엔지니어",
+    "임베디드 AI 추론 최적화 엔지니어",
+    "스마트시티/안전 영상분석 알고리즘 엔지니어"
    ],
-   "caution": "서울 근무지 이동 및 중소기업 규모에서의 R&D 지원 체계를 확인해야 합니다."
-  },
-  {
-   "corp_code": "00126566",
-   "name": "한화에어로스페이스",
-   "legal_name": "한화에어로스페이스(주)",
-   "stock_code": "012450",
-   "market": "코스피",
-   "industry_code": "31321",
-   "sector": "항공기·우주선",
-   "related": true,
-   "address": "경상남도 창원시 성산구  창원대로 1204",
-   "region": "경상남도",
-   "homepage": "www.hanwhaaerospace.com",
-   "est_year": "1977",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%9C%ED%99%94%EC%97%90%EC%96%B4%EB%A1%9C%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 26702901249000,
-   "op_income": 3089320181000,
-   "employees": 8168,
-   "avg_salary": 124322845,
-   "score": 86,
-   "sub": {
-    "tech": 85,
-    "domain": 90,
-    "growth": 90,
-    "env": 75
-   },
-   "business": "무인 지상차량(UGV) 및 차세대 전투로봇 자율주행·비전 감시 기술을 개발하는 방산 및 항공우주 기업입니다.",
-   "fit_tags": [
-    "방산",
-    "자율주행",
-    "로보틱스"
+   "caution": "수도권(경기) 근무로 인한 대전 거주자의 통근·이주 여건과 자체 SoC(Wisenet 시리즈) 전용 SDK 환경에 대한 적응도를 확인해야 한다.",
+   "web_facts": [
+    "자체 듀얼 NPU 아키텍처를 도입한 차세대 영상보안 칩 Wisenet 9 SoC를 개발·적용하고 있다.",
+    "하이브리드 AI VMS 'BLAZE' 전용 어플라이언스를 출시하고 스마트시티, 중대재해 예방, ITS 솔루션을 전개하고 있다."
    ],
-   "reasons": [
-    "무인 지상차량(UGV) 자율주행 개발에 후보자의 ROS2, Nav2, SLAM Toolbox 기반 자율 매핑 및 로봇 제어 경험이 매우 유용합니다.",
-    "전투로봇의 비전 감시 기술에 후보자의 YOLOv8 기반 실시간 화재·연기 및 도로 파손 탐지 연구 실적이 직접 적용될 수 있습니다.",
-    "Jetson Orin 및 Raspberry Pi 등 엣지 디바이스 배포 경험은 UGV 탑재용 임베디드 시스템 최적화에 강점이 됩니다."
-   ],
-   "roles": [
-    "로봇 SW 엔지니어",
-    "비전 AI 엔지니어"
-   ],
-   "caution": "대전 연구소와 창원 공장 간의 직무 배치 및 근무지 차이를 명확히 확인해야 합니다."
-  },
-  {
-   "corp_code": "01524507",
-   "name": "핀텔",
-   "legal_name": "(주)핀텔",
-   "stock_code": "291810",
-   "market": "코스닥",
-   "industry_code": "58222",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "경기도 용인시 기흥구 기흥로 58 기흥 ICT밸리 SKV1 B동 B335호",
-   "region": "경기도",
-   "homepage": "www.pintel.co.kr/html/index/",
-   "est_year": "2015",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%80%ED%85%94",
-   "fiscal_year": 2025,
-   "revenue": 5771786570,
-   "op_income": -3232574054,
-   "employees": 56,
-   "avg_salary": 54035714,
-   "score": 84,
-   "sub": {
-    "tech": 90,
-    "domain": 95,
-    "growth": 65,
-    "env": 65
-   },
-   "business": "교통 및 재난 안전 관제를 위한 실시간 엣지 비전 AI 솔루션 개발 기업입니다.",
-   "fit_tags": [
-    "엣지AI",
-    "컴퓨터비전",
-    "안전·재난"
-   ],
-   "reasons": [
-    "도로 파손 탐지를 위한 YOLOv8과 YOLO26의 학습 성능 및 TensorRT 기반 추론 성능 비교 분석 연구가 핀텔의 실시간 도로 교통 및 안전 관제 솔루션과 완벽히 매칭됩니다.",
-    "엣지 디바이스 최적화 역량이 핵심 제품군에 즉시 투입 가능합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "적자 규모가 크고 임직원 수가 적어 초기 R&D 환경의 체계성을 확인해야 합니다."
-  },
-  {
-   "corp_code": "01405451",
-   "name": "알체라",
-   "legal_name": "주식회사 알체라",
-   "stock_code": "347860",
-   "market": "코스닥",
-   "industry_code": "58222",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 강남구 논현로 653 3층(논현동)",
-   "region": "서울특별시",
-   "homepage": "www.alchera.ai",
-   "est_year": "2016",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%8C%EC%B2%B4%EB%9D%BC",
-   "fiscal_year": 2025,
-   "revenue": null,
-   "op_income": -10249280632,
-   "employees": 203,
-   "avg_salary": 31423645,
-   "score": 84,
-   "sub": {
-    "tech": 85,
-    "domain": 95,
-    "growth": 75,
-    "env": 70
-   },
-   "business": "인공지능 기반 영상인식 및 산불·화재 감지 솔루션 개발 기업입니다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "안전·재난",
-    "엣지AI"
-   ],
-   "reasons": [
-    "제1저자로 작성한 화재 및 연기 탐지를 위한 커스텀 YOLOv8 성능 분석 및 실시간 화재·연기 감지 성능 평가 논문이 알체라의 핵심 제품인 파이어스카우트 솔루션과 완벽하게 일치합니다.",
-    "비전 기반 재난 감지 도메인 지식을 즉각 활용 가능합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "연구원"
-   ],
-   "caution": "지속적인 영업적자로 인한 경영 안정성 및 구조조정 여부를 사전에 파악해야 합니다."
-  },
-  {
-   "corp_code": "00946030",
-   "name": "로보티즈",
-   "legal_name": "(주)로보티즈",
-   "stock_code": "108490",
-   "market": "코스닥",
-   "industry_code": "29299",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "서울특별시 강서구 마곡중앙5로1길 37",
-   "region": "서울특별시",
-   "homepage": "www.robotis.com",
-   "est_year": "1999",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A1%9C%EB%B3%B4%ED%8B%B0%EC%A6%88",
-   "fiscal_year": 2025,
-   "revenue": 38942547006,
-   "op_income": 3346038655,
-   "employees": 111,
-   "avg_salary": 50891928,
-   "score": 84,
-   "sub": {
-    "tech": 90,
-    "domain": 85,
-    "growth": 80,
-    "env": 70
-   },
-   "business": "실외 자율주행 로봇 및 ROS2 기반 로봇 플랫폼을 개발하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "모빌리티"
-   ],
-   "reasons": [
-    "'YogiBot ControlTower' 프로젝트에서 구현한 ROS2-MQTT-WebSocket 기반 관제 시스템과 Nav2/SLAM 기술은 로보티즈의 자율주행 로봇 관제 솔루션과 직결됩니다.",
-    "WCRC 국제대회 동메달 및 ILRC 지능형 로봇 경진대회 수상 이력은 로보티즈의 로봇 플랫폼 개발 방향과 일치합니다."
-   ],
-   "roles": [
-    "로봇 SW",
-    "웹서비스"
-   ],
-   "caution": "하드웨어 제어 및 임베디드 C++ 역량을 추가로 요구할 수 있으므로 확인이 필요합니다."
-  },
-  {
-   "corp_code": "00339391",
-   "name": "한화시스템",
-   "legal_name": "한화시스템(주)",
-   "stock_code": "272210",
-   "market": "코스피",
-   "industry_code": "26299",
-   "sector": "전자부품",
-   "related": true,
-   "address": "경상북도 구미시 산호대로 264-60 -",
-   "region": "경상북도",
-   "homepage": "hanwhasystems.com",
-   "est_year": "2000",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%9C%ED%99%94%EC%8B%9C%EC%8A%A4%ED%85%9C",
-   "fiscal_year": 2025,
-   "revenue": 3664150568020,
-   "op_income": 119898725355,
-   "employees": 4855,
-   "avg_salary": 107578579,
-   "score": 84,
-   "sub": {
-    "tech": 85,
-    "domain": 90,
-    "growth": 85,
-    "env": 65
-   },
-   "business": "전자광학 센서 기반 국방 비전 AI 및 복합 감시체계, 무인기 센서를 개발하는 방산 IT 대표 기업입니다.",
-   "fit_tags": [
-    "방산",
-    "컴퓨터비전",
-    "엣지AI"
-   ],
-   "reasons": [
-    "KCI 등재 논문인 '화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석' 연구는 이 회사의 복합 감시체계 및 비전 AI 탐지 기술과 일치합니다.",
-    "도로 파손 탐지 프로젝트에서 수행한 TensorRT 기반 추론 최적화 경험은 국방용 엣지 디바이스 탑재용 경량화 모델 개발에 즉시 활용 가능합니다.",
-    "인공위성 큐브위성 제작 및 위성데이터 활용 교육 금상 수상 이력은 우주·방산 사업 부문과의 접점을 보여줍니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화 엔지니어"
-   ],
-   "caution": "방산 기업 특성상 연구 결과의 외부 공개나 학회 발표가 제한될 수 있습니다."
-  },
-  {
-   "corp_code": "00362441",
-   "name": "현대오토에버",
-   "legal_name": "현대오토에버(주)",
-   "stock_code": "307950",
-   "market": "코스피",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 강남구 테헤란로 510 루첸타워",
-   "region": "서울특별시",
-   "homepage": "www.hyundai-autoever.com",
-   "est_year": "2000",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EC%98%A4%ED%86%A0%EC%97%90%EB%B2%84",
-   "fiscal_year": 2025,
-   "revenue": 4252067261000,
-   "op_income": 255302187000,
-   "employees": 5753,
-   "avg_salary": 99020511,
-   "score": 83,
-   "sub": {
-    "tech": 85,
-    "domain": 80,
-    "growth": 85,
-    "env": 80
-   },
-   "business": "현대차그룹의 차량 소프트웨어 플랫폼 및 모빌리티 관제 시스템을 개발하는 IT 서비스 기업입니다.",
-   "fit_tags": [
-    "자율주행",
-    "모빌리티",
-    "웹서비스"
-   ],
-   "reasons": [
-    "YogiBot ControlTower 프로젝트에서 구현한 ROS2-MQTT-WebSocket 기반의 로봇 관제 웹 아키텍처는 현대오토에버의 커넥티비티 모빌리티 관제 시스템 개발에 직접적으로 기여할 수 있습니다.",
-    "React 19, Node.js, AWS EC2/S3를 활용한 언제나가 웹 서비스 개발 및 배포 경험은 대규모 모빌리티 플랫폼의 프론트엔드 및 백엔드 인프라 구축에 유용합니다."
-   ],
-   "roles": [
-    "로봇 SW",
-    "백엔드",
-    "모빌리티 SW 엔지니어"
-   ],
-   "caution": "서울 근무로 인해 대전 거주자로서의 통근 및 주거 비용 부담을 고려해야 합니다."
-  },
-  {
-   "corp_code": "01571107",
-   "name": "오픈엣지테크놀로지",
-   "legal_name": "오픈엣지테크놀로지 주식회사",
-   "stock_code": "394280",
-   "market": "코스닥",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 강남구 역삼로 114 현죽빌딩 12층",
-   "region": "서울특별시",
-   "homepage": "www.openedges.com",
-   "est_year": "2017",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%98%A4%ED%94%88%EC%97%A3%EC%A7%80%ED%85%8C%ED%81%AC%EB%86%80%EB%A1%9C%EC%A7%80",
-   "fiscal_year": 2025,
-   "revenue": 16058809323,
-   "op_income": -28907297350,
-   "employees": 118,
-   "avg_salary": 98047195,
-   "score": 83,
-   "sub": {
-    "tech": 90,
-    "domain": 85,
-    "growth": 80,
-    "env": 65
-   },
-   "business": "엣지 디바이스용 NPU 반도체 IP를 개발하여 경량화 및 온디바이스 비전 AI 가속을 연구하는 팹리스 IP 기업입니다.",
-   "fit_tags": [
-    "반도체·하드웨어",
-    "엣지AI",
-    "컴퓨터비전"
-   ],
-   "reasons": [
-    "도로 파손 탐지를 위한 YOLOv8과 YOLO26의 학습 성능 및 TensorRT 기반 추론 성능 비교 분석 연구에서 보여준 TensorRT 기반 엣지 추론 최적화 경험이 NPU IP 검증 및 온디바이스 AI 가속 연구에 매우 유용합니다.",
-    "Jetson Orin 및 Raspberry Pi 등 다양한 엣지 디바이스 배포 경험이 온디바이스 비전 AI 가속 환경 테스트에 즉시 기여할 수 있습니다."
-   ],
-   "roles": [
-    "엣지 추론 최적화",
-    "비전 AI 엔지니어"
-   ],
-   "caution": "하드웨어 IP 설계 중심의 기업이므로 순수 소프트웨어 개발보다는 반도체 아키텍처에 대한 깊은 이해가 필요합니다."
-  },
-  {
-   "corp_code": "01588189",
-   "name": "씨메스로보틱스",
-   "legal_name": "씨메스로보틱스(주)",
-   "stock_code": "475400",
-   "market": "코스닥",
-   "industry_code": "29299",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "서울특별시 강남구 도산대로 318 &nbsp",
-   "region": "서울특별시",
-   "homepage": "www.cmesrobotics.ai/",
-   "est_year": "2014",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%94%A8%EB%A9%94%EC%8A%A4%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 13056154094,
-   "op_income": -18411160019,
-   "employees": 183,
-   "avg_salary": 54218579,
-   "score": 82,
-   "sub": {
-    "tech": 85,
-    "domain": 85,
-    "growth": 80,
-    "env": 70
-   },
-   "business": "3D 비전 AI 기반 지능형 로봇 자동화 솔루션 개발 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "컴퓨터비전",
-    "스마트팩토리"
-   ],
-   "reasons": [
-    "ROS2기반 자율주행 로봇 관제 시스템 개발로 금상을 수상하고 WCRC 로봇 경진대회에서 수상한 이력이 씨메스의 로봇 제어 및 SW 개발 방향과 잘 맞습니다.",
-    "비전 AI와 로봇 제어를 융합하는 역량을 발휘할 수 있습니다."
-   ],
-   "roles": [
-    "로봇 SW 엔지니어",
-    "비전 AI 엔지니어"
-   ],
-   "caution": "씨메스는 주로 3D 비전과 매니퓰레이터 제어 중심이므로, 후보자의 2D 객체 탐지 및 모바일 로봇 중심 이력과의 상세 기술 정합성을 확인해야 합니다."
-  },
-  {
-   "corp_code": "01261644",
-   "name": "레인보우로보틱스",
-   "legal_name": "(주)레인보우로보틱스",
-   "stock_code": "277810",
-   "market": "코스닥",
-   "industry_code": "29280",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "세종특별자치시  집현중앙3로 8 세종특별자치시 집현중앙3로 8(집현동)",
-   "region": "세종특별자치시",
-   "homepage": "www.rainbow-robotics.com",
-   "est_year": "2011",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 34123110054,
-   "op_income": -2480266118,
-   "employees": 161,
-   "avg_salary": 41521385,
-   "score": 82,
-   "sub": {
-    "tech": 80,
-    "domain": 75,
-    "growth": 90,
-    "env": 95
-   },
-   "business": "협동로봇 및 자율이동로봇(AMR)을 개발하고 제조하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "스마트팩토리"
-   ],
-   "reasons": [
-    "대전 거주자인 후보자에게 세종특별자치시 소재의 레인보우로보틱스는 출퇴근 및 정주 여건 측면에서 최상의 선택지입니다.",
-    "'YogiBot ControlTower'의 SLAM Toolbox 및 Nav2 기반 자율 매핑 경험은 레인보우로보틱스의 AMR 자율주행 알고리즘 개발에 기여할 수 있습니다."
-   ],
-   "roles": [
-    "로봇 SW",
-    "비전 AI 엔지니어"
-   ],
-   "caution": "협동로봇 제어 중심의 R&D가 많아 비전 및 관제 소프트웨어 개발 비중을 사전 파악해야 합니다."
-  },
-  {
-   "corp_code": "00503668",
-   "name": "LIG디펜스앤에어로스페이스",
-   "legal_name": "엘아이지디펜스앤에어로스페이스(주)",
-   "stock_code": "079550",
-   "market": "코스피",
-   "industry_code": "25200",
-   "sector": "무기·총포탄",
-   "related": true,
-   "address": "경기도 용인시 기흥구 마북로 207 엘아이지넥스원(주)",
-   "region": "경기도",
-   "homepage": "www.lignex1.com",
-   "est_year": "1998",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=LIG%EB%94%94%ED%8E%9C%EC%8A%A4%EC%95%A4%EC%97%90%EC%96%B4%EB%A1%9C%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 4306936127418,
-   "op_income": 319442306790,
-   "employees": 5382,
-   "avg_salary": 109557599,
-   "score": 82,
-   "sub": {
-    "tech": 80,
-    "domain": 85,
-    "growth": 85,
-    "env": 75
-   },
-   "business": "지능형 감시정찰 체계, 무인 비전 시스템 및 방산 소프트웨어 연구개발을 주도하는 종합 방산 기업입니다.",
-   "fit_tags": [
-    "방산",
-    "컴퓨터비전",
-    "자율주행"
-   ],
-   "reasons": [
-    "무인 비전 시스템 및 지능형 감시정찰 체계 개발에 후보자의 YOLO 기반 실시간 화재·연기 감지 및 객체 탐지 기술이 직접적으로 기여할 수 있습니다.",
-    "ROS2 기반 자율주행 로봇 관제 시스템(YogiBot) 개발 경험은 무인 지상 차량(UGV)의 자율주행 및 원격 제어 SW 개발에 유용합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "로봇 SW 엔지니어"
-   ],
-   "caution": "대전 하우스(연구소) 채용 여부와 직무 배치를 사전에 확인해야 합니다."
-  },
-  {
-   "corp_code": "00155212",
-   "name": "포스코DX",
-   "legal_name": "(주)포스코디엑스",
-   "stock_code": "022100",
-   "market": "코스피",
-   "industry_code": "72129",
-   "sector": "건축기술·엔지니어링",
-   "related": true,
-   "address": "경상북도 포항시 남구 호동로 68",
-   "region": "경상북도",
-   "homepage": "www.poscodx.com/kor/",
-   "est_year": "1989",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8F%AC%EC%8A%A4%EC%BD%94DX",
-   "fiscal_year": 2025,
-   "revenue": 1075175363044,
-   "op_income": 60388586087,
-   "employees": 2103,
-   "avg_salary": 97717546,
-   "score": 82,
-   "sub": {
-    "tech": 85,
-    "domain": 85,
-    "growth": 80,
-    "env": 70
-   },
-   "business": "산업 현장 AI 비전 안전 관제 시스템과 산업용 로봇 자동화 사업을 주도하는 IT 엔지니어링 기업이다.",
-   "fit_tags": [
-    "안전·재난",
-    "컴퓨터비전",
-    "스마트팩토리"
-   ],
-   "reasons": [
-    "YOLOv8 기반 화재 및 연기 탐지, 도로 파손 탐지 KCI 논문 실적이 산업 현장 AI 비전 안전 관제 시스템과 완벽히 부합한다.",
-    "TensorRT 기반 엣지 디바이스 추론 성능 최적화 경험이 현장 장비 적용에 큰 강점이 된다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화",
-    "스마트팩토리 SW"
-   ],
-   "caution": "대규모 기업이지만 지방 현장 파견이나 근무 순환 가능성을 미리 확인해야 한다."
-  },
-  {
-   "corp_code": "01264872",
-   "name": "이노뎁",
-   "legal_name": "이노뎁(주)",
-   "stock_code": "303530",
-   "market": "코스닥",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 금천구 디지털로9길 47 한신IT타워 2차 9층, 11층",
-   "region": "서울특별시",
-   "homepage": "innodep.co.kr",
-   "est_year": "2008",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9D%B4%EB%85%B8%EB%8E%81",
-   "fiscal_year": 2025,
-   "revenue": 70744057088,
-   "op_income": -2896673174,
-   "employees": 213,
-   "avg_salary": 61164319,
-   "score": 80,
-   "sub": {
-    "tech": 85,
-    "domain": 85,
-    "growth": 70,
-    "env": 70
-   },
-   "business": "CCTV 영상관제 플랫폼 및 스마트시티 지능형 영상분석 솔루션 개발 기업입니다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "안전·재난",
-    "웹서비스"
-   ],
-   "reasons": [
-    "ROS2기반 자율주행 로봇 관제 시스템 프로젝트에서 구축한 FastAPI 및 React 기반 관제 웹 아키텍처가 이노뎁의 스마트시티 영상관제 플랫폼 개발에 유용합니다.",
-    "도로 파손 및 화재 탐지 비전 기술이 도시 안전 관제 솔루션에 부합합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "웹 풀스택 개발자"
-   ],
-   "caution": "최근 영업적자 상태이므로 재무 안정성과 R&D 투자 지속 여부를 점검해야 합니다."
-  },
-  {
-   "corp_code": "01251489",
-   "name": "라온피플",
-   "legal_name": "라온피플 주식회사",
-   "stock_code": "300120",
-   "market": "코스닥",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "경기도 과천시 과천대로7나길 60 과천어반허브 C동 5층, 6층",
-   "region": "경기도",
-   "homepage": "www.laonpeople.com/",
-   "est_year": "2010",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%9D%BC%EC%98%A8%ED%94%BC%ED%94%8C",
-   "fiscal_year": 2025,
-   "revenue": 223808325905,
-   "op_income": -16192262465,
-   "employees": 119,
-   "avg_salary": 63918235,
-   "score": 80,
-   "sub": {
-    "tech": 85,
-    "domain": 80,
-    "growth": 75,
-    "env": 75
-   },
-   "business": "산업용 머신비전 및 스마트 교통·안전 비전 솔루션 개발 기업입니다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "스마트팩토리",
-    "모빌리티"
-   ],
-   "reasons": [
-    "도로 파손 탐지를 위한 YOLOv8과 YOLO26 성능 비교 연구가 라온피플의 스마트 교통 및 도로 안전 비전 솔루션 개발에 직접 활용될 수 있습니다.",
-    "엣지 디바이스 기반의 실시간 객체 탐지 기술이 산업용 비전 검사 장비에도 응용 가능합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "임베디드 비전 엔지니어"
-   ],
-   "caution": "산업용 머신비전과 스마트 교통 솔루션 중 본인의 연구 분야와 더 밀접한 부서로의 배치 가능성을 확인해야 합니다."
-  },
-  {
-   "corp_code": "01709065",
-   "name": "마키나락스",
-   "legal_name": "(주)마키나락스",
-   "stock_code": "477850",
-   "market": "코스닥",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 서초구 강남대로 343 신덕빌딩, 12층",
-   "region": "서울특별시",
-   "homepage": "www.makinarocks.ai",
-   "est_year": "2017",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A7%88%ED%82%A4%EB%82%98%EB%9D%BD%EC%8A%A4",
-   "fiscal_year": null,
-   "revenue": null,
-   "op_income": null,
-   "employees": null,
-   "avg_salary": null,
-   "score": 80,
-   "sub": {
-    "tech": 85,
-    "domain": 80,
-    "growth": 85,
-    "env": 65
-   },
-   "business": "제조 및 산업 안전을 위한 엣지 산업용 AI 및 이상 탐지 비전 솔루션을 개발하는 기업입니다.",
-   "fit_tags": [
-    "엣지AI",
-    "컴퓨터비전",
-    "안전·재난"
-   ],
-   "reasons": [
-    "YOLOv8 및 TensorRT 기반 도로 파손 및 화재 탐지 연구는 마키나락스의 산업 안전 및 이상 탐지 비전 솔루션 개발에 직접 적용 가능합니다.",
-    "Jetson Orin 등 엣지 디바이스 최적화 경험이 마키나락스의 산업용 엣지 AI 배포 환경과 잘 부합합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "비상장 기업이므로 구체적인 R&D 조직 규모와 재무 안정성을 지원 전에 확인해야 합니다."
-  },
-  {
-   "corp_code": "01336461",
-   "name": "뉴로메카",
-   "legal_name": "주식회사 뉴로메카",
-   "stock_code": "348340",
-   "market": "코스닥",
-   "industry_code": "29280",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "서울특별시 성동구 아차산로 78 (성수동2가)",
-   "region": "서울특별시",
-   "homepage": "www.neuromeka.com",
-   "est_year": "2013",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%89%B4%EB%A1%9C%EB%A9%94%EC%B9%B4",
-   "fiscal_year": 2025,
-   "revenue": 18954203205,
-   "op_income": -14856577614,
-   "employees": 149,
-   "avg_salary": 60838926,
-   "score": 80,
-   "sub": {
-    "tech": 85,
-    "domain": 80,
-    "growth": 80,
-    "env": 65
-   },
-   "business": "협동로봇, 자율이동로봇(AMR) 및 로봇 관제 플랫폼을 개발하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "웹서비스"
-   ],
-   "reasons": [
-    "'YogiBot ControlTower'에서 구축한 FastAPI 및 React 기반 관제 웹 기술은 뉴로메카의 로봇 관제 플랫폼 개발 직무에 즉각 투입 가능한 수준입니다.",
-    "ROS2 기반 자율주행 로봇 제어 및 SLAM Toolbox 활용 경험이 뉴로메카의 AMR 라인업 개발 방향과 일치합니다."
-   ],
-   "roles": [
-    "로봇 SW",
-    "웹서비스"
-   ],
-   "caution": "지속적인 영업적자 상태이므로 재무적 안정성과 연구비 지원 지속 여부를 고려해야 합니다."
-  },
-  {
-   "corp_code": "01458161",
-   "name": "티엑스알로보틱스",
-   "legal_name": "주식회사 티엑스알로보틱스",
-   "stock_code": "484810",
-   "market": "코스닥",
-   "industry_code": "291",
-   "sector": "일반 목적용 기계",
-   "related": true,
-   "address": "경기도 부천시 원미구 옥산로 216",
-   "region": "경기도",
-   "homepage": "www.txr.kr",
-   "est_year": "2017",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8B%B0%EC%97%91%EC%8A%A4%EC%95%8C%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 56632898384,
-   "op_income": -771918665,
-   "employees": 130,
-   "avg_salary": 60930769,
-   "score": 80,
-   "sub": {
-    "tech": 85,
-    "domain": 80,
-    "growth": 75,
-    "env": 70
-   },
-   "business": "물류 자율이동로봇(AMR/AGV)과 스마트 물류 로봇 관제 솔루션을 개발하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "스마트팩토리"
-   ],
-   "reasons": [
-    "'YogiBot ControlTower'의 ROS2-MQTT-WebSocket 아키텍처 및 React 기반 관제 웹 개발 경험은 티엑스알로보틱스의 스마트 물류 로봇 관제 솔루션 개발에 매우 적합합니다.",
-    "WCRC 및 ILRC 등 로봇 경진대회 수상으로 검증된 로봇 시스템 통합 역량은 실제 물류 현장의 AMR/AGV 배치 및 최적화 업무에 강점이 됩니다."
-   ],
-   "roles": [
-    "로봇 SW",
-    "웹서비스"
-   ],
-   "caution": "물류 현장 출장 및 현장 셋업 업무의 비중이 높을 수 있으므로 직무 상세를 확인해야 합니다."
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.hanwhavision.com/",
+    "fetched_at": "2026-10-14T13:55+09:00",
+    "sources": [
+     {
+      "url": "https://www.hanwhavision.com/ko",
+      "title": "한화비전 | 글로벌 비전 솔루션 리더"
+     },
+     {
+      "url": "https://www.hanwhavision.com/ko/solutions/technologies/system-on-chip",
+      "title": "System On Chip | 한화비전"
+     },
+     {
+      "url": "https://www.hanwhavision.com/ko/solutions/technologies/ai",
+      "title": "AI | 한화비전"
+     }
+    ]
+   }
   },
   {
    "corp_code": "00164788",
@@ -1043,112 +98,1034 @@
    "op_income": 3357456000000,
    "employees": 12535,
    "avg_salary": 133123175,
-   "score": 80,
+   "score": 90,
    "sub": {
-    "tech": 80,
-    "domain": 80,
-    "growth": 85,
-    "env": 75
+    "tech": 90,
+    "domain": 88,
+    "growth": 95,
+    "env": 90
    },
-   "business": "자율주행 ADAS 카메라 비전 인식 및 차량용 고성능 엣지 제어기 개발을 주도하는 글로벌 부품사입니다.",
+   "business": "자동차 모듈 및 샤시, 전장 부품을 제조하며 첨단 자율주행 ADAS 및 통합 제어 솔루션을 공급하는 글로벌 완성차 부품사이다.",
    "fit_tags": [
     "자율주행",
     "컴퓨터비전",
     "엣지AI"
    ],
    "reasons": [
-    "차량용 고성능 엣지 제어기 개발에 후보자의 YOLOv8 엣지 디바이스 환경 성능 분석 및 TensorRT 최적화 연구가 유용하게 쓰일 수 있습니다.",
-    "ROS2 기반 자율주행 로봇 관제 시스템 설계 경험은 차량-인프라 간 협력 자율주행(V2X) 및 관제 기술 개발에 기여할 수 있습니다."
+    "KCI 논문으로 발표한 엣지 디바이스 환경의 YOLOv8 최적화 및 TensorRT 추론 성능 분석 경험이 모비스의 자율주행 카메라 딥러닝 모델 경량화 과제와 일치한다.",
+    "WCRC 및 ILRC 로봇 경진대회 수상, TurtleBot3와 Nav2를 활용한 SLAM 자율주행 경험은 자율주행 도메인 기초 역량으로 높은 평가를 받을 수 있다.",
+    "연구 인력 규모가 크고 체계화된 AI 연구 조직(의왕·마북 연구소)을 보유해 신입 엔지니어가 성장하기에 최적의 환경이다."
+   ],
+   "roles": [
+    "자율주행 비전 AI 연구원",
+    "차량용 엣지 AI 추론 최적화 엔지니어",
+    "자율주행 로보틱스 알고리즘 개발자"
+   ],
+   "caution": "차량용 기능 안전 규격(ISO 26262) 및 임베디드 C/C++ 기반 상용화 검증 역량이 중시되므로 Python 연구 코드를 넘어선 C/C++ 숙련도 보완이 요구된다.",
+   "web_facts": [
+    "자동차 부품 업계 Global Top 5 지위를 구축하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.mobis.com/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": [
+     {
+      "url": "https://www.mobis.com/",
+      "title": "현대모비스"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00883980",
+   "name": "아이디스",
+   "legal_name": "(주)아이디스",
+   "stock_code": "143160",
+   "market": "코스닥",
+   "industry_code": "26429",
+   "sector": "통신·방송장비",
+   "related": true,
+   "address": "대전 유성구 관평동 1301",
+   "region": "대전",
+   "homepage": "www.idisglobal.com",
+   "est_year": "2011",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9D%B4%EB%94%94%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 327595925715,
+   "op_income": 21242195723,
+   "employees": 438,
+   "avg_salary": 67294521,
+   "score": 89,
+   "sub": {
+    "tech": 90,
+    "domain": 88,
+    "growth": 82,
+    "env": 95
+   },
+   "business": "디지털 보안 감시 레코더(DVR/NVR), 네트워크 카메라, VMS 통합 보안 플랫폼을 전 세계에 공급하는 영상보안 기업이다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "엣지AI",
+    "안전·재난"
+   ],
+   "reasons": [
+    "아이디스가 양산 중인 '오감지 최소화한 불꽃 감지 카메라' 및 산업안전 감시 라인업은 후보자의 'RGB 채널 영상 기반 실시간 화재·연기 감지' KCI 논문과 도메인이 일치한다.",
+    "YOLOv8/v26 모델을 소형 타깃 보드에 TensorRT로 경량 이식한 경험은 AI IP 카메라 11종 통합 펌웨어 및 NVR 탑재 엣지 AI 가속화에 활용 가능하다.",
+    "본사와 주력 R&D 연구소가 대전에 위치하여 대전 거주자인 주인공에게 최적의 근무 접근성과 생활 편의성을 제공한다."
+   ],
+   "roles": [
+    "보안 영상 AI 비전 엔지니어",
+    "카메라/NVR 임베디드 AI 추론 개발자",
+    "VMS 관제 시스템 연동 개발자"
+   ],
+   "caution": "순수 딥러닝 리서치보다는 카메라 펌웨어 및 대규모 임베디드 NVR 양산 환경 중심의 엔지니어링 역량이 중시된다.",
+   "web_facts": [
+    "1997년 세계 최초 디지털 DVR을 개발했으며, 현재 고성능 네트워크 카메라, 레코더, 통합 보안 플랫폼 iNEX를 공급하고 있다.",
+    "오감지를 최소화한 UV 불꽃감지 카메라(DC-SP6211FLT) 등 산업안전 및 화재 대응 특화 카메라 라인업을 보유하고 있다.",
+    "국가 공공기관 최상위 보안 기준을 충족하는 단일 통합 펌웨어(INSRM-C1) 기반 AI 카메라 11종을 인증받았다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.idisglobal.com/",
+    "fetched_at": "2026-10-14T13:56+09:00",
+    "sources": [
+     {
+      "url": "https://idisglobal.com/",
+      "title": "아이디스 | 첨단 영상 보안 솔루션"
+     },
+     {
+      "url": "https://idisglobal.com/index/about",
+      "title": "아이디스 | 첨단 영상 보안 솔루션"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01810477",
+   "name": "노타",
+   "legal_name": "주식회사 노타",
+   "stock_code": "486990",
+   "market": "코스닥",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "대전광역시 유성구 문지로 272-16, 502호",
+   "region": "대전광역시",
+   "homepage": "/www.nota.ai",
+   "est_year": "2015",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%85%B8%ED%83%80",
+   "fiscal_year": 2025,
+   "revenue": 13100933426,
+   "op_income": -15279286074,
+   "employees": 131,
+   "avg_salary": 125697985,
+   "score": 89,
+   "sub": {
+    "tech": 96,
+    "domain": 85,
+    "growth": 88,
+    "env": 82
+   },
+   "business": "하드웨어 인지 기반 AI 모델 경량화 플랫폼 NetsPresso와 온디바이스 비전 AI 솔루션을 개발하는 기업이다.",
+   "fit_tags": [
+    "엣지AI",
+    "컴퓨터비전",
+    "안전·재난"
+   ],
+   "reasons": [
+    "도로 파손 및 화재 탐지 연구에서 주도적으로 진행한 'YOLO 계열 엣지 디바이스 성능 분석'과 'TensorRT 기반 추론 성능 비교'는 노타의 핵심 제품인 NetsPresso 경량화 파이프라인과 완벽히 합치한다.",
+    "산업 안전 및 교통 감시(ITS)를 타깃으로 하는 Nota Vision Agent(NVA) 솔루션에 화재·연기 및 도로 위험 상황 탐지 연구 경험이 부합한다.",
+    "대전 유성구에 R&D 오피스를 두고 있어 대전 거주 요건을 충족하면서도 최고 수준의 온디바이스 AI 최적화 전문성을 쌓을 수 있다."
+   ],
+   "roles": [
+    "온디바이스 비전 AI 경량화 엔지니어",
+    "엣지 AI 모델 최적화(TensorRT) 연구원",
+    "NVA 비전 솔루션 개발자"
+   ],
+   "caution": "글로벌 확장세 대비 현재 영업손실 폭이 커 연구 프로젝트의 수익화 진행 현황과 조직 안정성을 체크해야 한다.",
+   "web_facts": [
+    "하드웨어 인지형 AI 모델 최적화 플랫폼인 NetsPresso와 산업 안전 모니터링 솔루션 Nota Vision Agent를 개발·공급한다.",
+    "Nota Vision Agent는 플러그 앤 플레이 형태의 'Gen AI Box'를 통해 자연어 비디오 검색 및 이상 행동 추적 기능을 제공한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.nota.ai/",
+    "fetched_at": "2026-10-14T13:55+09:00",
+    "sources": [
+     {
+      "url": "https://www.nota.ai/",
+      "title": "Nota AI"
+     },
+     {
+      "url": "https://www.nota.ai/ai-solutions-notavisionagent",
+      "title": "Nota Vision Agent — Nota AI"
+     },
+     {
+      "url": "https://www.nota.ai/aboutus",
+      "title": "Company — Nota AI"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00339391",
+   "name": "한화시스템",
+   "legal_name": "한화시스템(주)",
+   "stock_code": "272210",
+   "market": "코스피",
+   "industry_code": "26299",
+   "sector": "전자부품",
+   "related": true,
+   "address": "경상북도 구미시 산호대로 264-60 -",
+   "region": "경상북도",
+   "homepage": "hanwhasystems.com",
+   "est_year": "2000",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%9C%ED%99%94%EC%8B%9C%EC%8A%A4%ED%85%9C",
+   "fiscal_year": 2025,
+   "revenue": 3664150568020,
+   "op_income": 119898725355,
+   "employees": 4855,
+   "avg_salary": 107578579,
+   "score": 88,
+   "sub": {
+    "tech": 88,
+    "domain": 90,
+    "growth": 90,
+    "env": 85
+   },
+   "business": "방위산업 전자광학 센서, 전술정보통신, 감시정찰 비전 체계 및 국방 ICT 솔루션을 공급하는 방산 전자 IT 기업이다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "방산",
+    "엣지AI"
+   ],
+   "reasons": [
+    "RGB 영상 기반 화재·연기 및 도로 파손 탐지 논문 실적과 엣지 디바이스 추론 분석 경험이 방산 감시정찰 EO/IR 영상 표적 탐지·추적 체계와 직결된다.",
+    "Jetson 보드 대상 TensorRT 및 NCNN 경량화 추론 연구는 전장 임베디드 엣지 프로세서 탑재용 경량 AI 개발에 바로 적용할 수 있다.",
+    "YogiBot ControlTower 프로젝트에서 구현한 ROS2-MQTT 다중 센서 관제 구조는 복합 정찰 무인체계 통신망과 일치도가 높다."
+   ],
+   "roles": [
+    "국방 비전 AI 알고리즘 개발자",
+    "엣지 임베디드 AI 엔지니어",
+    "무인체계 관제 SW 엔지니어"
+   ],
+   "caution": "사업장이 판교 외에도 용인, 구미 등 분산되어 있어 AI 연구 조직의 실제 근무 위치를 명확히 확인해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "robots_unknown",
+    "status_text": "robots.txt를 확인할 수 없어 건너뜀",
+    "homepage": "http://hanwhasystems.com/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": []
+   }
+  },
+  {
+   "corp_code": "00164742",
+   "name": "현대자동차",
+   "legal_name": "현대자동차(주)",
+   "stock_code": "005380",
+   "market": "코스피",
+   "industry_code": "30121",
+   "sector": "자동차",
+   "related": true,
+   "address": "서울특별시 서초구  헌릉로 12",
+   "region": "서울특별시",
+   "homepage": "www.hyundai.com",
+   "est_year": "1967",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EC%9E%90%EB%8F%99%EC%B0%A8",
+   "fiscal_year": 2025,
+   "revenue": 186254472000000,
+   "op_income": 11467851000000,
+   "employees": 72598,
+   "avg_salary": 131137345,
+   "score": 88,
+   "sub": {
+    "tech": 87,
+    "domain": 90,
+    "growth": 95,
+    "env": 80
+   },
+   "business": "승용, SUV, 상용차 등 완성차 제조와 함께 자율주행, 로보틱스, 스마트 모빌리티 솔루션을 연구·개발하는 완성차 기업이다.",
+   "fit_tags": [
+    "자율주행",
+    "로보틱스",
+    "모빌리티"
+   ],
+   "reasons": [
+    "TurtleBot3와 Nav2, SLAM Toolbox를 활용해 구현한 YogiBot ControlTower 로봇 관제 경험은 현대자동차 로보틱스랩의 자율주행 로봇 및 모바일 플랫폼 연구와 정합성이 높다.",
+    "KCI 논문에서 다룬 커스텀 YOLOv8 기반 화재·연기 탐지 및 학술대회 우수논문상의 도로 파손 탐지 기술은 ADAS 및 자율주행 인지 모델 개발에 연계된다.",
+    "TensorRT 및 엣지 디바이스(Jetson Orin) 추론 최적화 실적은 차량 내 임베디드 온보드 비전 시스템 실증 연구에 직결된다."
+   ],
+   "roles": [
+    "로보틱스 SW 엔지니어",
+    "자율주행 인지 알고리즘 엔지니어",
+    "엣지 비전 AI 연구원"
+   ],
+   "caution": "R&D 연구소 주요 거점이 경기 남부(남양, 의왕)에 집중되어 있어 대전 거주에 따른 통근 및 이주 계획을 고려해야 한다.",
+   "web_facts": [
+    "미래 모빌리티와 로보틱스를 주요 비전 및 미래 성장축으로 다루고 있다.",
+    "아이오닉 컨셉 등 전기차 및 차세대 모빌리티 솔루션에 집중 투자하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.hyundai.com/",
+    "fetched_at": "2026-10-14T13:55+09:00",
+    "sources": [
+     {
+      "url": "https://www.hyundai.com/kr/ko/e",
+      "title": "현대자동차 현대닷컴"
+     },
+     {
+      "url": "https://talent.hyundai.com/main/main.hc",
+      "title": "현대자동차 인재채용"
+     },
+     {
+      "url": "https://www.hyundai.com/worldwide/ko/company/ir",
+      "title": "현대자동차 IR | 회사소개 - 현대자동차 월드와이드"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00155212",
+   "name": "포스코DX",
+   "legal_name": "(주)포스코디엑스",
+   "stock_code": "022100",
+   "market": "코스피",
+   "industry_code": "72129",
+   "sector": "건축기술·엔지니어링",
+   "related": true,
+   "address": "경상북도 포항시 남구 호동로 68",
+   "region": "경상북도",
+   "homepage": "www.poscodx.com/kor/",
+   "est_year": "1989",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8F%AC%EC%8A%A4%EC%BD%94DX",
+   "fiscal_year": 2025,
+   "revenue": 1075175363044,
+   "op_income": 60388586087,
+   "employees": 2103,
+   "avg_salary": 97717546,
+   "score": 88,
+   "sub": {
+    "tech": 90,
+    "domain": 88,
+    "growth": 88,
+    "env": 82
+   },
+   "business": "산업 현장의 디지털 전환을 리딩하며 스마트 팩토리, 산업용 로봇, 비전 안전 관제 솔루션을 제공한다.",
+   "fit_tags": [
+    "스마트팩토리",
+    "안전·재난",
+    "로보틱스"
+   ],
+   "reasons": [
+    "스마트 세이프티 및 작업장 안전 솔루션을 주도하므로, KCI 등재 화재·연기 감지 YOLOv8 최적화 논문 및 도로 파손 탐지 연구가 정확히 일치한다.",
+    "산업용 로봇 자율화 및 물류 무인화를 추진하고 있어, ROS2 기반 자율주행 로봇 관제 시스템(금상 수상) 구축 역량을 즉시 발휘할 수 있다.",
+    "포스코 그룹 계열사로 대규모 R&D 조직과 안정적 재무 구조를 갖추고 있으며 판교 등 R&D 거점 접근성이 우수하다."
+   ],
+   "roles": [
+    "산업안전 비전 AI 엔지니어",
+    "로봇 제어 및 자율주행 SW 엔지니어",
+    "엣지 AI 최적화 개발자"
+   ],
+   "caution": "포항, 광양, 판교 등 사업 거점에 따라 배치되는 세부 연구 부서와 주력 업무가 다를 수 있어 근무지를 점검해야 한다.",
+   "web_facts": [
+    "AI Workforce, Intelligent Factory, Industrial Robot, Smart Safety 솔루션을 보유하고 있다.",
+    "피지컬AI 기반 산업현장 로봇 파운데이션 모델 공동 개발을 진행한다.",
+    "직원 수는 2,061명이며 포항 본사, 판교, 포스코센터, 광양 등에 거점을 두고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.poscodx.com/kor/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://www.poscodx.com/kor/",
+      "title": "포스코DX포스코DX포스코DX포스코DX"
+     },
+     {
+      "url": "https://www.poscodx.com/kor/about/poscodx",
+      "title": "AI Native company포스코DX포스코DX포스코DX"
+     },
+     {
+      "url": "https://www.poscodx.com/kor/about/greeting",
+      "title": "인사말포스코DX포스코DX포스코DX"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00503668",
+   "name": "LIG디펜스앤에어로스페이스",
+   "legal_name": "엘아이지디펜스앤에어로스페이스(주)",
+   "stock_code": "079550",
+   "market": "코스피",
+   "industry_code": "25200",
+   "sector": "무기·총포탄",
+   "related": true,
+   "address": "경기도 용인시 기흥구 마북로 207 엘아이지넥스원(주)",
+   "region": "경기도",
+   "homepage": "www.lignex1.com",
+   "est_year": "1998",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=LIG%EB%94%94%ED%8E%9C%EC%8A%A4%EC%95%A4%EC%97%90%EC%96%B4%EB%A1%9C%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 4306936127418,
+   "op_income": 319442306790,
+   "employees": 5382,
+   "avg_salary": 109557599,
+   "score": 87,
+   "sub": {
+    "tech": 87,
+    "domain": 88,
+    "growth": 90,
+    "env": 85
+   },
+   "business": "정밀유도무기, 감시정찰 체계, 무인·미래전 무기체계 및 지능형 방산 임베디드 소프트웨어를 개발하는 종합 방위산업체이다.",
+   "fit_tags": [
+    "방산",
+    "컴퓨터비전",
+    "엣지AI"
+   ],
+   "reasons": [
+    "소형 정찰·타격 복합형 드론 및 유무인 복합체계(MUM-T) 비전 솔루션에 Jetson 환경의 TensorRT 가속화 및 초경량 객체 탐지 역량을 투입할 수 있다.",
+    "YOLOv8 및 최신 YOLO 모델 벤치마킹 논문 이력은 감시정찰(ISR) 센서의 실시간 다중 객체 식별 및 표적 분석 과제와 맞아떨어진다.",
+    "우주·위성 캔위성 임무 제안서 작성 수상 경력 또한 정찰위성 및 항공우주 센서 데이터 분석 체계에 긍정적으로 작용한다."
+   ],
+   "roles": [
+    "지능형 비전 AI 연구원",
+    "무인체계 임베디드 SW 엔지니어"
+   ],
+   "caution": "본사 및 판교 외 대전하우스(연구소)가 있어 대전 근무 가능성이 열려 있으므로 모집 공고별 근무 부서의 소속 사업장을 확인해야 한다.",
+   "web_facts": [
+    "유·무인 복합작전 솔루션, 소형 정찰·타격 복합형 드론, 감시정찰(ISR) 체계를 주요 사업으로 전개한다.",
+    "The SSEN 임베디드SW 스쿨 등 임베디드 SW 인재 육성 프로그램을 운영한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.lignex1.com/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": [
+     {
+      "url": "https://www.ligdefenseaerospace.com/main.do",
+      "title": "LIG Defense&Aerospace"
+     },
+     {
+      "url": "https://www.ligdefenseaerospace.com/about/vision.do",
+      "title": "비전 - LIG Defense&Aerospace"
+     },
+     {
+      "url": "https://www.ligdefenseaerospace.com/about/history.do",
+      "title": "연혁 - LIG Defense&Aerospace"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01042775",
+   "name": "HL만도",
+   "legal_name": "에이치엘만도(주)",
+   "stock_code": "204320",
+   "market": "코스피",
+   "industry_code": "303",
+   "sector": "자동차 부품",
+   "related": true,
+   "address": "경기도 평택시 포승읍 하만호길 32",
+   "region": "경기도",
+   "homepage": "www.mando.com",
+   "est_year": "2014",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=HL%EB%A7%8C%EB%8F%84",
+   "fiscal_year": 2025,
+   "revenue": 9454812581023,
+   "op_income": 357120974882,
+   "employees": 3828,
+   "avg_salary": 108609195,
+   "score": 87,
+   "sub": {
+    "tech": 88,
+    "domain": 85,
+    "growth": 88,
+    "env": 85
+   },
+   "business": "차량용 조향·제동·현가장치 및 카메라, 레이다 기반의 자율주행 ADAS 통합 제어기를 공급하는 1차 자동차 부품 기업이다.",
+   "fit_tags": [
+    "자율주행",
+    "컴퓨터비전",
+    "모빌리티"
+   ],
+   "reasons": [
+    "도로 파손 탐지 논문에서 증명한 YOLOv8/v26 모델 학습 및 TensorRT 기반 최적화 실적은 차량용 전방 카메라 인지 알고리즘 경량화에 직접 연결된다.",
+    "Jetson 등 엣지 보드에서의 NCNN/TensorRT 가속화 경험은 ADAS 엣지 ECU 내 실시간 추론 연산 최적화 업무와 직무 적합성이 매우 높다.",
+    "웹 풀스택 개발 역량보다는 차량 임베디드 C/C++ 포팅 및 비전 AI 딥러닝 추론 최적화 역량이 중점적으로 검증받게 된다."
+   ],
+   "roles": [
+    "ADAS 카메라 인지 알고리즘 개발자",
+    "자율주행 비전 AI 엣지 최적화 엔지니어"
+   ],
+   "caution": "연구개발 인력의 주 근무처가 판교 및 기흥 연구소에 위치해 있어 수도권 거주 이전 가능성을 사전에 검토해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "robots_unknown",
+    "status_text": "robots.txt를 확인할 수 없어 건너뜀",
+    "homepage": "http://www.mando.com/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": []
+   }
+  },
+  {
+   "corp_code": "00362441",
+   "name": "현대오토에버",
+   "legal_name": "현대오토에버(주)",
+   "stock_code": "307950",
+   "market": "코스피",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 강남구 테헤란로 510 루첸타워",
+   "region": "서울특별시",
+   "homepage": "www.hyundai-autoever.com",
+   "est_year": "2000",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EC%98%A4%ED%86%A0%EC%97%90%EB%B2%84",
+   "fiscal_year": 2025,
+   "revenue": 4252067261000,
+   "op_income": 255302187000,
+   "employees": 5753,
+   "avg_salary": 99020511,
+   "score": 86,
+   "sub": {
+    "tech": 88,
+    "domain": 85,
+    "growth": 90,
+    "env": 82
+   },
+   "business": "현대자동차그룹의 모빌리티 SW 전문 기업으로 차량 소프트웨어, 자율주행 플랫폼, 스마트팩토리 및 클라우드 시스템을 개발한다.",
+   "fit_tags": [
+    "자율주행",
+    "모빌리티",
+    "클라우드"
+   ],
+   "reasons": [
+    "학술대회 금상을 수상한 YogiBot ControlTower 프로젝트에서 ROS2, MQTT, 웹 관제 시스템을 설계한 경험은 현대오토에버의 모빌리티 관제 플랫폼 및 차량 SW 아키텍처와 직접 맞닿아 있다.",
+    "웹 서비스 언제나가(when-to-leave)의 TypeScript/React 풀스택 개발 및 AWS EC2/S3 배포 경험은 클라우드 및 커넥티비티 관제 시스템 구축 업무에 바로 활용 가능하다.",
+    "YOLOv8 기반 도로 파손 및 화재 탐지 연구는 차량 비전 센서 기반 주행 환경 인식 및 도로 인프라 데이터 수집 파이프라인 개발에 부합한다."
+   ],
+   "roles": [
+    "자율주행 SW 엔지니어",
+    "모빌리티 플랫폼 백엔드 개발자",
+    "비전 AI 엔지니어"
+   ],
+   "caution": "차량용 임베디드 SW와 클라우드 플랫폼 개발 등 조직별 요구 스택이 상이하므로 지원 직무의 개발 환경을 사전에 확인해야 한다.",
+   "web_facts": [
+    "SDx(소프트웨어로 정의되는 모든 것) 분야에서 선도적인 역할을 하고 있다.",
+    "차량 SW, 내비게이션, 클라우드, 스마트팩토리, 엔터프라이즈 IT 등 글로벌 서비스를 제공한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.hyundai-autoever.com/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": [
+     {
+      "url": "https://www.hyundai-autoever.com/",
+      "title": "현대오토에버"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01405451",
+   "name": "알체라",
+   "legal_name": "주식회사 알체라",
+   "stock_code": "347860",
+   "market": "코스닥",
+   "industry_code": "58222",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 강남구 논현로 653 3층(논현동)",
+   "region": "서울특별시",
+   "homepage": "www.alchera.ai",
+   "est_year": "2016",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%8C%EC%B2%B4%EB%9D%BC",
+   "fiscal_year": 2025,
+   "revenue": null,
+   "op_income": -10249280632,
+   "employees": 203,
+   "avg_salary": 31423645,
+   "score": 85,
+   "sub": {
+    "tech": 90,
+    "domain": 95,
+    "growth": 75,
+    "env": 62
+   },
+   "business": "얼굴인식 및 영상 분석 비전 AI와 산불·화재 원격 감지 솔루션 파이어스카우트를 공급하는 AI 전문 기업이다.",
+   "fit_tags": [
+    "안전·재난",
+    "컴퓨터비전",
+    "엣지AI"
+   ],
+   "reasons": [
+    "KCI 등재 제1저자 논문 2편 모두 화재·연기 탐지에 특화되어 있어 알체라의 핵심 공공 안전 제품인 '파이어스카우트' 솔루션 개발팀에 완벽히 매칭된다.",
+    "학술대회에서 우수논문상을 받은 YOLOv26과 YOLOv8n 화재 감지 성능 비교 경험을 바탕으로 실시간 산불·화재 비전 모델의 정확도 개선 및 오탐 저감에 기여할 수 있다.",
+    "React 기반 관제 웹 설계 경험이 화재 발생 시 경보를 전파하는 통합 안전관리 대시보드 구축과 자연스럽게 연계된다."
+   ],
+   "roles": [
+    "화재·재난 비전 AI 모델 연구원",
+    "실시간 영상 분석 알고리즘 엔지니어"
+   ],
+   "caution": "지속된 영업손실로 인한 인력 변동 여부와 성남/서울 오피스 근무에 따른 대전 거주자의 출퇴근 난도를 고려해야 한다.",
+   "web_facts": [
+    "얼굴 인식, 영상 분석 솔루션과 더불어 산불 감지 안전관리 솔루션 '파이어스카우트(FireScout)'를 공급하고 있다.",
+    "국내외 대규모 인하우스 데이터 센터를 활용한 AI 데이터 수집·구축 서비스를 제공하고 피지컬 AI 분야로 사업을 확장하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.alchera.ai/",
+    "fetched_at": "2026-10-14T14:03+09:00",
+    "sources": [
+     {
+      "url": "https://www.alchera.ai/",
+      "title": "알체라 | Vision AI 솔루션을 통한 혁신적 AI 기술 선도 기업"
+     },
+     {
+      "url": "https://www.alchera.ai/company/overview",
+      "title": "알체라 회사소개 | AI 기술 선도 기업의 비전과 혁신"
+     },
+     {
+      "url": "https://www.alchera.ai/company/ir",
+      "title": "알체라 IR 정보 | 투자자 관계 및 기업 성과"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00126566",
+   "name": "한화에어로스페이스",
+   "legal_name": "한화에어로스페이스(주)",
+   "stock_code": "012450",
+   "market": "코스피",
+   "industry_code": "31321",
+   "sector": "항공기·우주선",
+   "related": true,
+   "address": "경상남도 창원시 성산구  창원대로 1204",
+   "region": "경상남도",
+   "homepage": "www.hanwhaaerospace.com",
+   "est_year": "1977",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%9C%ED%99%94%EC%97%90%EC%96%B4%EB%A1%9C%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 26702901249000,
+   "op_income": 3089320181000,
+   "employees": 8168,
+   "avg_salary": 124322845,
+   "score": 85,
+   "sub": {
+    "tech": 85,
+    "domain": 85,
+    "growth": 92,
+    "env": 80
+   },
+   "business": "항공우주 발사체, 항공엔진, 지상 전투장비 및 차세대 무인 지상로봇(UGV) 체계를 종합 개발·양산하는 방산·항공우주 기업이다.",
+   "fit_tags": [
+    "방산",
+    "로보틱스",
+    "자율주행"
+   ],
+   "reasons": [
+    "야지 자율주행 무인수색차량(UGV) 개발에 도로 파손 탐지 논문과 TurtleBot3 기반 Nav2 자율주행 로봇 관제 실적이 부합한다.",
+    "Jetson 배포 및 라즈베리파이 릴레이 제어, MQTT 프로토콜 활용 경험은 무인 지상로봇의 임베디드 자율주행 통신 모듈에 즉시 쓰일 수 있다.",
+    "K9 자주포나 레드백 장갑차 등 주력 하드웨어 양산 조직보다는 미래 유무인 복합 전투체계 자율주행 R&D 조직에 국한되어 지원해야 한다."
+   ],
+   "roles": [
+    "UGV 자율주행 SW 엔지니어",
+    "방산 로보틱스 비전 연구원"
+   ],
+   "caution": "지상방산 R&D 조직이 판교, 창원 등으로 나뉘어 있으므로 로봇 자율주행 연구 부서의 실제 근무지를 필히 점검해야 한다.",
+   "web_facts": [
+    "K9 자주포, 레드백 보병전투장갑차 등 탄탄한 지상 무기체계 라인업을 구축하고 있다.",
+    "한국형 발사체 누리호 총괄 및 미래 모빌리티 전기추진체계 SI 역량을 확장 중이다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.hanwhaaerospace.com/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": [
+     {
+      "url": "https://www.hanwhaaerospace.com/kor/index.do",
+      "title": "한화에어로스페이스"
+     },
+     {
+      "url": "https://www.hanwhaaerospace.com/kor/whoweare/about.do",
+      "title": "기업 소개 | 한화에어로스페이스"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01588897",
+   "name": "니어스랩",
+   "legal_name": "주식회사 니어스랩",
+   "stock_code": "417030",
+   "market": "코스닥",
+   "industry_code": "58221",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 송파구 정의로8길 9 AJ빌딩 3층 &nbsp",
+   "region": "서울특별시",
+   "homepage": "www.nearthlab.com",
+   "est_year": "2015",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%8B%88%EC%96%B4%EC%8A%A4%EB%9E%A9",
+   "fiscal_year": null,
+   "revenue": null,
+   "op_income": null,
+   "employees": null,
+   "avg_salary": null,
+   "score": 84,
+   "sub": {
+    "tech": 85,
+    "domain": 90,
+    "growth": 80,
+    "env": 75
+   },
+   "business": "니어스랩은 자율비행 드론과 엣지 기반 인프라 안전점검 비전 AI 솔루션을 제공하는 피지컬 AI 기업이다.",
+   "fit_tags": [
+    "엣지AI",
+    "컴퓨터비전",
+    "안전·재난",
+    "자율주행",
+    "방산"
+   ],
+   "reasons": [
+    "지원자의 핵심 연구 분야인 '화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석' 및 KCI 논문 성과는 니어스랩의 엣지 AI 비전 솔루션 연구와 직결된다.",
+    "도로 파손 탐지 및 안전·재난 응용 비전 AI 기술은 니어스랩의 시설물 안전점검 및 드론 자율비행 AI 코어 개발 목적과 완벽히 부합한다."
    ],
    "roles": [
     "비전 AI 엔지니어",
-    "엣지 추론 최적화 엔지니어"
+    "엣지 추론 최적화",
+    "자율비행 알고리즘"
    ],
-   "caution": "글로벌 대기업 특성상 매우 세분화된 직무 단위로 채용하므로 본인의 엣지 AI 최적화 역량을 명확히 어필해야 합니다."
+   "caution": "서울 본사 근무이므로 대전 거주지에서의 원거리 출퇴근이 불가능하여 입사 시 거주지 이전이 필수적이다.",
+   "web_facts": [
+    "소형 기체 위에서 스스로 보고 판단하는 지능형 코어 Aerial Intelligence를 개발한다.",
+    "드론에 컴퓨터비전과 AI 알고리즘을 적용한 자율비행 솔루션과 시설물 안전점검 디지털 트윈 플랫폼을 제공한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.nearthlab.com/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://www.nearthlab.com/kr",
+      "title": "니어스랩 | 가장 중요한 것을 지킵니다"
+     },
+     {
+      "url": "https://www.nearthlab.com/kr/company/about",
+      "title": "회사소개 | 니어스랩"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "00579999",
-   "name": "고영",
-   "legal_name": "(주)고영테크놀러지",
-   "stock_code": "098460",
+   "corp_code": "01134216",
+   "name": "트루엔",
+   "legal_name": "주식회사 트루엔",
+   "stock_code": "417790",
    "market": "코스닥",
-   "industry_code": "29271",
-   "sector": "특수 목적용 기계",
+   "industry_code": "265",
+   "sector": "영상·음향기기",
    "related": true,
-   "address": "경기도 용인시 수지구 포은대로59번길 18 (상현동)",
-   "region": "경기도",
-   "homepage": "www.kohyoung.com",
-   "est_year": "2002",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EA%B3%A0%EC%98%81",
+   "address": "서울특별시 구로구 디지털로33길 28, 1108, 1309호(구로동, 우림이비지센터1차)",
+   "region": "서울특별시",
+   "homepage": "truen.co.kr",
+   "est_year": "2005",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8A%B8%EB%A3%A8%EC%97%94",
    "fiscal_year": 2025,
-   "revenue": 232647218656,
-   "op_income": 17342338477,
-   "employees": 472,
-   "avg_salary": 70095339,
-   "score": 80,
+   "revenue": 49113803516,
+   "op_income": 13254533775,
+   "employees": 105,
+   "avg_salary": 66456286,
+   "score": 83,
    "sub": {
-    "tech": 85,
-    "domain": 75,
-    "growth": 85,
-    "env": 75
+    "tech": 88,
+    "domain": 85,
+    "growth": 72,
+    "env": 78
    },
-   "business": "3D 측정 기반 머신비전 검사 장비와 의료용 수술 로봇을 개발하는 정밀 로봇·비전 기업입니다.",
+   "business": "지능형 IP 카메라와 엣지 디바이스 기반의 영상 분석 시스템을 개발·제조하는 영상 솔루션 전문 기업이다.",
    "fit_tags": [
-    "로보틱스",
+    "엣지AI",
     "컴퓨터비전",
-    "스마트팩토리"
+    "안전·재난"
    ],
    "reasons": [
-    "ROS2기반 자율주행 로봇 관제 시스템의 설계 및 구현 프로젝트와 YogiBot ControlTower 개발 경험이 고영의 의료용 수술 로봇 및 정밀 로봇 제어 SW 개발에 직접 활용될 수 있습니다.",
-    "WCRC 국제대회 동메달 및 ILRC 지능형 로봇 경진대회 수상으로 검증된 로봇 제어 역량이 정밀 로봇 제어 직무에 적합합니다."
+    "지능형 IP 카메라 엣지 보드에 탑재되는 실시간 경량 객체 탐지 파이프라인 개발에 YOLOv8 및 NCNN/TensorRT 최적화 역량이 즉시 투입 가능하다.",
+    "화재·연기 탐지 학술논문(JDCS, JPT) 실적이 카메라 단에서 화재·침입 등 이벤트를 바로 식별하는 온디바이스 AI 기능 구현과 정확히 일치한다.",
+    "YogiBot에서 다룬 Jetson, Raspberry Pi 등 소형 임베디드 보드 제어 및 원격 통신 연동 경험이 스마트 IP 카메라 펌웨어 연계에 유효하다."
    ],
    "roles": [
-    "로봇 SW 엔지니어",
-    "컴퓨터비전 엔지니어"
+    "임베디드 엣지 비전 AI 개발자",
+    "IP 카메라 지능형 알고리즘 엔지니어"
    ],
-   "caution": "의료 로봇과 머신비전 장비의 높은 정밀도 요구사항으로 인해 하드웨어 밀착형 C/C++ 개발 역량이 추가로 요구될 수 있습니다."
+   "caution": "서울 근무에 따른 주거 이동 필요성과 AI R&D 조직의 세부 규모 및 자체 NPU/SoC 타깃 최적화 툴체인을 확인해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "robots_unknown",
+    "status_text": "robots.txt를 확인할 수 없어 건너뜀",
+    "homepage": "http://truen.co.kr/",
+    "fetched_at": "2026-10-14T14:03+09:00",
+    "sources": []
+   }
   },
   {
-   "corp_code": "00579971",
-   "name": "칩스앤미디어",
-   "legal_name": "(주)칩스앤미디어",
-   "stock_code": "094360",
-   "market": "코스닥",
-   "industry_code": "261",
-   "sector": "반도체",
+   "corp_code": "00302926",
+   "name": "현대로템",
+   "legal_name": "현대로템(주)",
+   "stock_code": "064350",
+   "market": "코스피",
+   "industry_code": "31910",
+   "sector": "기타 운송장비",
    "related": true,
-   "address": "서울특별시 강남구 테헤란로 509 엔씨타워1  7층,8층",
-   "region": "서울특별시",
-   "homepage": "www.chipsnmedia.com",
-   "est_year": "2003",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%B9%A9%EC%8A%A4%EC%95%A4%EB%AF%B8%EB%94%94%EC%96%B4",
+   "address": "경상남도 창원시 의창구  창원대로 488",
+   "region": "경상남도",
+   "homepage": "www.hyundai-rotem.co.kr",
+   "est_year": "1999",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EB%A1%9C%ED%85%9C",
    "fiscal_year": 2025,
-   "revenue": null,
-   "op_income": 6964476384,
-   "employees": 86,
-   "avg_salary": 130431058,
+   "revenue": 5839031553000,
+   "op_income": 1005640509000,
+   "employees": 4541,
+   "avg_salary": 120042281,
+   "score": 83,
+   "sub": {
+    "tech": 84,
+    "domain": 82,
+    "growth": 85,
+    "env": 80
+   },
+   "business": "철도차량, 방위사업(전차·다목적 무인차량), 스마트팩토리 플랜트 설비를 제작하는 종합 중공업 기업이다.",
+   "fit_tags": [
+    "자율주행",
+    "로보틱스",
+    "방산"
+   ],
+   "reasons": [
+    "철도 선로 및 도로 파손 탐지 논문 실적은 철도 시설물 상태 진단 및 전방 비전 검지 시스템에 기술적으로 정확히 부합한다.",
+    "HR-셰르파 등 다목적 무인차량 연구 조직에서 ROS2, SLAM Toolbox, Nav2 기반 자율주행 및 관제 아키텍처 역량을 필요로 한다.",
+    "FastAPI와 React 기반의 YogiBot ControlTower 실시간 웹 관제 구축 경험은 다목적 무인차량 원격 관제 체계와 맞닿아 있다."
+   ],
+   "roles": [
+    "무인차량 자율주행 SW 개발자",
+    "철도 비전 AI 엔지니어",
+    "로봇 원격 관제 SW 개발자"
+   ],
+   "caution": "기술연구소(의왕)와 방산 생산지(창원)가 구분되어 있으므로 소프트웨어 R&D 중심 연구 포지션인지 채용 공고를 세밀히 살펴야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.hyundai-rotem.co.kr/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": [
+     {
+      "url": "https://www.hyundai-rotem.co.kr/",
+      "title": "현대로템"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01370517",
+   "name": "스트라드비젼",
+   "legal_name": "(주)스트라드비젼",
+   "stock_code": "475040",
+   "market": "코스닥",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "경상북도 포항시 남구 지곡로 394 제5벤처동 308호",
+   "region": "경상북도",
+   "homepage": "stradvision.com/",
+   "est_year": "2014",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%8A%A4%ED%8A%B8%EB%9D%BC%EB%93%9C%EB%B9%84%EC%A0%BC",
+   "fiscal_year": 2025,
+   "revenue": 18109229713,
+   "op_income": -58595029759,
+   "employees": 251,
+   "avg_salary": 90613546,
+   "score": 82,
+   "sub": {
+    "tech": 88,
+    "domain": 82,
+    "growth": 85,
+    "env": 60
+   },
+   "business": "카메라 센서 기반의 딥러닝 임베디드 자율주행 및 ADAS 인지 소프트웨어 SVNet을 개발하는 비전 AI 기업이다.",
+   "fit_tags": [
+    "자율주행",
+    "컴퓨터비전",
+    "엣지AI"
+   ],
+   "reasons": [
+    "도로 파손 탐지 논문 및 경량 객체 탐지 비교 분석 경험이 도로 위 차량, 보행자, 노면 객체를 인지하는 전방 인식(FrontVision) 엔진 연구와 연결된다.",
+    "경량 임베디드 SoC(Arm, 차량용 NPU) 타깃으로 저전력 추론 알고리즘을 튜닝한 경험이 30개 이상의 자동차용 SoC 플랫폼을 지원하는 SVNet 포팅 작업에 적합하다.",
+    "ROS2 및 자율 매핑을 다룬 YogiBot ControlTower 프로젝트 경험이 자율주행·자율주차 서라운드뷰(SurroundVision) 비전 인지 맥락과 일치한다."
+   ],
+   "roles": [
+    "자율주행 ADAS 비전 알고리즘 엔지니어",
+    "임베디드 비전 최적화/SoC 포팅 엔지니어"
+   ],
+   "caution": "경상북도(포항) 본사 및 서울 연구소 등 근무지 배치를 확인해야 하며, 차량용 기능안전 규격(AutoSAR, ISO 26262) 학습이 필요하다.",
+   "web_facts": [
+    "카메라 센서 기반 딥러닝 인식 소프트웨어 'SVNet'을 핵심 기술로 보유하며 FrontVision, SurroundVision, MultiVision 제품군을 제공한다.",
+    "30개 이상의 차량용 SoC 플랫폼에서 13개 이상의 글로벌 OEM과 양산 계약을 체결하였고 Aptiv 스마트카메라 등에 양산 적용되었다.",
+    "Arm Physical AI 생태계에 합류하여 로보틱스 분야로의 AI 기술 확장을 추진하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://stradvision.com/",
+    "fetched_at": "2026-10-14T14:03+09:00",
+    "sources": [
+     {
+      "url": "https://stradvision.com/",
+      "title": "STRADVISION"
+     },
+     {
+      "url": "https://stradvision.com/dh/about",
+      "title": "About Us - STRADVISION"
+     },
+     {
+      "url": "https://stradvision.com/dh/technology",
+      "title": "Technology - STRADVISION"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00612489",
+   "name": "아이쓰리시스템",
+   "legal_name": "아이쓰리시스템(주)",
+   "stock_code": "214430",
+   "market": "코스닥",
+   "industry_code": "2629",
+   "sector": "전자부품",
+   "related": true,
+   "address": "대전광역시 유성구 테크노5로 69",
+   "region": "대전광역시",
+   "homepage": "www.i3system.com",
+   "est_year": "1998",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9D%B4%EC%93%B0%EB%A6%AC%EC%8B%9C%EC%8A%A4%ED%85%9C",
+   "fiscal_year": 2025,
+   "revenue": 124275749815,
+   "op_income": 16458043794,
+   "employees": 507,
+   "avg_salary": 62366203,
+   "score": 82,
+   "sub": {
+    "tech": 75,
+    "domain": 95,
+    "growth": 70,
+    "env": 85
+   },
+   "business": "야간 감시 및 화재·재난 탐지에 쓰이는 적외선 영상센서를 국산화한 대전 소재 방산 센서 기업입니다.",
+   "fit_tags": [
+    "안전·재난",
+    "방산",
+    "엣지AI"
+   ],
+   "reasons": [
+    "제1저자로 발표한 '화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석' 및 'RGB 채널 영상을 이용한 실시간 화재·연기 감지' 연구 주제와 회사의 방산·재난 탐지 센서 사업이 완벽하게 일치합니다.",
+    "대전 거주지에서 출퇴근이 가능한 위치에 있어 근무 여건 측면에서 최적의 입지입니다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "엣지 추론 최적화"
+   ],
+   "caution": "방산 보안 규정 및 연구소 보안 환경에 대한 사전 이해가 필수적입니다.",
+   "web_facts": [
+    "적외선 검출기, X-Ray 센서 및 영상 부품의 전문 기업입니다.",
+    "냉각형 및 비냉각 적외선 검출기 국산화에 성공하였으며 자율주행 시장에 대비하고 있습니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.i3system.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://i3system.com/",
+      "title": "아이쓰리시스템(주) | i3system, Inc."
+     },
+     {
+      "url": "https://i3system.com/%ed%9a%8c%ec%82%ac%ea%b0%9c%ec%9a%94/%eb%8c%80%ed%91%9c%ec%9d%b4%ec%82%ac-%ec%9d%b8%ec%82%ac%eb%a7%90/",
+      "title": "대표이사 인사말 | 아이쓰리시스템(주)"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00309503",
+   "name": "한국항공우주",
+   "legal_name": "한국항공우주산업(주)",
+   "stock_code": "047810",
+   "market": "코스피",
+   "industry_code": "31311",
+   "sector": "항공기·우주선",
+   "related": true,
+   "address": "경상남도 사천시  사남면 공단1로 78 한국항공우주산업",
+   "region": "경상남도",
+   "homepage": "www.koreaaero.com",
+   "est_year": "1999",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%9C%EA%B5%AD%ED%95%AD%EA%B3%B5%EC%9A%B0%EC%A3%BC",
+   "fiscal_year": 2025,
+   "revenue": 3696379351601,
+   "op_income": 269190196660,
+   "employees": 5241,
+   "avg_salary": 120367678,
    "score": 80,
    "sub": {
-    "tech": 85,
+    "tech": 82,
     "domain": 80,
-    "growth": 75,
-    "env": 75
+    "growth": 88,
+    "env": 70
    },
-   "business": "영상 코덱 및 비전 AI 딥러닝 가속 NPU 반도체 설계 자산을 공급하는 글로벌 IP 기업입니다.",
+   "business": "군용 항공기, 헬기, 무인기 체계 및 위성·항공우주 비행체를 설계·제조하는 항공우주 체계 종합 기업이다.",
    "fit_tags": [
-    "반도체·하드웨어",
-    "엣지AI",
+    "방산",
+    "자율주행",
     "컴퓨터비전"
    ],
    "reasons": [
-    "YOLOv8n 및 YOLOv26 등 경량화 모델의 엣지 디바이스 성능 분석 연구가 비전 AI 딥러닝 가속 NPU IP 개발 방향과 일치합니다.",
-    "흑자 경영을 유지하는 탄탄한 글로벌 IP 기업으로, 엣지 AI 최적화 분야에서 깊이 있는 기술적 성장을 도모할 수 있습니다."
+    "무인기 자율비행 및 비행제어 시스템에 Nav2와 SLAM, ROS2 기반 경로 계획 및 상태 제어 경험을 적용할 수 있다.",
+    "항공정찰 영상 분석 및 지상 표적 인식 부문에 실시간 화재·연기 탐지 논문에서 다룬 저지연 비전 딥러닝 파이프라인을 매핑할 수 있다.",
+    "큐브위성 제작 및 위성데이터 활용 특성화교육 금상 수상 이력은 항공우주 위성 영상 분석 업무에 우호적이다."
    ],
    "roles": [
-    "엣지 추론 최적화",
-    "비전 AI 엔지니어"
+    "무인기 자율비행 제어 엔지니어",
+    "항공정찰 영상 AI 엔지니어"
    ],
-   "caution": "반도체 IP 라이선싱 비즈니스 모델 특성상 직접적인 완제품 서비스 개발보다는 알고리즘의 하드웨어 매핑 연구에 집중됩니다."
+   "caution": "주요 R&D 연구소 및 생산 거점이 경남 사천에 집중되어 있어 대전 거주자가 통근하기에는 지리적 제약이 크다.",
+   "web_facts": [],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.koreaaero.com/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": [
+     {
+      "url": "https://www.koreaaero.com/",
+      "title": ""
+     }
+    ]
+   }
   },
   {
    "corp_code": "00449254",
@@ -1171,319 +1148,167 @@
    "avg_salary": 79524366,
    "score": 80,
    "sub": {
-    "tech": 70,
-    "domain": 85,
-    "growth": 85,
-    "env": 90
+    "tech": 78,
+    "domain": 75,
+    "growth": 82,
+    "env": 95
    },
-   "business": "인공위성 시스템 및 위성 영상 처리 체계를 개발하는 대전 소재 우주항공 선도 기업이다.",
+   "business": "지구관측 위성 본체·탑재체 및 인공지능 기반 위성 영상 데이터 분석 솔루션을 개발한다.",
    "fit_tags": [
     "컴퓨터비전",
-    "반도체·하드웨어",
     "엣지AI"
    ],
    "reasons": [
-    "인공위성 큐브위성 제작 및 위성데이터 활용 특성화교육 금상 수상 이력이 기업의 핵심 사업인 위성 시스템 및 데이터 활용과 직접 연결된다.",
-    "대전 소재 기업으로 거주지 이동 없이 출퇴근할 수 있으며 우주항공 R&D 환경이 잘 갖추어져 있다."
+    "AI 기반 지구관측 위성 영상 분석(GEOINT)을 수행하므로, YOLOv8과 TensorRT를 활용한 항공·원격 탐지 객체 검출 연구와 직접 이어진다.",
+    "인공위성 큐브위성 제작 및 위성데이터 활용 특성화교육 금상 수상 이력이 있어 회사 사업 도메인에 대한 이해도가 높다.",
+    "대전 유성구에 본사를 두고 있어 대전 거주자인 주인공에게 지리적 접근성이 가장 뛰어나며 안정적인 상장 흑자 기업이다."
    ],
    "roles": [
-    "위성 영상 처리",
-    "임베디드 SW 엔지니어"
+    "위성 영상 AI 비전 엔지니어",
+    "위성 탑재체 온보드 엣지 AI 개발자",
+    "지상국 데이터 처리 SW 개발자"
    ],
-   "caution": "위성 시스템 특성상 하드웨어 제어 및 임베디드 도메인 지식에 대한 심화 학습이 요구된다."
+   "caution": "위성 탑재체 하드웨어 연동 임베디드 프로그래밍과 지상국 딥러닝 영상 분석 중 어느 직무에 배치될지 파악해야 한다.",
+   "web_facts": [
+    "지구 관측 위성 시스템, 지상국 시스템, AI 기반 지리공간 정보(GEOINT) 솔루션을 제공한다.",
+    "0.25m급 초고해상도 지구관측 솔루션을 개발하며 상업 및 국방용 지상 시스템을 공급한다.",
+    "1999년 대한민국 최초 위성 개발 엔지니어들이 설립한 지구관측 솔루션 선두 기업이다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.satreci.com/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://www.satreci.com/",
+      "title": "쎄트렉아이 - SATREC INITIATIVE"
+     },
+     {
+      "url": "https://www.satreci.com/page/11",
+      "title": "Satrec Initiative | 쎄트렉아이 - SATREC INITIATIVE"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "00302926",
-   "name": "현대로템",
-   "legal_name": "현대로템(주)",
-   "stock_code": "064350",
-   "market": "코스피",
-   "industry_code": "31910",
-   "sector": "기타 운송장비",
+   "corp_code": "01524507",
+   "name": "핀텔",
+   "legal_name": "(주)핀텔",
+   "stock_code": "291810",
+   "market": "코스닥",
+   "industry_code": "58222",
+   "sector": "소프트웨어 개발·공급",
    "related": true,
-   "address": "경상남도 창원시 의창구  창원대로 488",
-   "region": "경상남도",
-   "homepage": "www.hyundai-rotem.co.kr",
-   "est_year": "1999",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EB%A1%9C%ED%85%9C",
+   "address": "경기도 용인시 기흥구 기흥로 58 기흥 ICT밸리 SKV1 B동 B335호",
+   "region": "경기도",
+   "homepage": "www.pintel.co.kr/html/index/",
+   "est_year": "2015",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%80%ED%85%94",
    "fiscal_year": 2025,
-   "revenue": 5839031553000,
-   "op_income": 1005640509000,
-   "employees": 4541,
-   "avg_salary": 120042281,
+   "revenue": 5771786570,
+   "op_income": -3232574054,
+   "employees": 56,
+   "avg_salary": 54035714,
    "score": 79,
    "sub": {
-    "tech": 80,
-    "domain": 85,
-    "growth": 80,
-    "env": 65
+    "tech": 85,
+    "domain": 90,
+    "growth": 65,
+    "env": 55
    },
-   "business": "다목적 무인차량 자율주행 시스템 및 철도 자율운행·관제 비전 AI 솔루션을 개발하는 기업입니다.",
+   "business": "교통 및 공공 안전 모니터링을 위한 고화질 실시간 엣지 비전 AI 솔루션을 전문 개발하는 기업이다.",
    "fit_tags": [
-    "모빌리티",
-    "자율주행",
-    "로보틱스"
+    "엣지AI",
+    "컴퓨터비전",
+    "안전·재난"
    ],
    "reasons": [
-    "다목적 무인차량 개발에 후보자의 ROS2 기반 자율주행 로봇 제어 및 WCRC 로봇 경진대회 수상 경험이 잘 맞습니다.",
-    "철도 자율운행 및 관제 비전 AI 솔루션에 후보자의 YogiBot ControlTower(FastAPI, React, MQTT 관제 웹) 및 도로 파손 탐지 비전 기술을 적용할 수 있습니다."
+    "도로 파손 탐지 비교 분석 논문과 화재·연기 검출 KCI 논문은 핀텔의 주력 분야인 실시간 도로 교통 및 재난 관제 엣지 솔루션과 기술적으로 부합한다.",
+    "엣지 장비 단에서 TensorRT 기반 저지연 추론 파이프라인을 구축해 본 실무 역량이 엣지 영상 분석 하드웨어 솔루션 개발에 유효하다.",
+    "다만 소규모 연구 인력 중심 스타트업 규모로 체계적인 신입 교육 프로세스보다는 즉각적인 문제 해결을 요구받을 가능성이 높다."
    ],
    "roles": [
-    "로봇 SW 엔지니어",
-    "관제 시스템 개발자"
+    "엣지 비전 AI 엔지니어",
+    "교통·재난 영상 객체인식 알고리즘 개발자"
    ],
-   "caution": "의왕 연구소 근무 가능 여부와 출장 빈도를 확인해야 합니다."
+   "caution": "연간 매출 규모(58억원) 및 영업적자 지속에 따른 기업 재무 안정성과 연구 지속 가능성을 면밀히 따져보아야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "unreachable",
+    "status_text": "홈페이지에 접속하지 못함",
+    "homepage": "http://www.pintel.co.kr/html/index/",
+    "fetched_at": "2026-10-14T14:03+09:00",
+    "sources": []
+   }
   },
   {
-   "corp_code": "01370517",
-   "name": "스트라드비젼",
-   "legal_name": "(주)스트라드비젼",
-   "stock_code": "475040",
+   "corp_code": "01251489",
+   "name": "라온피플",
+   "legal_name": "라온피플 주식회사",
+   "stock_code": "300120",
    "market": "코스닥",
    "industry_code": "582",
    "sector": "소프트웨어 개발·공급",
    "related": true,
-   "address": "경상북도 포항시 남구 지곡로 394 제5벤처동 308호",
-   "region": "경상북도",
-   "homepage": "stradvision.com/",
-   "est_year": "2014",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%8A%A4%ED%8A%B8%EB%9D%BC%EB%93%9C%EB%B9%84%EC%A0%BC",
-   "fiscal_year": 2025,
-   "revenue": 18109229713,
-   "op_income": -58595029759,
-   "employees": 251,
-   "avg_salary": 90613546,
-   "score": 78,
-   "sub": {
-    "tech": 80,
-    "domain": 80,
-    "growth": 85,
-    "env": 60
-   },
-   "business": "딥러닝 기반 자율주행 및 ADAS용 임베디드 비전 인식 소프트웨어 개발 기업입니다.",
-   "fit_tags": [
-    "자율주행",
-    "컴퓨터비전",
-    "모빌리티"
-   ],
-   "reasons": [
-    "도로 파손 탐지 및 ROS2 기반 자율주행 로봇 관제 프로젝트 경험이 차량용 객체 인식 및 ADAS 비전 기술과 연계될 수 있습니다.",
-    "임베디드 환경 최적화 역량이 차량용 SoC 타겟 최적화 업무에 유용합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "임베디드 비전 엔지니어"
-   ],
-   "caution": "포항 또는 서울 근무로 대전 거주자에게 이동 부담이 크며, 오토모티브 표준 준수 역량이 요구됩니다."
-  },
-  {
-   "corp_code": "01515864",
-   "name": "넥스트칩",
-   "legal_name": "(주)넥스트칩",
-   "stock_code": "396270",
-   "market": "코스닥",
-   "industry_code": "26112",
-   "sector": "반도체",
-   "related": true,
-   "address": "경기도 성남시 분당구 대왕판교로 660 유스페이스1 에이동 5층",
+   "address": "경기도 과천시 과천대로7나길 60 과천어반허브 C동 5층, 6층",
    "region": "경기도",
-   "homepage": "www.nextchip.com/",
-   "est_year": "2019",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%84%A5%EC%8A%A4%ED%8A%B8%EC%B9%A9",
+   "homepage": "www.laonpeople.com/",
+   "est_year": "2010",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%9D%BC%EC%98%A8%ED%94%BC%ED%94%8C",
    "fiscal_year": 2025,
-   "revenue": 39653511990,
-   "op_income": -12936402244,
-   "employees": null,
-   "avg_salary": null,
-   "score": 78,
+   "revenue": 223808325905,
+   "op_income": -16192262465,
+   "employees": 119,
+   "avg_salary": 63918235,
+   "score": 79,
    "sub": {
     "tech": 85,
-    "domain": 80,
-    "growth": 75,
-    "env": 60
-   },
-   "business": "자율주행 차량용 ISP 및 엣지 AI NPU 비전 SoC를 개발하는 차량용 비전 반도체 전문 기업입니다.",
-   "fit_tags": [
-    "자율주행",
-    "엣지AI",
-    "반도체·하드웨어"
-   ],
-   "reasons": [
-    "도로 파손 탐지를 위한 YOLOv8과 YOLO26의 학습 성능 및 TensorRT 기반 추론 성능 비교 분석 연구는 차량용 엣지 AI NPU 비전 SoC 최적화 업무와 기술적으로 매우 밀접합니다.",
-    "YogiBot ControlTower 프로젝트에서 Jetson Orin 및 Raspberry Pi를 활용한 엣지 배포 경험이 차량용 임베디드 환경 개발에 강점이 됩니다."
-   ],
-   "roles": [
-    "엣지 추론 최적화",
-    "임베디드 비전 엔지니어"
-   ],
-   "caution": "차량용 반도체 표준에 따른 엄격한 개발 프로세스와 C/C++ 기반 임베디드 개발 역량이 강조됩니다."
-  },
-  {
-   "corp_code": "00423177",
-   "name": "텔레칩스",
-   "legal_name": "(주)텔레칩스",
-   "stock_code": "054450",
-   "market": "코스닥",
-   "industry_code": "2611",
-   "sector": "반도체",
-   "related": true,
-   "address": "경기도 성남시 수정구 금토로80번길 27 ㈜텔레칩스 판교사옥",
-   "region": "경기도",
-   "homepage": "www.telechips.com",
-   "est_year": "1999",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%85%94%EB%A0%88%EC%B9%A9%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 192802105423,
-   "op_income": -6189468061,
-   "employees": 489,
-   "avg_salary": 85088045,
-   "score": 77,
-   "sub": {
-    "tech": 80,
-    "domain": 75,
-    "growth": 80,
+    "domain": 78,
+    "growth": 76,
     "env": 70
    },
-   "business": "자율주행 및 첨단 ADAS 제어를 위한 고성능 오토모티브 AP/NPU SoC 팹리스 기업입니다.",
+   "business": "제조 공정용 머신비전 AI 검사 장비 및 소프트웨어와 지능형 영상 관제 플랫폼을 자체 개발하는 기업이다.",
    "fit_tags": [
-    "자율주행",
-    "반도체·하드웨어",
-    "모빌리티"
-   ],
-   "reasons": [
-    "자율주행 및 ADAS 제어를 위한 AP/NPU 개발 기업으로, 지원자의 ROS2 기반 자율주행 로봇 제어 및 엣지 AI 최적화 역량과 기술적 접점이 큽니다.",
-    "ROS2기반 자율주행 로봇 관제 시스템에서 구현한 Jetson 원격 제어 및 통신 아키텍처 설계 능력이 차량용 인포테인먼트 및 ADAS 시스템 개발에 기여할 수 있습니다."
-   ],
-   "roles": [
-    "임베디드 SW 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "팹리스 대기업으로서 시스템 LSI 및 펌웨어 수준의 저수준 개발 비중이 높을 수 있음을 인지해야 합니다."
-  },
-  {
-   "corp_code": "01105153",
-   "name": "두산로보틱스",
-   "legal_name": "두산로보틱스 주식회사",
-   "stock_code": "454910",
-   "market": "코스피",
-   "industry_code": "2928",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "경기도 수원시 권선구 산업로156번길 79",
-   "region": "경기도",
-   "homepage": "www.doosanrobotics.com",
-   "est_year": "2015",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%91%90%EC%82%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 32978338354,
-   "op_income": -59472307590,
-   "employees": 255,
-   "avg_salary": 72454902,
-   "score": 76,
-   "sub": {
-    "tech": 75,
-    "domain": 70,
-    "growth": 90,
-    "env": 75
-   },
-   "business": "협동로봇 및 비전 센서 기반 지능형 솔루션을 개발하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
+    "스마트팩토리",
     "컴퓨터비전",
-    "스마트팩토리"
+    "엣지AI"
    ],
    "reasons": [
-    "YOLOv8 및 TensorRT를 활용한 실시간 객체 탐지 연구는 두산로보틱스의 협동로봇 비전 센서 기반 지능형 객체 조작 AI 연구에 활용될 수 있습니다.",
-    "대기업 규모의 R&D 조직을 보유하고 있어 체계적인 신입 사원 교육 및 대규모 AI 프로젝트 경험을 쌓기에 유리합니다."
+    "초고속 추론 솔루션인 NAVI AI PRO의 비정형 영역 탐지 및 객체 검출 엔진은 후보자의 TensorRT 기반 초경량 YOLO 모델 최적화 이력과 기술 구조가 흡사하다.",
+    "제조 현장의 화재·추락 등 산업재해 실시간 감지 관제 솔루션에 연기·불꽃 감지 연구 결과물을 직접 응용할 수 있다.",
+    "지능형 관제 플랫폼 전주기 파이프라인 개발에 Jetson 임베디드 배포 역량이 실무적으로 활용된다."
    ],
    "roles": [
-    "비전 AI 엔지니어",
-    "로봇 SW"
+    "머신비전 딥러닝 엔지니어",
+    "지능형 영상관제 AI 개발자",
+    "추론 엔진 최적화 엔지니어"
    ],
-   "caution": "적자 규모가 크고 협동로봇 매니퓰레이션 중심이므로 모바일 로봇 관제 이력과의 정합성을 따져봐야 합니다."
-  },
-  {
-   "corp_code": "00234227",
-   "name": "유진로봇",
-   "legal_name": "(주) 유진로봇",
-   "stock_code": "056080",
-   "market": "코스닥",
-   "industry_code": "292",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "인천광역시 연수구 하모니로187번길 33 송도동",
-   "region": "인천광역시",
-   "homepage": "www.yujinrobot.com",
-   "est_year": "1993",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9C%A0%EC%A7%84%EB%A1%9C%EB%B4%87",
-   "fiscal_year": 2025,
-   "revenue": 28189374133,
-   "op_income": -5033460702,
-   "employees": 142,
-   "avg_salary": 71810669,
-   "score": 76,
-   "sub": {
-    "tech": 80,
-    "domain": 80,
-    "growth": 75,
-    "env": 60
-   },
-   "business": "자율주행 솔루션(AMS) 및 로봇 토털 솔루션을 공급하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "모빌리티"
+   "caution": "주력 매출 영역이 산업용 제조 머신비전 검사에 맞춰져 있어 재난 안전 및 공공 비전 연구 분야의 비중을 살펴야 한다.",
+   "web_facts": [
+    "저사양 CPU 환경에서도 1ms 이내 고속 추론을 구현하는 비전 검사 소프트웨어 NAVI AI PRO(MERCURY, MARS, VENUS, JUPITER 모델)를 보유하고 있다.",
+    "지능형 CCTV를 넘은 고성능 VLM 영상 관제 플랫폼 및 702억 규모의 '피지컬 AI' 국책사업 수행기관으로 선정되었다."
    ],
-   "reasons": [
-    "'YogiBot ControlTower' 프로젝트의 Nav2 기반 자율 매핑 및 Jetson 원격 제어 경험은 유진로봇의 자율주행 솔루션 고도화에 적합합니다.",
-    "WCRC 및 ILRC 등 다수의 로봇 경진대회 수상 이력은 유진로봇의 실무 중심 로봇 엔지니어링 환경에 빠르게 적응하는 데 도움이 됩니다."
-   ],
-   "roles": [
-    "로봇 SW"
-   ],
-   "caution": "인천 송도 근무지로 대전에서의 통근이 불가능하므로 이주 계획이 필수적입니다."
-  },
-  {
-   "corp_code": "01042775",
-   "name": "HL만도",
-   "legal_name": "에이치엘만도(주)",
-   "stock_code": "204320",
-   "market": "코스피",
-   "industry_code": "303",
-   "sector": "자동차 부품",
-   "related": true,
-   "address": "경기도 평택시 포승읍 하만호길 32",
-   "region": "경기도",
-   "homepage": "www.mando.com",
-   "est_year": "2014",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=HL%EB%A7%8C%EB%8F%84",
-   "fiscal_year": 2025,
-   "revenue": 9454812581023,
-   "op_income": 357120974882,
-   "employees": 3828,
-   "avg_salary": 108609195,
-   "score": 76,
-   "sub": {
-    "tech": 75,
-    "domain": 80,
-    "growth": 80,
-    "env": 70
-   },
-   "business": "차량용 카메라, 레이다 등 자율주행 ADAS 센서 및 인지 알고리즘을 개발하는 전장 솔루션 기업입니다.",
-   "fit_tags": [
-    "자율주행",
-    "컴퓨터비전",
-    "모빌리티"
-   ],
-   "reasons": [
-    "도로 파손 탐지 프로젝트에서 수행한 YOLOv8 및 YOLO26의 TensorRT 기반 추론 성능 비교 분석 경험은 ADAS 카메라의 실시간 객체 인지 알고리즘 최적화에 직결됩니다.",
-    "다만 후보자의 주 연구 분야인 화재·연기 탐지 등 안전·재난 비전은 차량용 ADAS 도메인과 다소 거리가 있습니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "ADAS 인지 알고리즘 개발자"
-   ],
-   "caution": "차량용 임베디드 소프트웨어 표준(AUTOSAR 등)에 대한 추가 학습이 필요할 수 있습니다."
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.laonpeople.com/",
+    "fetched_at": "2026-10-14T14:03+09:00",
+    "sources": [
+     {
+      "url": "https://laonpeople.com/",
+      "title": "라온피플"
+     },
+     {
+      "url": "https://laonpeople.com/navi-ai-pro/",
+      "title": "라온피플"
+     },
+     {
+      "url": "https://laonpeople.com/adc-system/",
+      "title": "라온피플"
+     }
+    ]
+   }
   },
   {
    "corp_code": "00438036",
@@ -1504,656 +1329,122 @@
    "op_income": 15891936463,
    "employees": 263,
    "avg_salary": 49866920,
-   "score": 76,
+   "score": 79,
    "sub": {
-    "tech": 80,
-    "domain": 75,
-    "growth": 70,
+    "tech": 82,
+    "domain": 80,
+    "growth": 72,
     "env": 75
    },
-   "business": "아이나비 브랜드의 차량용 블랙박스 및 내비게이션을 기반으로 비전 AI ADAS와 모빌리티 맵 서비스를 개발하는 기업입니다.",
-   "fit_tags": [
-    "엣지AI",
-    "컴퓨터비전",
-    "자율주행"
-   ],
-   "reasons": [
-    "도로 파손 탐지를 위한 YOLOv8과 YOLO26의 TensorRT 기반 추론 성능 비교 연구는 블랙박스 엣지 디바이스 내에서 실시간으로 도로 상황을 인지하는 ADAS 알고리즘 최적화에 바로 적용 가능합니다.",
-    "KCI 논문에서 다룬 RGB 채널 기반 실시간 화재·연기 감지 성능 평가 경험은 저조도나 악천후 등 다양한 차량 주행 환경에서의 비전 인식 강건성 확보에 기여할 수 있습니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "블랙박스 하드웨어 의존적인 임베디드 환경에 맞춘 최적화 업무 비중이 높을 수 있습니다."
-  },
-  {
-   "corp_code": "00309503",
-   "name": "한국항공우주",
-   "legal_name": "한국항공우주산업(주)",
-   "stock_code": "047810",
-   "market": "코스피",
-   "industry_code": "31311",
-   "sector": "항공기·우주선",
-   "related": true,
-   "address": "경상남도 사천시  사남면 공단1로 78 한국항공우주산업",
-   "region": "경상남도",
-   "homepage": "www.koreaaero.com",
-   "est_year": "1999",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%9C%EA%B5%AD%ED%95%AD%EA%B3%B5%EC%9A%B0%EC%A3%BC",
-   "fiscal_year": 2025,
-   "revenue": 3696379351601,
-   "op_income": 269190196660,
-   "employees": 5241,
-   "avg_salary": 120367678,
-   "score": 74,
-   "sub": {
-    "tech": 75,
-    "domain": 80,
-    "growth": 80,
-    "env": 50
-   },
-   "business": "무인기 자율비행 제어 및 정찰 영상 AI 분석 체계를 연구하는 항공우주 체계 종합 기업입니다.",
-   "fit_tags": [
-    "방산",
-    "컴퓨터비전",
-    "자율주행"
-   ],
-   "reasons": [
-    "정찰 영상 AI 분석 체계 연구에 후보자의 YOLOv8/v26 기반 객체 탐지 및 TensorRT 추론 성능 비교 분석 역량이 부합합니다.",
-    "큐브위성 제작 및 위성데이터 활용 특성화교육 금상 수상 이력은 항공우주 도메인에 대한 기본적인 이해도를 증명합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "영상 처리 엔지니어"
-   ],
-   "caution": "경남 사천 근무지로 인해 대전 거주자인 후보자의 주거 이전이 필수적입니다."
-  },
-  {
-   "corp_code": "01555215",
-   "name": "스마트레이더시스템",
-   "legal_name": "(주)스마트레이더시스템",
-   "stock_code": "424960",
-   "market": "코스닥",
-   "industry_code": "272",
-   "sector": "측정·시험·제어기기",
-   "related": true,
-   "address": "서울특별시 강남구 봉은사로81길 7 -",
-   "region": "서울특별시",
-   "homepage": "www.smartradarsystem.com",
-   "est_year": "2017",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%8A%A4%EB%A7%88%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8D%94%EC%8B%9C%EC%8A%A4%ED%85%9C",
-   "fiscal_year": 2025,
-   "revenue": 9397297026,
-   "op_income": -5269843048,
-   "employees": 58,
-   "avg_salary": 84051724,
-   "score": 74,
-   "sub": {
-    "tech": 75,
-    "domain": 85,
-    "growth": 65,
-    "env": 60
-   },
-   "business": "자율주행과 산업 안전·침입 감시용 고해상도 4D 이미징 레이다 센서를 개발하는 기업입니다.",
-   "fit_tags": [
-    "자율주행",
-    "안전·재난",
-    "모빌리티"
-   ],
-   "reasons": [
-    "ROS2기반 자율주행 로봇 관제 시스템 프로젝트와 Nav2, SLAM Toolbox 활용 경험이 4D 이미징 레이다 기반 자율주행 및 장애물 회피 시스템 개발과 연계됩니다.",
-    "산업 안전 및 침입 감시용 센서 개발 사업은 지원자의 화재·연기 감지 등 안전·재난 비전 연구와 도메인 측면에서 상통합니다."
-   ],
-   "roles": [
-    "로봇 SW 엔지니어",
-    "임베디드 SW 엔지니어"
-   ],
-   "caution": "레이다 센서 데이터 처리를 위해 고도의 신호 처리 및 수학적 역량이 요구될 수 있습니다."
-  },
-  {
-   "corp_code": "01358463",
-   "name": "현대무벡스",
-   "legal_name": "현대무벡스(주)",
-   "stock_code": "319400",
-   "market": "코스닥",
-   "industry_code": "291",
-   "sector": "일반 목적용 기계",
-   "related": true,
-   "address": "서울시 종로구 율곡로 194 현대그룹빌딩",
-   "region": "서울시",
-   "homepage": "www.hyundaimovex.com/",
-   "est_year": "2019",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EB%AC%B4%EB%B2%A1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 393940640251,
-   "op_income": 18212543309,
-   "employees": 551,
-   "avg_salary": 85813067,
-   "score": 74,
-   "sub": {
-    "tech": 75,
-    "domain": 80,
-    "growth": 70,
-    "env": 65
-   },
-   "business": "스마트 물류 자동화 설비와 자율이동로봇 및 실시간 관제 시스템을 구축하는 기업이다.",
-   "fit_tags": [
-    "로보틱스",
-    "스마트팩토리",
-    "모빌리티"
-   ],
-   "reasons": [
-    "ROS2 기반 자율주행 로봇 관제 시스템 설계 및 구현으로 대학생논문경진대회 금상을 수상한 경력이 AMR 관제 시스템 개발에 직결된다.",
-    "FastAPI와 React를 활용한 관제 웹 구축 경험이 실제 물류 로봇 UI 개발에 유용하다."
-   ],
-   "roles": [
-    "로봇 SW 엔지니어",
-    "관제 시스템 개발자"
-   ],
-   "caution": "서울 본사 근무 조건이므로 출퇴근 가능 여부를 검토해야 한다."
-  },
-  {
-   "corp_code": "00564562",
-   "name": "엠씨넥스",
-   "legal_name": "(주)엠씨넥스",
-   "stock_code": "097520",
-   "market": "코스피",
-   "industry_code": "26519",
-   "sector": "영상·음향기기",
-   "related": true,
-   "address": "인천광역시 연수구 송도과학로16번길 13-39 엠씨넥스 타워 송도동, 엠씨넥스타워",
-   "region": "인천광역시",
-   "homepage": "www.mcnex.co.kr",
-   "est_year": "2004",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%97%A0%EC%94%A8%EB%84%A5%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 1279236953303,
-   "op_income": 52015262942,
-   "employees": 472,
-   "avg_salary": 59280706,
-   "score": 72,
-   "sub": {
-    "tech": 75,
-    "domain": 70,
-    "growth": 70,
-    "env": 70
-   },
-   "business": "차량용 및 모바일용 카메라 모듈과 ADAS 비전 알고리즘을 개발하여 공급하는 전장 부품 중견기업입니다.",
+   "business": "블랙박스 및 내비게이션 등 차량용 전장 제품과 위치기반서비스, ADAS 및 고정밀 지도를 개발하는 기업이다.",
    "fit_tags": [
     "컴퓨터비전",
     "엣지AI",
-    "자율주행"
+    "모빌리티"
    ],
    "reasons": [
-    "도로 파손 탐지 프로젝트에서 수행한 YOLOv8 및 YOLO26의 학습 및 TensorRT 추론 성능 비교 분석은 엠씨넥스의 차량용 센싱 카메라 ADAS 알고리즘 경량화에 유용합니다.",
-    "Jetson Orin 및 Raspberry Pi 등 다양한 엣지 디바이스 배포 경험은 차량용 임베디드 비전 모듈 개발 프로세스에 빠르게 적응하는 데 기여할 수 있습니다."
+    "도로 파손 탐지를 위한 YOLOv8과 YOLO26의 TensorRT 경량화 분석 연구는 블랙박스 엣지 디바이스 내 실시간 ADAS 영상 처리 알고리즘 구현에 적합하다.",
+    "언제나가(when-to-leave) 프로젝트에서 카카오·ODsay·국토부 API를 활용한 역산 스케줄링 및 대중교통 경로 최적화 경험은 회사의 위치기반서비스(LBS) 및 지도 서비스 플랫폼 개발과 통한다.",
+    "엣지 디바이스 화재·연기 감지 KCI 논문 작성 경험은 블랙박스 카메라를 활용한 차량 내외부 비정상 상황 감지 기능 개발에 접목할 수 있다."
    ],
    "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
+    "임베디드 비전 AI 엔지니어",
+    "ADAS 알고리즘 개발자",
+    "위치기반 웹/서버 개발자"
    ],
-   "caution": "인천 송도 근무지로 대전에서의 출퇴근은 불가능하며 이주가 필요합니다."
+   "caution": "차량용 블랙박스 및 모빌리티 서비스 외에 생활가전 유통 비중도 존재하므로 실제 비전 AI/지도 R&D 조직 규모를 확인해야 한다.",
+   "web_facts": [
+    "글로벌 BMW향 블랙박스를 공급하며 ADAS 및 레벨4 자율주행 차량플랫폼 고정밀 지도 기술을 개발하고 있다.",
+    "회원 위치 정보 기반 지도 서비스와 커넥티드 블랙박스 특약 서비스를 운영한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.thinkware.co.kr/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": [
+     {
+      "url": "https://www.thinkware.co.kr/",
+      "title": "THINKWARE"
+     },
+     {
+      "url": "https://www.thinkware.co.kr/company/introduce/",
+      "title": "회사소개 – THINKWARE"
+     },
+     {
+      "url": "https://www.thinkware.co.kr/company/ceo/",
+      "title": "CEO인사말 – THINKWARE"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "00601988",
-   "name": "코난테크놀로지",
-   "legal_name": "주식회사 코난테크놀로지",
-   "stock_code": "402030",
-   "market": "코스닥",
-   "industry_code": "58221",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 서초구 강남대로 327 6층, 7층, 9층(서울특별시 서초구 강남대로)",
-   "region": "서울특별시",
-   "homepage": "konantech.com",
-   "est_year": "1999",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%BD%94%EB%82%9C%ED%85%8C%ED%81%AC%EB%86%80%EB%A1%9C%EC%A7%80",
-   "fiscal_year": 2025,
-   "revenue": 33979970427,
-   "op_income": -9865474602,
-   "employees": 201,
-   "avg_salary": 66828493,
-   "score": 72,
-   "sub": {
-    "tech": 75,
-    "domain": 75,
-    "growth": 65,
-    "env": 65
-   },
-   "business": "영상 및 멀티미디어 비전 AI 솔루션과 이상상황 탐지 엔진을 공급하는 AI 전문 기업이다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "안전·재난",
-    "클라우드"
-   ],
-   "reasons": [
-    "화재 및 연기 감지, 엣지 디바이스 성능 분석 등 비전 AI 논문 실적이 이상상황 탐지 영상 AI 솔루션 개발에 바로 활용될 수 있다.",
-    "Ultralytics YOLO 및 PyTorch 활용 능력이 사내 AI 모델 고도화 업무에 적합하다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "딥러닝 모델 연구원"
-   ],
-   "caution": "지속적인 영업이익 적자 구조 속에서 R&D 조직의 고용 안정성을 점검해야 한다."
-  },
-  {
-   "corp_code": "01516766",
-   "name": "아이비젼웍스",
-   "legal_name": "(주)아이비젼웍스",
-   "stock_code": "469750",
-   "market": "코스닥",
-   "industry_code": "292",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "대전광역시 유성구 국제과학21로 54 -",
-   "region": "대전광역시",
-   "homepage": "www.ivw.co.kr",
-   "est_year": "2015",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9D%B4%EB%B9%84%EC%A0%BC%EC%9B%8D%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 23001097577,
-   "op_income": -390839029,
-   "employees": 128,
-   "avg_salary": 62718750,
-   "score": 71,
-   "sub": {
-    "tech": 75,
-    "domain": 65,
-    "growth": 60,
-    "env": 85
-   },
-   "business": "2차전지 배터리 제조 공정용 AI 머신비전 검사 장비 및 결함 탐지 알고리즘을 개발하는 기업입니다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "스마트팩토리",
-    "엣지AI"
-   ],
-   "reasons": [
-    "가장 큰 강점은 대전 소재 기업이라는 점으로 대전에 거주하며 목원대 학·석사를 마친 후보자에게 최상의 정주 여건을 제공합니다.",
-    "도로 파손 탐지 및 화재·연기 탐지 연구에서 축적한 YOLOv8 기반 실시간 객체 탐지 및 경량화 기술은 2차전지 전극 공정 등의 실시간 고속 결함 탐지 알고리즘 고도화에 기여할 수 있습니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
-   ],
-   "caution": "2차전지 제조 공정 검사에 특화되어 있어 로보틱스(ROS2)나 일반 웹 서비스 개발 역량을 발휘할 기회는 적습니다."
-  },
-  {
-   "corp_code": "00867098",
-   "name": "티로보틱스",
-   "legal_name": "(주)티로보틱스",
-   "stock_code": "117730",
-   "market": "코스닥",
-   "industry_code": "29271",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "경기도 오산시 가장산업서북로 103-37 (지곶동)",
-   "region": "경기도",
-   "homepage": "www.t-robotics.net/",
-   "est_year": "2004",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8B%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 43812661900,
-   "op_income": -11908451001,
-   "employees": 121,
-   "avg_salary": 58202116,
-   "score": 70,
-   "sub": {
-    "tech": 70,
-    "domain": 70,
-    "growth": 70,
-    "env": 70
-   },
-   "business": "반도체 및 물류용 자율이동로봇(AMR)을 제조하는 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "반도체·하드웨어"
-   ],
-   "reasons": [
-    "'YogiBot ControlTower'의 SLAM Toolbox 및 Nav2 기반 자율 매핑 기술은 티로보틱스의 물류용 AMR 자율주행 내비게이션 고도화에 기여할 수 있습니다.",
-    "다만 티로보틱스는 반도체 진공 로봇 등 하드웨어 제조 비중이 높아 후보자의 강점인 웹 관제 및 비전 AI 역량을 펼칠 기회가 상대적으로 제한적일 수 있습니다."
-   ],
-   "roles": [
-    "로봇 SW"
-   ],
-   "caution": "하드웨어 중심의 기업 문화와 소프트웨어 연구 조직의 규모를 면밀히 파악해야 합니다."
-  },
-  {
-   "corp_code": "01293485",
-   "name": "제닉스로보틱스",
-   "legal_name": "제닉스로보틱스(주)",
-   "stock_code": "381620",
+   "corp_code": "01588189",
+   "name": "씨메스로보틱스",
+   "legal_name": "씨메스로보틱스(주)",
+   "stock_code": "475400",
    "market": "코스닥",
    "industry_code": "29299",
    "sector": "특수 목적용 기계",
    "related": true,
-   "address": "충청남도 천안시 서북구 직산읍 부송로 165-33",
-   "region": "충청남도",
-   "homepage": "www.zenixkorea.co.kr/",
-   "est_year": "2010",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%A0%9C%EB%8B%89%EC%8A%A4%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 22665261675,
-   "op_income": -12312906714,
-   "employees": 190,
-   "avg_salary": 44036453,
-   "score": 70,
-   "sub": {
-    "tech": 70,
-    "domain": 75,
-    "growth": 60,
-    "env": 70
-   },
-   "business": "공장 자동화 무인이송차(AGV/AMR) 및 로봇 물류 자동화 시스템을 공급하는 로봇 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "스마트팩토리"
-   ],
-   "reasons": [
-    "ROS2 기반 자율주행 로봇 관제 시스템 설계로 금상을 수상한 경험은 이 회사의 AGV/AMR 관제 및 제어 시스템 개발에 유용합니다.",
-    "Jetson Orin 및 Raspberry Pi를 활용한 엣지 배포 경험이 공장 자동화용 임베디드 로봇 제어기 개발에 부합합니다."
-   ],
-   "roles": [
-    "로봇 SW 엔지니어",
-    "임베디드 제어 엔지니어"
-   ],
-   "caution": "최근 대규모 영업손실이 발생한 재무적 불안정성을 확인해야 합니다."
-  },
-  {
-   "corp_code": "01297898",
-   "name": "마음AI",
-   "legal_name": "(주)마음에이아이",
-   "stock_code": "377480",
-   "market": "코스닥",
-   "industry_code": "58222",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "경기도 성남시 수정구 창업로40번길 30 4층(시흥동, 판교IT센터)",
-   "region": "경기도",
-   "homepage": "maum.ai",
+   "address": "서울특별시 강남구 도산대로 318 &nbsp",
+   "region": "서울특별시",
+   "homepage": "www.cmesrobotics.ai/",
    "est_year": "2014",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A7%88%EC%9D%8CAI",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%94%A8%EB%A9%94%EC%8A%A4%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
    "fiscal_year": 2025,
-   "revenue": 9786361142,
-   "op_income": -6375714178,
-   "employees": 126,
-   "avg_salary": 48746032,
-   "score": 70,
+   "revenue": 13056154094,
+   "op_income": -18411160019,
+   "employees": 183,
+   "avg_salary": 54218579,
+   "score": 77,
    "sub": {
-    "tech": 75,
-    "domain": 70,
-    "growth": 65,
-    "env": 60
-   },
-   "business": "멀티모달 비전 AI 및 자율주행 로봇용 파운데이션 모델을 연구 사업화하는 인공지능 플랫폼 기업이다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "로보틱스",
-    "자율주행"
-   ],
-   "reasons": [
-    "YOLO 객체 탐지 연구와 ROS2 기반 자율주행 로봇 관제 시스템 구현 경험이 로봇용 AI 플랫폼 개발에 부합한다.",
-    "Python과 PyTorch를 이용한 딥러닝 모델 최적화 역량이 파운데이션 모델 응용 연구에 기여할 수 있다."
-   ],
-   "roles": [
-    "비전 AI 연구원",
-    "로봇 AI 엔지니어"
-   ],
-   "caution": "회사의 재무 상태와 소규모 조직 환경에서의 업무 범위를 미리 파악해야 한다."
-  },
-  {
-   "corp_code": "01594791",
-   "name": "나우로보틱스",
-   "legal_name": "(주)나우로보틱스",
-   "stock_code": "459510",
-   "market": "코스닥",
-   "industry_code": "29280",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "인천광역시 남동구 앵고개로449번길 42",
-   "region": "인천광역시",
-   "homepage": "naurobot.com",
-   "est_year": "2016",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%82%98%EC%9A%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 12526033167,
-   "op_income": -8206292816,
-   "employees": 68,
-   "avg_salary": 50727294,
-   "score": 69,
-   "sub": {
-    "tech": 75,
-    "domain": 80,
-    "growth": 55,
-    "env": 45
-   },
-   "business": "산업용 로봇 및 물류 자율주행 로봇(AMR)을 자체 개발하고 양산하는 로봇 전문 기업입니다.",
-   "fit_tags": [
-    "로보틱스",
-    "자율주행",
-    "스마트팩토리"
-   ],
-   "reasons": [
-    "YogiBot ControlTower 프로젝트에서 ROS2, Nav2, SLAM Toolbox를 활용해 자율 매핑 및 제어 시스템을 구축한 경험이 이 회사의 AMR 개발에 직접 기여할 수 있습니다.",
-    "WCRC 국제대회 동메달 및 ILRC 지능형 로봇 경진대회 수상 이력은 실물 로봇 제어 및 하드웨어 통합 역량을 증명합니다."
-   ],
-   "roles": [
-    "로봇 SW 엔지니어",
-    "자율주행 알고리즘 개발자"
-   ],
-   "caution": "적자가 지속되는 재무 상황과 인천 근무지로 인한 대전에서의 이주 필요성을 고려해야 합니다."
-  },
-  {
-   "corp_code": "00609324",
-   "name": "뷰웍스",
-   "legal_name": "(주)뷰웍스",
-   "stock_code": "100120",
-   "market": "코스닥",
-   "industry_code": "27199",
-   "sector": "의료·정밀기기",
-   "related": true,
-   "address": "경기도 안양시 동안구 부림로 17041-3",
-   "region": "경기도",
-   "homepage": "www.vieworks.com",
-   "est_year": "1999",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%B7%B0%EC%9B%8D%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 239334580000,
-   "op_income": 21420223360,
-   "employees": 486,
-   "avg_salary": 70185185,
-   "score": 69,
-   "sub": {
-    "tech": 70,
-    "domain": 60,
-    "growth": 80,
-    "env": 75
-   },
-   "business": "고해상도 산업용 머신비전 카메라 및 의료 영상 센서를 자체 개발하는 영상 솔루션 전문 기업입니다.",
-   "fit_tags": [
-    "컴퓨터비전",
-    "스마트팩토리"
-   ],
-   "reasons": [
-    "고해상도 산업용 카메라 개발 기업으로, 지원자의 OpenCV 기반 컴퓨터 비전 처리 및 이미지 분석 역량이 카메라 펌웨어 및 SDK 개발에 활용될 수 있습니다.",
-    "탄탄한 재무 구조와 대규모 R&D 조직을 갖추고 있어 신입 엔지니어가 체계적으로 비전 기술을 배우기에 좋은 환경입니다."
-   ],
-   "roles": [
-    "컴퓨터비전 엔지니어",
-    "소프트웨어 개발자"
-   ],
-   "caution": "딥러닝 기반 AI 소프트웨어보다는 광학 및 하드웨어 제어 중심의 전통적 머신비전 비중이 높을 수 있습니다."
-  },
-  {
-   "corp_code": "01309388",
-   "name": "LS티라유텍",
-   "legal_name": "엘에스티라유텍(주)",
-   "stock_code": "322180",
-   "market": "코스닥",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "서울특별시 강남구 학동로5길 7",
-   "region": "서울특별시",
-   "homepage": "ls-thirautech.com",
-   "est_year": "2006",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=LS%ED%8B%B0%EB%9D%BC%EC%9C%A0%ED%85%8D",
-   "fiscal_year": 2025,
-   "revenue": 58940727170,
-   "op_income": -4293305447,
-   "employees": 253,
-   "avg_salary": 65796285,
-   "score": 69,
-   "sub": {
-    "tech": 70,
+    "tech": 82,
     "domain": 75,
-    "growth": 60,
-    "env": 65
+    "growth": 84,
+    "env": 62
    },
-   "business": "스마트 팩토리 물류 자동화를 위한 무인이송로봇 및 제조 실행 시스템을 공급한다.",
+   "business": "3D 비전 AI와 로봇 제어를 결합한 피지컬 AI 기술로 제조·물류 자동화 솔루션을 제공하는 지능형 로봇 전문 기업이다.",
    "fit_tags": [
-    "스마트팩토리",
     "로보틱스",
-    "웹서비스"
-   ],
-   "reasons": [
-    "ROS2기반 자율주행 로봇 관제 시스템 구현 경험이 무인이송로봇 현장 적용에 직접 활용될 수 있다.",
-    "TypeScript와 React 기반 웹 서비스 개발 역량이 제조 실행 시스템 UI 구축에 도움이 된다."
-   ],
-   "roles": [
-    "로봇 SW 엔지니어",
-    "웹 애플리케이션 개발자"
-   ],
-   "caution": "최근 영업이익 적자 상태이므로 R&D 조직의 안정성을 확인할 필요가 있다."
-  },
-  {
-   "corp_code": "00556615",
-   "name": "모바일어플라이언스",
-   "legal_name": "모바일어플라이언스 주식회사",
-   "stock_code": "087260",
-   "market": "코스닥",
-   "industry_code": "582",
-   "sector": "소프트웨어 개발·공급",
-   "related": true,
-   "address": "경기도 안양시 동안구 시민대로 401",
-   "region": "경기도",
-   "homepage": "www.mobileappliance.co.kr",
-   "est_year": "2004",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%96%B4%ED%94%8C%EB%9D%BC%EC%9D%B4%EC%96%B8%EC%8A%A4",
-   "fiscal_year": 2025,
-   "revenue": 34943028825,
-   "op_income": -895803759,
-   "employees": 47,
-   "avg_salary": 59914894,
-   "score": 68,
-   "sub": {
-    "tech": 75,
-    "domain": 70,
-    "growth": 55,
-    "env": 60
-   },
-   "business": "자율주행용 ADAS 카메라, HUD 등 차량용 임베디드 엣지 인공지능 솔루션을 개발하여 글로벌 완성차 업체에 공급하는 기업입니다.",
-   "fit_tags": [
-    "엣지AI",
     "컴퓨터비전",
-    "자율주행"
+    "스마트팩토리"
    ],
    "reasons": [
-    "화재 및 연기 탐지를 위한 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석 논문에서 보여준 임베디드 보드 최적화 역량은 이 회사의 ADAS 카메라용 엣지 AI 솔루션 개발에 부합합니다.",
-    "다만 로보틱스(ROS2)나 대규모 웹 서비스(React/Node.js) 역량을 활용할 수 있는 사업 영역은 제한적입니다."
+    "대학생논문경진대회 금상을 수상한 YogiBot 프로젝트의 ROS2–MQTT 로봇 관제 및 자율 매핑 경험은 물류·제조 피지컬 로봇 시스템 구축에 기반 지식이 된다.",
+    "YOLO 기반 객체 탐지와 임베디드 비전 처리 이력이 로봇 픽앤플레이스(Pick & Place) 및 팔레타이징을 위한 객체 인식 전처리 파이프라인과 접점을 가진다.",
+    "다만 주인공의 핵심 실적인 화재·도로 2D 영상 비전보다는 산업용 3D 비전(Point Cloud, Depth) 및 6축 다관절 로봇 모션 제어 비중이 훨씬 크다."
    ],
    "roles": [
-    "비전 AI 엔지니어",
-    "엣지 추론 최적화"
+    "로봇 제어 SW 엔지니어",
+    "로보틱스 비전 AI 엔지니어",
+    "ROS2 로봇 시스템 개발자"
    ],
-   "caution": "최근 영업이익 적자 상태이므로 재무 안정성과 R&D 투자 지속 여부를 확인해야 합니다."
-  },
-  {
-   "corp_code": "01429220",
-   "name": "피아이이",
-   "legal_name": "(주)피아이이",
-   "stock_code": "452450",
-   "market": "코스닥",
-   "industry_code": "29299",
-   "sector": "특수 목적용 기계",
-   "related": true,
-   "address": "경기도 화성시 동탄기흥로 614 더퍼스트타워2차 19층",
-   "region": "경기도",
-   "homepage": "piegroup.co.kr",
-   "est_year": "2018",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%94%BC%EC%95%84%EC%9D%B4%EC%9D%B4",
-   "fiscal_year": 2025,
-   "revenue": 65088392269,
-   "op_income": -21217301485,
-   "employees": 199,
-   "avg_salary": 59502513,
-   "score": 67,
-   "sub": {
-    "tech": 75,
-    "domain": 60,
-    "growth": 70,
-    "env": 55
-   },
-   "business": "스마트 팩토리용 딥러닝 비전 검사 소프트웨어 및 산업 데이터 분석 플랫폼을 개발하는 기업입니다.",
-   "fit_tags": [
-    "스마트팩토리",
-    "컴퓨터비전",
-    "클라우드"
+   "caution": "2D 객체 탐지 중심 이력에서 3D 비전 기하학 및 산업용 로봇 머니퓰레이터 제어 라이브러리로의 기술 확장이 요구된다.",
+   "web_facts": [
+    "3D 비전 AI와 로보틱스를 결합해 디팔레타이징, 피스피킹, 로봇 어셈블리, 3D 검사 등 물류·제조 현장의 자동화 솔루션을 공급한다.",
+    "'See. Think. Move.' 콘셉트를 바탕으로 자체 AI 코어 인식, 작업 경로 생성, 로봇 오차 보정 기술을 피지컬 AI 형태로 상용화했다."
    ],
-   "reasons": [
-    "YOLO 기반 객체 탐지 및 컴퓨터 비전 연구 역량이 스마트 팩토리용 딥러닝 비전 검사 소프트웨어 개발에 직접적으로 기여할 수 있습니다.",
-    "언제나가 웹 서비스 개발을 통해 다진 TypeScript, React, Node.js 역량은 산업 데이터 분석 플랫폼의 웹 관제 및 대시보드 개발에 활용 가능합니다."
-   ],
-   "roles": [
-    "비전 AI 엔지니어",
-    "웹 풀스택 엔지니어"
-   ],
-   "caution": "최근 대규모 영업적자를 기록하고 있어 재무적 안정성과 R&D 투자 지속 여부를 확인할 필요가 있습니다."
-  },
-  {
-   "corp_code": "01014055",
-   "name": "에스트래픽",
-   "legal_name": "에스트래픽 주식회사",
-   "stock_code": "234300",
-   "market": "코스닥",
-   "industry_code": "6202",
-   "sector": "컴퓨터 프로그래밍·SI",
-   "related": true,
-   "address": "경기도 성남시 수정구 금토로80번길 56 ,씨동(금토동, 위든타워)",
-   "region": "경기도",
-   "homepage": "www.straffic.co.kr",
-   "est_year": "2013",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%97%90%EC%8A%A4%ED%8A%B8%EB%9E%98%ED%94%BD",
-   "fiscal_year": 2025,
-   "revenue": 168238551225,
-   "op_income": 8956631429,
-   "employees": 238,
-   "avg_salary": 82642857,
-   "score": 66,
-   "sub": {
-    "tech": 65,
-    "domain": 70,
-    "growth": 65,
-    "env": 65
-   },
-   "business": "지능형 교통체계와 도로 철도 영상 기반 관제 및 스마트 모빌리티 솔루션을 구축하는 기업이다.",
-   "fit_tags": [
-    "자율주행",
-    "컴퓨터비전",
-    "모빌리티"
-   ],
-   "reasons": [
-    "도로 파손 탐지를 위한 YOLOv8과 YOLO26 학습 및 TensorRT 추론 성능 비교 분석 연구가 도로 영상 관제에 직결된다.",
-    "TypeScript와 웹 API 통합 경험이 교통 관제 플랫폼 개발에 기여할 수 있다."
-   ],
-   "roles": [
-    "컴퓨터비전 엔지니어",
-    "ITS SW 개발자"
-   ],
-   "caution": "경기도 근무지이므로 대전 거주 환경과의 거리를 고려해야 한다."
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.cmesrobotics.ai/",
+    "fetched_at": "2026-10-14T14:03+09:00",
+    "sources": [
+     {
+      "url": "https://www.cmesrobotics.ai/",
+      "title": "씨메스로보틱스 | 피지컬 AI로 완성하는 지능형 산업 자동화"
+     },
+     {
+      "url": "https://www.cmesrobotics.ai/about/mission_vision",
+      "title": "미션&비전 | 피지컬 AI로 스마트 워크플로우 재정의"
+     },
+     {
+      "url": "https://www.cmesrobotics.ai/about/value",
+      "title": "고객 가치 | 안전·효율·지속가능한 자동화 제공"
+     }
+    ]
+   }
   },
   {
    "corp_code": "01217014",
@@ -2174,148 +1465,432 @@
    "op_income": -4083362675,
    "employees": 113,
    "avg_salary": 56159292,
-   "score": 65,
+   "score": 77,
    "sub": {
-    "tech": 70,
-    "domain": 60,
-    "growth": 60,
-    "env": 65
+    "tech": 86,
+    "domain": 70,
+    "growth": 76,
+    "env": 70
    },
-   "business": "산업용 AI 머신비전 검사 장비 및 결함 탐지 소프트웨어를 개발하여 스마트팩토리 솔루션을 제공하는 기업입니다.",
+   "business": "산업 공정의 결함을 판정하는 딥러닝 머신비전 검사 엔진, 자동화 장비 및 AI 로봇 솔루션을 공급한다.",
    "fit_tags": [
     "컴퓨터비전",
     "스마트팩토리",
-    "엣지AI"
+    "로보틱스"
    ],
    "reasons": [
-    "도로 파손 탐지 프로젝트에서 수행한 YOLOv8 기반 미세 결함 탐지 및 학습 성능 분석 경험은 트윔의 산업용 제품 표면 결함 탐지 AI 모델 개발에 유사하게 적용될 수 있습니다.",
-    "그러나 ROS2 기반 로봇 관제 시스템이나 대중교통 이동 비서와 같은 로보틱스 및 웹 서비스 역량은 활용하기 어렵습니다."
+    "KCI 논문과 학술대회에서 검증한 커스텀 YOLO 객체 탐지 및 불량·파손 판별 기술은 트윔의 AI 딥러닝 결함 검출 플랫폼(T-AIS, T-MEGA)에 바로 접목된다.",
+    "TurtleBot3 기반 SLAM/Nav2와 관제 웹을 구축한 YogiBot 프로젝트 경험은 회사가 신규 전개하는 T-Move(로봇 관제 플랫폼) 및 RoAX 개발에 밀접하게 활용 가능하다.",
+    "Raspberry Pi 및 Jetson 기반 엣지 배포 역량은 비전 가이드 로봇(VGR) 및 제조 현장 엔드 투 엔드 AI 시스템 구축에 기여할 수 있다."
    ],
    "roles": [
-    "비전 AI 엔지니어"
+    "AI 머신비전 개발자",
+    "로봇 제어·관제 SW 엔지니어",
+    "딥러닝 최적화 엔지니어"
    ],
-   "caution": "스마트팩토리 검사 장비 특성상 고객사 공장 라인 셋업을 위한 잦은 출장이나 현장 대응이 있을 수 있습니다."
+   "caution": "스마트팩토리 설비 납품 프로젝트 특성상 현장 셋업 및 셋업 지원을 위한 출장 빈도를 사전에 확인해야 한다.",
+   "web_facts": [
+    "AI 비전검사기(T-MEGA), 비전검사 플랫폼(T-AIS) 및 비전 가이드 로봇(VGR)을 공급한다.",
+    "인지부터 행동까지 연결하는 End-to-End Physical AI 솔루션으로 Robot 관제 플랫폼 T-Move와 RoAX를 개발하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.twim21.com/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": [
+     {
+      "url": "https://www.twim21.com/kor/main/",
+      "title": "주식회사 트윔"
+     },
+     {
+      "url": "https://www.twim21.com/kor/company/outline.php",
+      "title": "주식회사 트윔"
+     },
+     {
+      "url": "https://www.twim21.com/kor/company/history.php",
+      "title": "주식회사 트윔"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "00825959",
-   "name": "하이비젼시스템",
-   "legal_name": "(주)하이비젼시스템",
-   "stock_code": "126700",
+   "corp_code": "01358463",
+   "name": "현대무벡스",
+   "legal_name": "현대무벡스(주)",
+   "stock_code": "319400",
    "market": "코스닥",
-   "industry_code": "273",
-   "sector": "광학기기",
+   "industry_code": "291",
+   "sector": "일반 목적용 기계",
    "related": true,
-   "address": "경기도 성남시 중원구 둔촌대로 527 -",
-   "region": "경기도",
-   "homepage": "www.hyvision.co.kr",
-   "est_year": "2010",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%98%EC%9D%B4%EB%B9%84%EC%A0%BC%EC%8B%9C%EC%8A%A4%ED%85%9C",
+   "address": "서울시 종로구 율곡로 194 현대그룹빌딩",
+   "region": "서울시",
+   "homepage": "www.hyundaimovex.com/",
+   "est_year": "2019",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%98%84%EB%8C%80%EB%AC%B4%EB%B2%A1%EC%8A%A4",
    "fiscal_year": 2025,
-   "revenue": 171096948608,
-   "op_income": -32554245303,
-   "employees": 455,
-   "avg_salary": 59046075,
-   "score": 62,
+   "revenue": 393940640251,
+   "op_income": 18212543309,
+   "employees": 551,
+   "avg_salary": 85813067,
+   "score": 77,
    "sub": {
-    "tech": 65,
-    "domain": 55,
-    "growth": 65,
-    "env": 65
+    "tech": 80,
+    "domain": 78,
+    "growth": 75,
+    "env": 70
    },
-   "business": "스마트폰 및 차량용 카메라 모듈 검사 장비와 딥러닝 기반 머신비전 검사 소프트웨어를 개발하는 기업입니다.",
+   "business": "물류 자동화 설비 엔지니어링과 AMR 무인 이송 로봇 및 산업 IT 시스템을 구축한다.",
+   "fit_tags": [
+    "로보틱스",
+    "스마트팩토리",
+    "웹서비스"
+   ],
+   "reasons": [
+    "AMR 및 이송 로봇 기반 물류 자동화를 진행하므로, Nav2 및 ROS2 기반 YogiBot 자율주행 로봇 관제 시스템 구현 경험이 직접 맞닿는다.",
+    "실시간 물류 관제 및 IT 서비스를 운영하므로, FastAPI, React 19, MQTT를 활용한 관제 시스템 및 when-to-leave 웹 풀스택 운영 경험을 활용할 수 있다.",
+    "단순 비전 모델 튜닝보다는 물류 설비 PLC 및 산업용 프로토콜 연동 비중이 높아 순수 딥러닝 연구와는 업무 성격 차이가 있을 수 있다."
+   ],
+   "roles": [
+    "로봇 관제 SW 개발자",
+    "AMR 자율주행 엔지니어",
+    "웹 풀스택 엔지니어"
+   ],
+   "caution": "순수 비전 연구보다는 대형 물류 설비 시운전과 관제 시스템 SI 업무 비중이 높은지 확인해야 한다.",
+   "web_facts": [
+    "SRM, 4 Way Shuttle, Gantry Robot, Transfer Robot 등 물류 자동화 설비 솔루션을 제공한다.",
+    "지하철 승강장안전문(PSD) 및 항만운영시스템 등 IT 솔루션을 공급한다.",
+    "타이어 및 EV/ESS 배터리 전공정 물류 자동화를 추진하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.hyundaimovex.com/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://www.hyundaimovex.com/",
+      "title": "현대무벡스"
+     },
+     {
+      "url": "https://www.hyundaimovex.com/company/introduction.php",
+      "title": "현대무벡스"
+     },
+     {
+      "url": "https://www.hyundaimovex.com/company/ci.php",
+      "title": "현대무벡스"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00601988",
+   "name": "코난테크놀로지",
+   "legal_name": "주식회사 코난테크놀로지",
+   "stock_code": "402030",
+   "market": "코스닥",
+   "industry_code": "58221",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 서초구 강남대로 327 6층, 7층, 9층(서울특별시 서초구 강남대로)",
+   "region": "서울특별시",
+   "homepage": "konantech.com",
+   "est_year": "1999",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%BD%94%EB%82%9C%ED%85%8C%ED%81%AC%EB%86%80%EB%A1%9C%EC%A7%80",
+   "fiscal_year": 2025,
+   "revenue": 33979970427,
+   "op_income": -9865474602,
+   "employees": 201,
+   "avg_salary": 66828493,
+   "score": 76,
+   "sub": {
+    "tech": 82,
+    "domain": 72,
+    "growth": 78,
+    "env": 68
+   },
+   "business": "대규모 언어모델(LLM)과 온디바이스 비전 AI 솔루션을 개발·공급하는 인공지능 전문 기업이다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "엣지AI",
+    "방산"
+   ],
+   "reasons": [
+    "온디바이스 비전 AI 솔루션 VisionFlow를 보유하여, 엣지 환경에서 YOLO 경량화 및 TensorRT/NCNN 가속을 검증한 논문 연구 실적과 부합한다.",
+    "지능형 CCTV 실종자·이상상황 탐지 엔진을 개발하므로, KCI 등재 화재·연기 탐지 논문 및 경진대회 비전 프로젝트 경험을 직접 활용할 수 있다.",
+    "최근 주력 사업이 생성형 LLM(Konan LLM) 및 텍스트 OSINT 쪽에 집중되어 있어 비전 부서의 연구 배분 현황을 살펴볼 필요가 있다."
+   ],
+   "roles": [
+    "온디바이스 비전 AI 엔지니어",
+    "CCTV 영상 분석 알고리즘 연구원",
+    "엣지 딥러닝 추론 최적화 개발자"
+   ],
+   "caution": "자연어처리 및 LLM 중심 사업 확장 속에서 비전 AI 연구개발 인력에 대한 실질적 배치가 이루어지는지 확인해야 한다.",
+   "web_facts": [
+    "On-Device AI 비전 솔루션인 VisionFlow를 제공한다.",
+    "전출처 정보융합분석플랫폼 Konan ARGOS를 비롯해 국방 AI 및 대형 언어모델 Konan LLM 사업을 추진한다.",
+    "지능형 CCTV 이동형(실종자) 분야 KISA 시험·인증을 통과했다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://konantech.com/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://konantech.com/",
+      "title": "코난테크놀로지"
+     },
+     {
+      "url": "https://konantech.com/products/visionflow",
+      "title": "코난테크놀로지"
+     },
+     {
+      "url": "https://konantech.com/company/overview",
+      "title": "코난테크놀로지"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01516766",
+   "name": "아이비젼웍스",
+   "legal_name": "(주)아이비젼웍스",
+   "stock_code": "469750",
+   "market": "코스닥",
+   "industry_code": "292",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "대전광역시 유성구 국제과학21로 54 -",
+   "region": "대전광역시",
+   "homepage": "www.ivw.co.kr",
+   "est_year": "2015",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9D%B4%EB%B9%84%EC%A0%BC%EC%9B%8D%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 23001097577,
+   "op_income": -390839029,
+   "employees": 128,
+   "avg_salary": 62718750,
+   "score": 75,
+   "sub": {
+    "tech": 80,
+    "domain": 65,
+    "growth": 70,
+    "env": 88
+   },
+   "business": "2차전지 배터리 제조 공정에 특화된 딥러닝·머신비전 검사 장비 및 결함 탐지 솔루션을 개발한다.",
    "fit_tags": [
     "컴퓨터비전",
     "스마트팩토리"
    ],
    "reasons": [
-    "검사 장비용 딥러닝 머신비전 소프트웨어 개발에 후보자의 YOLO 기반 객체 탐지 및 OpenCV 활용 역량을 적용할 수 있습니다.",
-    "다만 후보자의 주 연구 분야인 화재·연기·도로 파손 등 야외 안전·재난 비전 및 ROS2 기반 자율주행 로봇 제어와는 도메인 불일치가 큽니다."
+    "도로 파손 및 화재·연기 탐지 논문에서 입증한 YOLO 기반 미세 객체 탐지 기법은 배터리 전극·노칭·조립 공정의 이물 및 결함 딥러닝 판별 모델에 적용하기 적합하다.",
+    "TensorRT 및 엣지 환경 추론 가속화 연구 실적은 2차전지 인라인 고속 검사 장비의 판정 처리 지연시간(Latency)을 최소화하는 데 직접 활용될 수 있다.",
+    "본사가 연구자의 거주지인 대전광역시 국제과학비즈니스벨트에 위치해 대전 거주자로서 출퇴근 및 정주 여건이 매우 우수하다."
    ],
    "roles": [
-    "비전 AI 엔지니어"
+    "머신비전 AI 알고리즘 개발자",
+    "비전 검사 SW 엔지니어"
    ],
-   "caution": "최근 영업이익이 큰 폭의 적자로 전환되었으므로 고용 안정성과 R&D 투자 여력을 점검해야 합니다."
+   "caution": "2차전지 단일 산업군에 대한 사업 집중도가 높으므로 배터리 업황 변동성에 따른 수주 영향을 주시해야 한다.",
+   "web_facts": [
+    "이차전지 전극, 조립, 패키징, 모듈 공정에 최적화된 Machine Vision 검사기를 납품한다.",
+    "본사를 대전 국제과학비즈니스벨트로 신축 이전했으며 딥러닝 이물 정부과제를 수행했다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "http://www.ivw.co.kr/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": [
+     {
+      "url": "http://www.ivw.co.kr/kor/main/",
+      "title": "아이비젼웍스"
+     },
+     {
+      "url": "http://www.ivw.co.kr/kor/company/menu_01.html",
+      "title": "아이비젼웍스"
+     },
+     {
+      "url": "http://www.ivw.co.kr/kor/company/menu_02.html",
+      "title": "아이비젼웍스"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "01135640",
-   "name": "이삭엔지니어링",
-   "legal_name": "이삭엔지니어링(주)",
-   "stock_code": "351330",
+   "corp_code": "01264872",
+   "name": "이노뎁",
+   "legal_name": "이노뎁(주)",
+   "stock_code": "303530",
    "market": "코스닥",
-   "industry_code": "62021",
-   "sector": "컴퓨터 프로그래밍·SI",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
    "related": true,
-   "address": "경기도 군포시 군포첨단산업1로 15",
-   "region": "경기도",
-   "homepage": "isaac-eng.com",
-   "est_year": "2006",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9D%B4%EC%82%AD%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81",
+   "address": "서울특별시 금천구 디지털로9길 47 한신IT타워 2차 9층, 11층",
+   "region": "서울특별시",
+   "homepage": "innodep.co.kr",
+   "est_year": "2008",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9D%B4%EB%85%B8%EB%8E%81",
    "fiscal_year": 2025,
-   "revenue": 78986196809,
-   "op_income": -7182250667,
-   "employees": 155,
-   "avg_salary": 56129032,
-   "score": 62,
+   "revenue": 70744057088,
+   "op_income": -2896673174,
+   "employees": 213,
+   "avg_salary": 61164319,
+   "score": 74,
    "sub": {
-    "tech": 65,
-    "domain": 60,
-    "growth": 60,
-    "env": 60
+    "tech": 75,
+    "domain": 80,
+    "growth": 68,
+    "env": 62
    },
-   "business": "산업 자동화 엔지니어링 및 디지털 트윈, 공장 설비 모니터링 IoT 시스템을 개발하는 기업이다.",
+   "business": "스마트시티 공공 관제 및 CCTV 통합 관제 VMS 플랫폼과 영상 AI 분석 솔루션을 제공하는 기업이다.",
    "fit_tags": [
-    "스마트팩토리",
+    "컴퓨터비전",
+    "안전·재난",
     "웹서비스"
    ],
    "reasons": [
-    "React와 Node.js 기반 웹 서비스 개발 및 API 연동 역량이 공장 설비 모니터링 시스템 구축에 쓰일 수 있다.",
-    "비전 AI 연구 경험이 설비 이상 감지 디지털 트윈 분야로 확장될 수 있다."
+    "지자체 지능형 관제 시스템에 연동되는 실시간 화재·연기 및 도로 위험 상황 탐지 모델 연구 실적을 관제 분석 모듈로 활용할 수 있다.",
+    "React 19와 FastAPI 기반으로 관제 웹 아키텍처(YogiBot ControlTower) 및 AWS 배포 서비스를 직접 운영해 본 경험이 관제 VMS 웹 프론트엔드/백엔드에 직결된다.",
+    "다만 연구의 주축인 온디바이스 임베디드 추론 최적화보다는 서버·클라우드 기반 관제 시스템 비중이 상대적으로 높을 수 있다."
    ],
    "roles": [
-    "백엔드 개발자",
-    "디지털 트윈 엔지니어"
+    "지능형 영상관제 AI 엔지니어",
+    "관제 플랫폼 풀스택 개발자"
    ],
-   "caution": "경기도 소재 근무지로 대전 거주 시 출퇴근 또는 거주 이전 계획을 세워야 한다."
+   "caution": "최근 영업이익 적자 상태에 따른 R&D 투자 여력과 서울 근무에 따른 주거 비용을 감안해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://innodep.co.kr/",
+    "fetched_at": "2026-10-14T14:03+09:00",
+    "sources": [
+     {
+      "url": "https://innodep.co.kr/",
+      "title": "Innodep"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "01258710",
-   "name": "이노메트리",
-   "legal_name": "(주)이노메트리",
-   "stock_code": "302430",
+   "corp_code": "00556615",
+   "name": "모바일어플라이언스",
+   "legal_name": "모바일어플라이언스 주식회사",
+   "stock_code": "087260",
    "market": "코스닥",
-   "industry_code": "29299",
-   "sector": "특수 목적용 기계",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
    "related": true,
-   "address": "경기도 화성시 정남면 정남산단1길 40 -",
+   "address": "경기도 안양시 동안구 시민대로 401",
    "region": "경기도",
-   "homepage": "www.innometry.com",
-   "est_year": "2008",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9D%B4%EB%85%B8%EB%A9%94%ED%8A%B8%EB%A6%AC",
+   "homepage": "www.mobileappliance.co.kr",
+   "est_year": "2004",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%96%B4%ED%94%8C%EB%9D%BC%EC%9D%B4%EC%96%B8%EC%8A%A4",
    "fiscal_year": 2025,
-   "revenue": 38567691701,
-   "op_income": -5703408531,
-   "employees": 167,
-   "avg_salary": 57186491,
-   "score": 61,
+   "revenue": 34943028825,
+   "op_income": -895803759,
+   "employees": 47,
+   "avg_salary": 59914894,
+   "score": 74,
    "sub": {
-    "tech": 70,
-    "domain": 50,
-    "growth": 65,
-    "env": 55
+    "tech": 78,
+    "domain": 77,
+    "growth": 60,
+    "env": 68
    },
-   "business": "배터리 내부 결함 탐지를 위한 엑스레이 및 비전 기반 AI 비파괴 검사 시스템을 제조하는 기업입니다.",
+   "business": "스마트카 및 자율주행차용 ADAS 운전자보조시스템, 헤드업디스플레이(HUD), 블랙박스 등을 연구·생산하는 기업이다.",
    "fit_tags": [
-    "스마트팩토리",
+    "자율주행",
+    "엣지AI",
     "컴퓨터비전"
    ],
    "reasons": [
-    "YOLOv8 기반 실시간 감지 및 도로 파손 탐지 연구를 통해 쌓은 객체 탐지 기술이 배터리 내부 결함 탐지용 비전 AI 알고리즘 고도화에 쓰일 수 있습니다.",
-    "다만 지원자의 핵심 연구 분야인 자율주행 로봇이나 안전·재난 방재 도메인과는 사업적 연관성이 다소 낮습니다."
+    "커스텀 YOLOv8 기반 화재 감지 및 도로 파손 탐지 논문에서 증명한 엣지 디바이스 대상 경량화 역량은 회사의 임베디드 ADAS 카메라 센싱 모듈에 적용 가능하다.",
+    "Jetson Orin, Raspberry Pi 환경에서의 배포 및 NCNN/TensorRT 추론 최적화 실적은 자율주행 차량용 소형 제어기 임베디드 비전 구현과 직결된다.",
+    "다만 연구 인력 규모가 크지 않고 최근 영업적자를 기록하고 있어 대규모 AI 모델 학습보다는 보드 레벨의 경량화 솔루션 탑재 위주 업무일 가능성이 크다."
    ],
    "roles": [
-    "비전 AI 엔지니어"
+    "임베디드 비전 엔지니어",
+    "ADAS 카메라 SW 개발자"
    ],
-   "caution": "엑스레이 및 비파괴 검사 장비 특성상 일반적인 RGB 이미지 외에 특수 영상 처리 기법에 대한 학습이 요구됩니다."
+   "caution": "소규모 인력 구성과 최근 영업손실을 감안해 R&D 연구 환경과 신입 지원 체계를 사전 점검해야 한다.",
+   "web_facts": [
+    "BMW 등 글로벌 자동차 기업에 ADAS 및 HUD 제품을 수출·공급한 실적이 있다.",
+    "차간거리측정, 차선이탈경보, 교통표지판 인식 등 자율주행 기초 기술을 보유하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.mobileappliance.co.kr/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": [
+     {
+      "url": "https://www.mobileappliance.co.kr/",
+      "title": "모바일어플라이언스"
+     },
+     {
+      "url": "https://www.mobileappliance.co.kr/greeting",
+      "title": "모바일어플라이언스"
+     },
+     {
+      "url": "https://www.mobileappliance.co.kr/history",
+      "title": "모바일어플라이언스"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00564562",
+   "name": "엠씨넥스",
+   "legal_name": "(주)엠씨넥스",
+   "stock_code": "097520",
+   "market": "코스피",
+   "industry_code": "26519",
+   "sector": "영상·음향기기",
+   "related": true,
+   "address": "인천광역시 연수구 송도과학로16번길 13-39 엠씨넥스 타워 송도동, 엠씨넥스타워",
+   "region": "인천광역시",
+   "homepage": "www.mcnex.co.kr",
+   "est_year": "2004",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%97%A0%EC%94%A8%EB%84%A5%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 1279236953303,
+   "op_income": 52015262942,
+   "employees": 472,
+   "avg_salary": 59280706,
+   "score": 74,
+   "sub": {
+    "tech": 75,
+    "domain": 70,
+    "growth": 74,
+    "env": 78
+   },
+   "business": "스마트폰 및 차량용 카메라 모듈과 ADAS 비전 인식 시스템을 개발·제조하는 전장 부품 기업이다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "자율주행",
+    "엣지AI"
+   ],
+   "reasons": [
+    "KCI 논문에서 검증한 실시간 RGB 영상 객체 탐지 및 커스텀 YOLOv8 기반 최적화 경험은 차량용 ADAS 센싱 카메라 알고리즘 개선에 기여할 수 있다.",
+    "Jetson 등 엣지 디바이스 기반 경량화 추론 연구는 전장 카메라 모듈 온디바이스 AI 솔루션 적용에 부합한다.",
+    "차량용 센서 중심 제조사 특성상 웹 서비스나 ROS2 로봇 관제 프로젝트와의 직접적인 사업 연계는 다소 제한적이다."
+   ],
+   "roles": [
+    "ADAS 비전 알고리즘 엔지니어",
+    "임베디드 비전 AI 개발자"
+   ],
+   "caution": "모바일 부품과 전장 부품 사업부가 나뉘어 있으므로 자율주행 및 전장 ADAS 비전 파트로의 배치가 가능한지 확인해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "robots_unknown",
+    "status_text": "robots.txt를 확인할 수 없어 건너뜀",
+    "homepage": "http://www.mcnex.co.kr/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": []
+   }
   },
   {
    "corp_code": "01686427",
@@ -2336,110 +1911,921 @@
    "op_income": -16131399828,
    "employees": 127,
    "avg_salary": 67952953,
-   "score": 61,
+   "score": 74,
+   "sub": {
+    "tech": 75,
+    "domain": 82,
+    "growth": 72,
+    "env": 55
+   },
+   "business": "고정형 라이다(LiDAR) 센서 하드웨어 및 3D 데이터 처리, AI 객체 인지 소프트웨어를 개발한다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "자율주행",
+    "안전·재난"
+   ],
+   "reasons": [
+    "라이다 기반 AI 객체 인지 및 산업 안전 솔루션을 개발하므로, YOLOv8 및 커스텀 객체 탐지 모델 연구 경험과 밀접하게 연결된다.",
+    "회사가 로봇 센서 융합 및 3D 지도 생성을 다루고 있어, TurtleBot3와 SLAM Toolbox를 활용한 YogiBot ControlTower 로봇 매핑 및 제어 경험이 유용하다.",
+    "본사가 광주에 위치하고 수도권 R&D 센터를 운영 중이나 대전에서는 통근이 어려워 이주가 필요하다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "자율주행 인지 알고리즘 엔지니어",
+    "로봇 SW 엔지니어"
+   ],
+   "caution": "광주 본사 또는 판교/안양 R&D 센터 중 구체적인 채용 근무지와 라이다 포인트 클라우드 처리 경험 요구 여부를 확인해야 한다.",
+   "web_facts": [
+    "데이터 처리, 센서 융합, AI 객체 인지, 3D 지도 생성을 아우르는 통합 소프트웨어 솔루션을 제공한다.",
+    "로봇과 산업 안전을 위한 고품질 라이다 제품 및 도로 분석 센서를 공급한다.",
+    "광주 본사를 비롯해 분당 판교, 안양 평촌 R&D 센터, 미국 산호세 지사를 두고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://soslab.co/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://soslab.co/",
+      "title": "에스오에스랩"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01309388",
+   "name": "LS티라유텍",
+   "legal_name": "엘에스티라유텍(주)",
+   "stock_code": "322180",
+   "market": "코스닥",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 강남구 학동로5길 7",
+   "region": "서울특별시",
+   "homepage": "ls-thirautech.com",
+   "est_year": "2006",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=LS%ED%8B%B0%EB%9D%BC%EC%9C%A0%ED%85%8D",
+   "fiscal_year": 2025,
+   "revenue": 58940727170,
+   "op_income": -4293305447,
+   "employees": 253,
+   "avg_salary": 65796285,
+   "score": 74,
+   "sub": {
+    "tech": 82,
+    "domain": 72,
+    "growth": 68,
+    "env": 62
+   },
+   "business": "스마트팩토리 제조 실행 시스템과 무인이송로봇(AGV/AMR)을 제조 및 공급한다.",
+   "fit_tags": [
+    "로보틱스",
+    "스마트팩토리",
+    "자율주행"
+   ],
+   "reasons": [
+    "무인이송로봇(AGV/AMR) 자율주행 구현 시 ROS2, Nav2, SLAM Toolbox를 활용한 YogiBot ControlTower 프로젝트 경험이 직결된다.",
+    "Jetson Orin 및 라즈베리파이 엣지 보드 배포 경험과 MQTT 통신 파이프라인 설계 역량이 현장 로봇 제어 소프트웨어에 적합하다.",
+    "서울 근무로 대전 거주자 기준 통근이 어려워 주거 이전 고려가 필요하다."
+   ],
+   "roles": [
+    "로봇 자율주행 SW 엔지니어",
+    "엣지 컴퓨팅 엔지니어",
+    "로봇 관제 시스템 개발자"
+   ],
+   "caution": "공장 현장 셋업 출장 빈도와 AMR 로봇 SW 부서의 세부 채용 직무를 확인해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "robots_blocked",
+    "status_text": "robots.txt가 수집을 막음",
+    "homepage": "https://ls-thirautech.com/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": []
+   }
+  },
+  {
+   "corp_code": "01297898",
+   "name": "마음AI",
+   "legal_name": "(주)마음에이아이",
+   "stock_code": "377480",
+   "market": "코스닥",
+   "industry_code": "58222",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "경기도 성남시 수정구 창업로40번길 30 4층(시흥동, 판교IT센터)",
+   "region": "경기도",
+   "homepage": "maum.ai",
+   "est_year": "2014",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A7%88%EC%9D%8CAI",
+   "fiscal_year": 2025,
+   "revenue": 9786361142,
+   "op_income": -6375714178,
+   "employees": 126,
+   "avg_salary": 48746032,
+   "score": 71,
+   "sub": {
+    "tech": 75,
+    "domain": 70,
+    "growth": 72,
+    "env": 64
+   },
+   "business": "멀티모달 비전 AI 및 자율주행·로봇용 파운데이션 모델을 연구하는 인공지능 플랫폼 기업이다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "로보틱스",
+    "자율주행"
+   ],
+   "reasons": [
+    "자율주행 및 로봇용 파운데이션 모델을 연구하므로, ROS2 자율주행 로봇(YogiBot) 개발 및 객체 탐지 비전 모델링 역량이 맞닿는다.",
+    "PyTorch, Ultralytics YOLO, TensorRT 엣지 가속 등 최신 딥러닝 파이프라인 경험이 비전 모델 연구에 기초가 된다.",
+    "수집된 홈페이지 데이터가 깨져 있고 지속적인 영업손실 상태이므로 기업의 R&D 안정성을 검토할 필요가 있다."
+   ],
+   "roles": [
+    "멀티모달 비전 연구원",
+    "로봇 인공지능 엔지니어",
+    "엣지 딥러닝 최적화 개발자"
+   ],
+   "caution": "회사의 재무 지속성과 함께 로봇용 파운데이션 모델 연구 부서의 실제 채용 유무를 면밀히 검토해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://maum.ai/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://maum.ai/",
+      "title": ""
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01594791",
+   "name": "나우로보틱스",
+   "legal_name": "(주)나우로보틱스",
+   "stock_code": "459510",
+   "market": "코스닥",
+   "industry_code": "29280",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "인천광역시 남동구 앵고개로449번길 42",
+   "region": "인천광역시",
+   "homepage": "naurobot.com",
+   "est_year": "2016",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%82%98%EC%9A%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 12526033167,
+   "op_income": -8206292816,
+   "employees": 68,
+   "avg_salary": 50727294,
+   "score": 70,
+   "sub": {
+    "tech": 75,
+    "domain": 70,
+    "growth": 65,
+    "env": 60
+   },
+   "business": "산업용 로봇과 자율주행 물류로봇(AMR) 및 공장 자동화 솔루션을 자체 개발·생산하는 기업이다.",
+   "fit_tags": [
+    "로보틱스",
+    "자율주행",
+    "스마트팩토리"
+   ],
+   "reasons": [
+    "TurtleBot3 기반 Nav2, SLAM Toolbox를 활용한 자율 매핑 및 관제 시스템 구축 경험이 자율주행 물류로봇 뉴고(NUGO) 시리즈 개발에 직접적으로 맞닿아 있다.",
+    "Jetson Orin 환경에서의 ROS2 및 MQTT 기반 통신 설계 역량을 산업용 로봇과 공장 자동화 시스템 제어에 활용할 수 있다.",
+    "다만 산업 현장의 제어 로직은 기구학 및 PLC 기반 하드웨어 제어 비중이 높아 순수 딥러닝 비전 연구 비중은 상대적으로 제한적일 수 있다."
+   ],
+   "roles": [
+    "로봇 자율주행 SW 엔지니어",
+    "로봇 관제 시스템 개발자"
+   ],
+   "caution": "최근 대규모 영업손실을 기록하고 있으며 인천 근무로 대전 거주 시 출퇴근이 어려우므로 기숙사 제공 여부나 거주지 이전 필요성을 확인해야 한다.",
+   "web_facts": [
+    "자율주행 물류로봇 뉴고(NUGO) 및 다관절 로봇 뉴로 엑스(NURO X) 시리즈 등을 공급한다.",
+    "한양로보틱스 경영권 인수를 통해 5,000평 규모 생산 인프라를 확보하고 R&D 및 생산 통합 운영을 추진 중이다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://naurobot.com/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": [
+     {
+      "url": "https://naurobot.com/",
+      "title": "(주)나우로보틱스 – 대한민국을 움직이는 로봇 기술 혁신의 리더(주)나우로보틱스 | 대한민국을 움직이는 로봇 기술 혁신의 리더자산 2"
+     },
+     {
+      "url": "https://naurobot.com/%ec%9d%b8%ec%82%ac%eb%a7%90/",
+      "title": "인사말 – (주)나우로보틱스(주)나우로보틱스 | 대한민국을 움직이는 로봇 기술 혁신의 리더자산 2"
+     },
+     {
+      "url": "https://naurobot.com/%eb%b9%84%ec%a0%84/",
+      "title": "Vision – (주)나우로보틱스(주)나우로보틱스 | 대한민국을 움직이는 로봇 기술 혁신의 리더자산 2"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01784914",
+   "name": "클로봇",
+   "legal_name": "주식회사 클로봇",
+   "stock_code": "466100",
+   "market": "코스닥",
+   "industry_code": "58221",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "경기도 성남시 중원구 양현로405번길 4-5 (여수동, 마커스빌딩)",
+   "region": "경기도",
+   "homepage": "clobot.co.kr",
+   "est_year": "2017",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%81%B4%EB%A1%9C%EB%B4%87",
+   "fiscal_year": 2025,
+   "revenue": 41406081428,
+   "op_income": -3180595266,
+   "employees": 161,
+   "avg_salary": 44538851,
+   "score": 68,
+   "sub": {
+    "tech": 65,
+    "domain": 70,
+    "growth": 70,
+    "env": 70
+   },
+   "business": "클로봇은 이종 로봇 관제 시스템(FMS)과 자율주행 로봇 소프트웨어를 개발하여 스마트 물류 및 제조 자동화 서비스를 제공하는 로봇 SW 전문 기업이다.",
+   "fit_tags": [
+    "로보틱스",
+    "자율주행",
+    "클라우드"
+   ],
+   "reasons": [
+    "지원자가 제작한 YogiBot ControlTower(ROS2-MQTT-WebSocket 아키텍처 및 FastAPI+React 관제 웹)는 클로봇의 이종 로봇 관제 솔루션 크롬스(CROMS) 및 카멜레온 아키텍처와 기술 스택 및 목적이 매우 일치한다.",
+    "지원자의 웹 풀스택 역량(TypeScript/React/Node/FastAPI)과 ROS2 연동 경험을 동시에 활용할 수 있는 최적의 도메인이다."
+   ],
+   "roles": [
+    "로봇 SW",
+    "관제 시스템 엔지니어",
+    "백엔드"
+   ],
+   "caution": "경기도 소재 기업으로 수도권 근무에 따른 거주지 이전이나 출퇴근 계획을 사전에 확정해야 한다.",
+   "web_facts": [
+    "클라우드 기반 이기종 로봇 관제를 통해 모니터링, 경로생성, 교통제어, 작업 스케줄링 솔루션을 제공한다.",
+    "자율주행범용화 아키텍처를 통해 로봇 종류에 상관없이 ROS 대응이 가능한 주행 및 관제 기술을 보유하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://clobot.co.kr/",
+    "fetched_at": "2026-10-14T13:55+09:00",
+    "sources": [
+     {
+      "url": "https://clobot.co.kr/",
+      "title": "클라우드 기반 로봇 서비스 전문기업 클로봇"
+     },
+     {
+      "url": "https://clobot.co.kr/company",
+      "title": "클로봇 회사소개"
+     },
+     {
+      "url": "https://clobot.co.kr/business",
+      "title": "클로봇 - 사업영역"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00825959",
+   "name": "하이비젼시스템",
+   "legal_name": "(주)하이비젼시스템",
+   "stock_code": "126700",
+   "market": "코스닥",
+   "industry_code": "273",
+   "sector": "광학기기",
+   "related": true,
+   "address": "경기도 성남시 중원구 둔촌대로 527 -",
+   "region": "경기도",
+   "homepage": "www.hyvision.co.kr",
+   "est_year": "2010",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%95%98%EC%9D%B4%EB%B9%84%EC%A0%BC%EC%8B%9C%EC%8A%A4%ED%85%9C",
+   "fiscal_year": 2025,
+   "revenue": 171096948608,
+   "op_income": -32554245303,
+   "employees": 455,
+   "avg_salary": 59046075,
+   "score": 68,
+   "sub": {
+    "tech": 73,
+    "domain": 62,
+    "growth": 68,
+    "env": 70
+   },
+   "business": "카메라 모듈, 센서 및 2차전지 검사를 위한 고정밀 자동화 비전 검사 설비와 부품을 제조한다.",
+   "fit_tags": [
+    "스마트팩토리",
+    "컴퓨터비전",
+    "로보틱스"
+   ],
+   "reasons": [
+    "도로 파손 검출을 위해 수행한 TensorRT 가속 분석 경험은 산업용 카메라 비전 알고리즘의 실시간 결함 검사 속도 최적화에 적용할 수 있다.",
+    "회사가 다관절 로봇 및 설비 전자동화를 연구하고 있으므로 YogiBot ControlTower 프로젝트에서 다룬 로봇 제어 및 매핑 경험을 설비 연동에 일부 응용할 수 있다.",
+    "화재·도로 파손 등 안전·재난 비전 분야와 비교했을 때 산업 설비 룰 기반/검사 알고리즘 도메인으로의 방향 전환이 필요하다."
+   ],
+   "roles": [
+    "머신비전 SW 엔지니어",
+    "자동화 설비 비전 알고리즘 개발자"
+   ],
+   "caution": "장비 영업손실 등 최근 실적 변동성과 함께 AI 딥러닝보다는 전통 머신비전 제어 소프트웨어 비중을 검토해야 한다.",
+   "web_facts": [
+    "카메라 모듈, ToF, LiDAR부터 2차전지 극판 VISION 검사 설비 등을 다룬다.",
+    "Image grabber board, Vision camera, Vision algorithm과 다관절·SCARA 로봇 연구를 지속하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.hyvision.co.kr/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": [
+     {
+      "url": "https://www.hyvision.co.kr/",
+      "title": "하이비젼시스템"
+     },
+     {
+      "url": "https://www.hyvision.co.kr/introduction",
+      "title": "하이비젼시스템"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01014055",
+   "name": "에스트래픽",
+   "legal_name": "에스트래픽 주식회사",
+   "stock_code": "234300",
+   "market": "코스닥",
+   "industry_code": "6202",
+   "sector": "컴퓨터 프로그래밍·SI",
+   "related": true,
+   "address": "경기도 성남시 수정구 금토로80번길 56 ,씨동(금토동, 위든타워)",
+   "region": "경기도",
+   "homepage": "www.straffic.co.kr",
+   "est_year": "2013",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%97%90%EC%8A%A4%ED%8A%B8%EB%9E%98%ED%94%BD",
+   "fiscal_year": 2025,
+   "revenue": 168238551225,
+   "op_income": 8956631429,
+   "employees": 238,
+   "avg_salary": 82642857,
+   "score": 68,
+   "sub": {
+    "tech": 68,
+    "domain": 70,
+    "growth": 65,
+    "env": 68
+   },
+   "business": "지능형 교통체계(ITS), 철도 신호 및 도로 교통 솔루션을 구축하는 SI 기업이다.",
+   "fit_tags": [
+    "모빌리티",
+    "컴퓨터비전"
+   ],
+   "reasons": [
+    "도로 교통 관리 및 모빌리티 인프라를 다루므로, 학술대회 우수논문상을 수상한 도로 파손 탐지 YOLOv8 및 TensorRT 추론 성능 비교 연구와 연계성이 높다.",
+    "대중교통 스케줄링 웹 서비스인 when-to-leave의 국토교통부 TAGO 및 ODsay 연동 경험이 교통 데이터 다루는 업무에 친화적이다.",
+    "자체 AI 원천기술 연구보다는 공공 교통 SI 인프라 사업 비중이 높아 엣지 AI 딥러닝 모델링 자체의 비중은 제한적일 수 있다."
+   ],
+   "roles": [
+    "교통 영상 비전 엔지니어",
+    "ITS 관제 소프트웨어 개발자"
+   ],
+   "caution": "연구 개발 직무와 SI 인프라 현장 납품·유지보수 업무의 실질적 비율을 파악해야 한다.",
+   "web_facts": [
+    "글로벌 교통 솔루션 선두기업을 지향한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.straffic.co.kr/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://www.straffic.co.kr/",
+      "title": "에스트래픽"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01261644",
+   "name": "레인보우로보틱스",
+   "legal_name": "(주)레인보우로보틱스",
+   "stock_code": "277810",
+   "market": "코스닥",
+   "industry_code": "29280",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "세종특별자치시  집현중앙3로 8 세종특별자치시 집현중앙3로 8(집현동)",
+   "region": "세종특별자치시",
+   "homepage": "www.rainbow-robotics.com",
+   "est_year": "2011",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 34123110054,
+   "op_income": -2480266118,
+   "employees": 161,
+   "avg_salary": 41521385,
+   "score": 67,
    "sub": {
     "tech": 60,
     "domain": 70,
-    "growth": 50,
-    "env": 55
+    "growth": 70,
+    "env": 75
    },
-   "business": "자율주행 및 지능형 인프라 안전 감시를 위한 고정형 라이다 센서 개발 기업이다.",
+   "business": "레인보우로보틱스는 휴머노이드 원천기술을 바탕으로 협동로봇과 자율이동로봇(AMR), 사족보행로봇을 공급하는 풀스택 로보틱스 기업이다.",
    "fit_tags": [
+    "로보틱스",
     "자율주행",
-    "안전·재난",
-    "반도체·하드웨어"
+    "스마트팩토리"
    ],
    "reasons": [
-    "화재 및 연기 탐지, 도로 파손 탐지 등 안전·재난 비전 연구 경험이 인프라 안전 감시 도메인과 맞닿아 있다.",
-    "TensorRT 기반 추론 최적화 역량이 라이다 데이터 처리 및 엣지 연동에 활용될 수 있다."
+    "세종특별자치시에 위치하여 지원자의 대전 거주지에서 출퇴근 인프라와 근무지 접근성 측면에서 환경 점수가 높다.",
+    "ROS2기반 자율주행 로봇 관제 시스템 설계 경험은 AMR 및 모바일 로봇의 자율주행 통합 개발에 직접 활용될 수 있다."
+   ],
+   "roles": [
+    "로봇 SW",
+    "자율주행 내비게이션 엔지니어"
+   ],
+   "caution": "세종 근무지로 출퇴근이 가능하지만 연구개발 조직 내 비전 AI 단독 직무보다는 로봇 플랫폼 전체 제어 소프트웨어 개발 역할을 맡을 가능성을 확인해야 한다.",
+   "web_facts": [
+    "KAIST 휴보랩에서 출발한 대한민국 로봇 플랫폼 전문기업이다.",
+    "협동로봇, AMR, 사족보행로봇, 이동형 양팔로봇을 상용화하며 풀라인업을 갖춘 피지컬 AI 기업이다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.rainbow-robotics.com/",
+    "fetched_at": "2026-10-14T13:55+09:00",
+    "sources": [
+     {
+      "url": "https://rainbow-robotics.com/",
+      "title": "레인보우로보틱스 | 휴머노이드 기반 로봇 플랫폼 전문기업"
+     },
+     {
+      "url": "https://rainbow-robotics.com/company/%ed%9a%8c%ec%82%ac%ec%86%8c%ea%b0%9c/",
+      "title": "회사소개 | 레인보우로보틱스"
+     },
+     {
+      "url": "https://rainbow-robotics.com/company/%ed%9a%8c%ec%82%ac%ec%86%8c%ea%b0%9c/%ed%97%a4%eb%a6%ac%ed%8b%b0%ec%a7%80-%ec%8a%a4%ed%86%a0%eb%a6%ac/",
+      "title": "헤리티지 스토리 | 레인보우로보틱스"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01293485",
+   "name": "제닉스로보틱스",
+   "legal_name": "제닉스로보틱스(주)",
+   "stock_code": "381620",
+   "market": "코스닥",
+   "industry_code": "29299",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "충청남도 천안시 서북구 직산읍 부송로 165-33",
+   "region": "충청남도",
+   "homepage": "www.zenixkorea.co.kr/",
+   "est_year": "2010",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%A0%9C%EB%8B%89%EC%8A%A4%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 22665261675,
+   "op_income": -12312906714,
+   "employees": 190,
+   "avg_salary": 44036453,
+   "score": 67,
+   "sub": {
+    "tech": 70,
+    "domain": 65,
+    "growth": 60,
+    "env": 70
+   },
+   "business": "공장 자동화 무인이송차(AGV/AMR) 및 물류 자동화 시스템을 공급하는 로봇 기업이다.",
+   "fit_tags": [
+    "로보틱스",
+    "자율주행",
+    "스마트팩토리"
+   ],
+   "reasons": [
+    "YogiBot ControlTower 프로젝트에서 다룬 ROS2 기반 자율 매핑 및 웹 관제 시스템 구현 경험이 AMR 무인이송차 관제 및 제어 SW에 부합한다.",
+    "충청남도 소재로 대전에서 통근이 비교적 용이하여 근무지 접근성 측면에서 강점이 있다.",
+    "물류 AGV/AMR 중심 사업 특성상 이력의 강점인 YOLOv8/v26 경량화 비전 모델 연구보다는 2D LiDAR SLAM 및 주행 제어 업무 비중이 높을 수 있다."
+   ],
+   "roles": [
+    "AMR 자율주행 엔지니어",
+    "로봇 관제 소프트웨어 개발자"
+   ],
+   "caution": "연간 120억 원대 영업손실 등 재무 안정성이 저하되어 있으므로 R&D 투자 규모와 신규 채용 여력을 사전 점검해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "http://www.zenixkorea.co.kr/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": [
+     {
+      "url": "http://errdoc.gabia.io/403.html",
+      "title": "403 Forbidden"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01571107",
+   "name": "오픈엣지테크놀로지",
+   "legal_name": "오픈엣지테크놀로지 주식회사",
+   "stock_code": "394280",
+   "market": "코스닥",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 강남구 역삼로 114 현죽빌딩 12층",
+   "region": "서울특별시",
+   "homepage": "www.openedges.com",
+   "est_year": "2017",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%98%A4%ED%94%88%EC%97%A3%EC%A7%80%ED%85%8C%ED%81%AC%EB%86%80%EB%A1%9C%EC%A7%80",
+   "fiscal_year": 2025,
+   "revenue": 16058809323,
+   "op_income": -28907297350,
+   "employees": 118,
+   "avg_salary": 98047195,
+   "score": 66,
+   "sub": {
+    "tech": 75,
+    "domain": 60,
+    "growth": 65,
+    "env": 55
+   },
+   "business": "엣지 디바이스용 NPU 반도체 IP를 개발하여 온디바이스 비전 AI 가속을 연구하는 팹리스 IP 기업입니다.",
+   "fit_tags": [
+    "반도체·하드웨어",
+    "엣지AI"
+   ],
+   "reasons": [
+    "화재 및 연기 탐지 논문에서 다룬 커스텀 YOLOv8의 엣지 디바이스 환경 성능 분석 및 TensorRT 추론 최적화 경험이 NPU IP 검증 및 비전 AI 가속 연구에 직접 기여합니다.",
+    "임베디드 및 엣지 배포 역량이 팹리스 IP 환경에서 강력한 장점으로 작용합니다."
    ],
    "roles": [
     "엣지 추론 최적화",
     "비전 AI 엔지니어"
    ],
-   "caution": "광주광역시 소재 기업으로 대전 거주 시 근무지 이동이나 거주지 변경 여부를 확인해야 한다."
+   "caution": "서울에 위치해 있으며 대전 거주 시 출퇴근이 불가하므로 주거 지원 여부를 확인해야 합니다.",
+   "web_facts": [
+    "NoC interconnect, DDR memory controller, DDR PHY, and NPU IP를 제공합니다.",
+    "전력 소비, 면적, DRAM 최적화에서 효율성을 제공하는 IP 솔루션을 개발합니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.openedges.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://www.openedges.com/",
+      "title": "Total Memory Subsystem IP Provider | OPENEDGES Technology, Inc."
+     },
+     {
+      "url": "https://www.openedges.com/about-1",
+      "title": "About | OPENEDGES Technology"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "00536523",
-   "name": "로보스타",
-   "legal_name": "(주)로보스타",
-   "stock_code": "090360",
+   "corp_code": "01105153",
+   "name": "두산로보틱스",
+   "legal_name": "두산로보틱스 주식회사",
+   "stock_code": "454910",
+   "market": "코스피",
+   "industry_code": "2928",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "경기도 수원시 권선구 산업로156번길 79",
+   "region": "경기도",
+   "homepage": "www.doosanrobotics.com",
+   "est_year": "2015",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%91%90%EC%82%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 32978338354,
+   "op_income": -59472307590,
+   "employees": 255,
+   "avg_salary": 72454902,
+   "score": 65,
+   "sub": {
+    "tech": 65,
+    "domain": 60,
+    "growth": 70,
+    "env": 70
+   },
+   "business": "두산로보틱스는 첨단 AI 기반 협동로봇 솔루션을 제공하여 제조 및 서비스 산업의 작업 프로세스를 자동화하는 로봇 선도 기업이다.",
+   "fit_tags": [
+    "로보틱스",
+    "스마트팩토리"
+   ],
+   "reasons": [
+    "지원자가 보유한 ROS2 및 비전 센서 기반 지능형 제어 역량은 두산로보틱스의 AI 기반 협동로봇 솔루션 및 Dart-Suite 플랫폼 개발과 맞닿아 있다.",
+    "다만 수도권 근무 조건으로 대전 거주지에서의 장거리 출퇴근 또는 이사가 필요하다."
+   ],
+   "roles": [
+    "로봇 SW",
+    "비전 AI 엔지니어"
+   ],
+   "caution": "영업이익이 적자 상태이므로 R&D 조직의 투자 안정성과 신입 사원 대상 교육 체계를 입사 전에 점검할 필요가 있다.",
+   "web_facts": [
+    "AI 기반 로봇 솔루션을 통해 다양한 산업 분야에서 작업 프로세스를 혁신한다.",
+    "고유의 토크센서를 기반으로 정밀한 작업을 수행하며 Dart-Suite 로봇 플랫폼을 제공한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.doosanrobotics.com/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://www.doosanrobotics.com/kr/",
+      "title": "Doosan Robotics AI Powered Solutions"
+     },
+     {
+      "url": "https://www.doosanrobotics.com/kr/about/company/overview/",
+      "title": "개요 : 기업정보 : 두산로보틱스"
+     },
+     {
+      "url": "https://www.doosanrobotics.com/kr/about/company/ci/",
+      "title": "CI : 기업정보 : 두산로보틱스"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01515864",
+   "name": "넥스트칩",
+   "legal_name": "(주)넥스트칩",
+   "stock_code": "396270",
+   "market": "코스닥",
+   "industry_code": "26112",
+   "sector": "반도체",
+   "related": true,
+   "address": "경기도 성남시 분당구 대왕판교로 660 유스페이스1 에이동 5층",
+   "region": "경기도",
+   "homepage": "www.nextchip.com/",
+   "est_year": "2019",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%84%A5%EC%8A%A4%ED%8A%B8%EC%B9%A9",
+   "fiscal_year": 2025,
+   "revenue": 39653511990,
+   "op_income": -12936402244,
+   "employees": null,
+   "avg_salary": null,
+   "score": 65,
+   "sub": {
+    "tech": 70,
+    "domain": 70,
+    "growth": 60,
+    "env": 45
+   },
+   "business": "자율주행 차량용 ISP 및 엣지 AI NPU 비전 SoC를 개발하는 반도체 기업입니다.",
+   "fit_tags": [
+    "자율주행",
+    "반도체·하드웨어",
+    "엣지AI"
+   ],
+   "reasons": [
+    "YOLOv8n 기반 실시간 화재·연기 감지 및 엣지 디바이스 추론 최적화 경험이 차량용 비전 프로세서 및 엣지 NPU SoC 적용에 유용합니다.",
+    "ROS2 기반 자율주행 로봇 관제 시스템 설계 경험이 자율주행 트렌드에 부합합니다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "엣지 추론 최적화",
+    "로봇 SW"
+   ],
+   "caution": "전장용 소프트웨어 표준프로세스(ASPICE, ISO26262 등)에 대한 이해와 적응력이 요구됩니다.",
+   "web_facts": [
+    "자율주행 트렌드에 맞춘 영상 솔루션과 CNN capable SoC를 설계합니다.",
+    "어안렌즈 기반 RVC 및 스텔라5 등 비전 프로세서를 개발합니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.nextchip.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://www.nextchip.com/kr/index.php",
+      "title": "넥스트칩"
+     },
+     {
+      "url": "https://www.nextchip.com/kr/vision/vision.php",
+      "title": "RVC - Vision Processor - 넥스트칩"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01336461",
+   "name": "뉴로메카",
+   "legal_name": "주식회사 뉴로메카",
+   "stock_code": "348340",
    "market": "코스닥",
    "industry_code": "29280",
    "sector": "특수 목적용 기계",
    "related": true,
-   "address": "경기도 안산시 상록구  수인로 700",
-   "region": "경기도",
-   "homepage": "robostar.co.kr",
-   "est_year": "1999",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A1%9C%EB%B3%B4%EC%8A%A4%ED%83%80",
+   "address": "서울특별시 성동구 아차산로 78 (성수동2가)",
+   "region": "서울특별시",
+   "homepage": "www.neuromeka.com",
+   "est_year": "2013",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%89%B4%EB%A1%9C%EB%A9%94%EC%B9%B4",
    "fiscal_year": 2025,
-   "revenue": 75735139041,
-   "op_income": -5660781243,
-   "employees": 204,
-   "avg_salary": 51058824,
-   "score": 55,
+   "revenue": 18954203205,
+   "op_income": -14856577614,
+   "employees": 149,
+   "avg_salary": 60838926,
+   "score": 64,
    "sub": {
-    "tech": 50,
-    "domain": 55,
+    "tech": 60,
+    "domain": 65,
     "growth": 65,
-    "env": 60
+    "env": 70
    },
-   "business": "산업용 로봇과 반도체 이송 로봇을 개발 및 제조하며 스마트 팩토리 솔루션을 제공하는 기업입니다.",
+   "business": "뉴로메카는 협동로봇, 자율이동로봇(AMR), 휴머노이드 플랫폼을 자체 기술로 내재화하여 지능형 로봇 자동화를 공급하는 기업이다.",
    "fit_tags": [
     "로보틱스",
-    "스마트팩토리",
-    "반도체·하드웨어"
+    "자율주행",
+    "스마트팩토리"
    ],
    "reasons": [
-    "산업용 로봇 제조가 주력이라 후보자의 YOLO 기반 객체 탐지 및 안전·재난 비전 연구를 직접 활용할 기회가 적습니다.",
-    "다만 스마트 팩토리 로보틱스 조직에서 ROS2 및 임베디드 제어 역량을 일부 접목할 여지는 있습니다."
+    "지원자의 ROS2 기반 자율주행 로봇 관제 시스템 구축 경험은 뉴로메카의 AMR 및 협동로봇 관제 플랫폼 개발 직무에 직접 적용 가능하다.",
+    "피지컬 AI 및 로봇 자동화 프로젝트 수행 이력이 지원자의 졸업작품 프로젝트와 기술적 교집합이 크다."
    ],
    "roles": [
-    "로봇 제어 SW 엔지니어"
+    "로봇 SW",
+    "관제 시스템 엔지니어"
    ],
-   "caution": "모바일 자율주행(AMR)이나 비전 AI보다는 전통적인 산업용 매니퓰레이터 제어 업무 비중이 높을 수 있습니다."
+   "caution": "최근 실적 기준 영업이익 적자 구조이므로 현장 R&D 조직의 업무 강도와 인력 운영 현황을 확인해야 한다.",
+   "web_facts": [
+    "협동로봇, 휴머노이드플랫폼, 자율이동로봇, 델타로봇 라인업을 자체 기술로 내재화했다.",
+    "국가 피지컬 AI 프로젝트 주관 및 조선 완전 자율용접 기술개발을 주도하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.neuromeka.com/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://www.neuromeka.com/",
+      "title": "협동로봇, 산업용로봇, 자율이동로봇, 델타로봇 I 뉴로메카 Neuromeka"
+     },
+     {
+      "url": "https://www.neuromeka.com/about",
+      "title": "대한민국 대표 협동로봇, 뉴로메카 Neuromeka | 회사소개"
+     },
+     {
+      "url": "https://www.neuromeka.com/history",
+      "title": "대한민국 대표 협동로봇, 뉴로메카 Neuromeka | 연혁"
+     }
+    ]
+   }
   },
   {
-   "corp_code": "01649620",
-   "name": "아우토크립트",
-   "legal_name": "아우토크립트 주식회사",
-   "stock_code": "331740",
+   "corp_code": "00579999",
+   "name": "고영",
+   "legal_name": "(주)고영테크놀러지",
+   "stock_code": "098460",
    "market": "코스닥",
-   "industry_code": "58222",
-   "sector": "소프트웨어 개발·공급",
+   "industry_code": "29271",
+   "sector": "특수 목적용 기계",
    "related": true,
-   "address": "서울특별시 영등포구 여의공원로 115 세우빌딩, 8층",
-   "region": "서울특별시",
-   "homepage": "autocrypt.co.kr/",
-   "est_year": "2019",
-   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9A%B0%ED%86%A0%ED%81%AC%EB%A6%BD%ED%8A%B8",
+   "address": "경기도 용인시 수지구 포은대로59번길 18 (상현동)",
+   "region": "경기도",
+   "homepage": "www.kohyoung.com",
+   "est_year": "2002",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EA%B3%A0%EC%98%81",
    "fiscal_year": 2025,
-   "revenue": 25479479430,
-   "op_income": -13519713490,
-   "employees": 254,
-   "avg_salary": 55192913,
-   "score": 54,
+   "revenue": 232647218656,
+   "op_income": 17342338477,
+   "employees": 472,
+   "avg_salary": 70095339,
+   "score": 64,
    "sub": {
-    "tech": 50,
-    "domain": 50,
-    "growth": 60,
-    "env": 65
+    "tech": 65,
+    "domain": 70,
+    "growth": 70,
+    "env": 45
    },
-   "business": "자율주행 V2X 통신 보안 및 지능형 교통 시스템 관제 소프트웨어를 개발하는 기업이다.",
+   "business": "3D 측정 기반 머신비전 검사 장비와 의료용 수술 로봇을 개발하는 기업입니다.",
    "fit_tags": [
-    "자율주행",
-    "통신·네트워크"
+    "컴퓨터비전",
+    "로보틱스"
    ],
    "reasons": [
-    "ROS2 기반 자율주행 로봇 관제 경험이 자율주행 시스템 이해에 도움을 주나 보안 및 암호화 통신 전문성이 추가로 요구된다.",
-    "보유한 비전 AI 및 엣지 최적화 역량이 주력 보안 사업과의 직접적인 접점이 다소 부족하다."
+    "ROS2 기반 로봇 관제 시스템 설계 및 금상 수상 경력이 의료용 수술 로봇 및 스마트 AI 솔루션 개발에 부합합니다.",
+    "머신비전 기반 3차원 측정 및 온디바이스 AI 자동 판정 기술은 이력의 YOLO 및 TensorRT 최적화 역량과 직결됩니다."
    ],
    "roles": [
-    "자율주행 SW",
-    "웹 관제 개발자"
+    "비전 AI 엔지니어",
+    "로봇 SW"
    ],
-   "caution": "보안 및 V2X 통신 도메인에 대한 추가적인 학습과 적응이 필요하다."
+   "caution": "경기도 용인시 근무로 대전에서 출퇴근이 불가능하여 거주지 이전을 고려해야 합니다.",
+   "web_facts": [
+    "SPI 및 AOI 세계시장 점유율 1위의 3D 측정 검사 기술 글로벌 리더입니다.",
+    "온디바이스 AI 자동 판정 및 검사 조건 피드백 솔루션을 제공합니다.",
+    "영상 기반의 수술 로봇 시스템을 개발합니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.kohyoung.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://kohyoung.com/kr/",
+      "title": "고영테크놀러지 – 3D 측정 검사 기술 글로벌 리더 | SPI·AOI 세계 1위고영테크놀러지"
+     },
+     {
+      "url": "https://kohyoung.com/kr/about-us/",
+      "title": "회사 소개 – 고영테크놀러지고영테크놀러지"
+     },
+     {
+      "url": "https://kohyoung.com/kr/who-we-are/",
+      "title": "회사 개요 – 고영테크놀러지고영테크놀러지"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01709065",
+   "name": "마키나락스",
+   "legal_name": "(주)마키나락스",
+   "stock_code": "477850",
+   "market": "코스닥",
+   "industry_code": "582",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 서초구 강남대로 343 신덕빌딩, 12층",
+   "region": "서울특별시",
+   "homepage": "www.makinarocks.ai",
+   "est_year": "2017",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A7%88%ED%82%A4%EB%82%98%EB%9D%BD%EC%8A%A4",
+   "fiscal_year": null,
+   "revenue": null,
+   "op_income": null,
+   "employees": null,
+   "avg_salary": null,
+   "score": 62,
+   "sub": {
+    "tech": 60,
+    "domain": 55,
+    "growth": 75,
+    "env": 70
+   },
+   "business": "마키나락스는 산업 현장의 물리적 복잡성과 제약을 이해하는 특화형 AI 에이전트와 AI 운영체제(Runway)를 공급하는 AI 플랫폼 기업이다.",
+   "fit_tags": [
+    "엣지AI",
+    "컴퓨터비전",
+    "스마트팩토리"
+   ],
+   "reasons": [
+    "화재·연기 탐지를 위한 커스텀 YOLOv8 및 TensorRT 엣지 추론 최적화 경험은 마키나락스의 머신 비전 에이전트 및 버티컬 AI 솔루션 개발에 직접 기여할 수 있다.",
+    "제조 및 산업 안전을 위한 이상 탐지 비전 솔루션 분야는 지원자의 KCI 논문 주제와 방향성이 잘 부합한다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "엣지 추론 최적화",
+    "AI 플랫폼 엔지니어"
+   ],
+   "caution": "서울 본사 근무 조건이므로 대전 거주지에서의 출퇴근 가능 여부나 거주지 이전 계획을 확인해야 한다.",
+   "web_facts": [
+    "산업 특화 AI 기술로 핵심 비즈니스 프로세스를 지능화하여 기업 생산성을 극대화한다.",
+    "AI를 기업의 자산으로 전환하는 Runway는 산업 현장에 특화된 AI 운영체제이다.",
+    "머신 비전 에이전트는 복잡한 비정형 객체 인식부터 품질 판정까지 반복적인 판단을 대신 수행한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.makinarocks.ai/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://www.makinarocks.ai/",
+      "title": "Transforming Industries with Specialized AI | MakinaRocks"
+     },
+     {
+      "url": "https://www.makinarocks.ai/specialized/",
+      "title": "Specialized AI for the Real-World | MakinaRocks"
+     },
+     {
+      "url": "https://www.makinarocks.ai/specialized/vision",
+      "title": "Machine Vision | MakinaRocks"
+     }
+    ]
+   }
   },
   {
    "corp_code": "01357446",
@@ -2460,26 +2846,98 @@
    "op_income": -7162779864,
    "employees": 100,
    "avg_salary": 65958020,
-   "score": 50,
+   "score": 62,
    "sub": {
-    "tech": 50,
-    "domain": 45,
-    "growth": 55,
-    "env": 55
+    "tech": 65,
+    "domain": 58,
+    "growth": 62,
+    "env": 63
    },
-   "business": "자율주행 카메라 모듈의 조립 및 검사 장비와 비전 튜닝 솔루션을 공급하는 장비 전문 기업입니다.",
+   "business": "자율주행차용 센싱 카메라 및 3D 센싱 모듈의 자동화 검사·조립 장비를 개발하고 제조한다.",
    "fit_tags": [
-    "반도체·하드웨어",
-    "컴퓨터비전"
+    "컴퓨터비전",
+    "자율주행",
+    "스마트팩토리"
    ],
    "reasons": [
-    "카메라 모듈 검사 장비의 핵심인 비전 튜닝 및 캘리브레이션 영역은 후보자의 YOLO 기반 객체 탐지 및 ROS2 로봇 제어 이력과 직접적인 접점이 적습니다.",
-    "Blender Python을 활용한 아나모픽 미디어아트 3D 렌더링 파이프라인 개발 경험이 카메라 기하학 및 3D 비전 검사 알고리즘 이해에 간접적인 도움이 될 수 있습니다."
+    "OpenCV와 비전 기반 탐지 파이프라인 경험은 카메라 캘리브레이션 및 검사 솔루션의 영상 분석 알고리즘에 기초 역량으로 쓰일 수 있다.",
+    "주 연구가 도로 파손, 화재 감지 같은 자율주행·안전 응용 딥러닝 객체 탐지에 맞춰져 있어 하드웨어 튜닝 및 카메라 렌즈 액티브 얼라인먼트 장비 제어와는 도메인 차이가 있다.",
+    "ROS2 관제 및 웹 풀스택 역량을 장비 자동화 제어 소프트웨어에 일부 전용할 수 있으나 전문 자동화 SW 스택과의 불일치가 존재한다."
    ],
    "roles": [
-    "컴퓨터비전 엔지니어"
+    "비전 검사 SW 개발자",
+    "광학 영상처리 엔지니어"
    ],
-   "caution": "딥러닝 객체 탐지보다는 전통적인 머신비전 및 카메라 캘리브레이션 장비 제어 업무가 주를 이룹니다."
+   "caution": "장비 하드웨어 및 광학계 검사 중심 기업이므로 딥러닝 인지 모델 연구보다는 제조 공정 자동화 SW 비중이 높다는 점을 확인해야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.furonteer.com/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": [
+     {
+      "url": "https://furonteer.com/",
+      "title": "Furonteer"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00423177",
+   "name": "텔레칩스",
+   "legal_name": "(주)텔레칩스",
+   "stock_code": "054450",
+   "market": "코스닥",
+   "industry_code": "2611",
+   "sector": "반도체",
+   "related": true,
+   "address": "경기도 성남시 수정구 금토로80번길 27 ㈜텔레칩스 판교사옥",
+   "region": "경기도",
+   "homepage": "www.telechips.com",
+   "est_year": "1999",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%85%94%EB%A0%88%EC%B9%A9%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 192802105423,
+   "op_income": -6189468061,
+   "employees": 489,
+   "avg_salary": 85088045,
+   "score": 62,
+   "sub": {
+    "tech": 65,
+    "domain": 65,
+    "growth": 65,
+    "env": 45
+   },
+   "business": "자율주행 및 ADAS 제어를 위한 고성능 오토모티브 AP 및 NPU SoC를 개발하는 팹리스 기업입니다.",
+   "fit_tags": [
+    "자율주행",
+    "반도체·하드웨어"
+   ],
+   "reasons": [
+    "엣지 디바이스 환경에서의 객체 탐지 모델 최적화 역량이 차량용 인포테인먼트 및 ADAS NPU 반도체 개발과 연관성이 높습니다.",
+    "파이썬 및 임베디드 환경에 대한 이해도가 반도체 검증 및 응용 SW 개발에 도움이 됩니다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "엣지 추론 최적화"
+   ],
+   "caution": "경기도에 본사가 있어 거주지 이전이나 숙소 지원 조건의 확인이 필요합니다.",
+   "web_facts": [
+    "차량용 반도체 팹리스 기업으로 인포테인먼트, ADAS, 네트워크, AI 반도체를 공급합니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.telechips.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://www.telechips.com/",
+      "title": "Telechips"
+     }
+    ]
+   }
   },
   {
    "corp_code": "00351630",
@@ -2500,26 +2958,754 @@
    "op_income": 3006279897,
    "employees": 555,
    "avg_salary": 50778378,
-   "score": 49,
+   "score": 61,
    "sub": {
-    "tech": 45,
-    "domain": 40,
+    "tech": 60,
+    "domain": 55,
+    "growth": 63,
+    "env": 72
+   },
+   "business": "차량용 카메라 렌즈, 광학 부품 및 광학 영상 모듈을 개발·생산하는 기업이다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "모빌리티"
+   ],
+   "reasons": [
+    "OpenCV 기반 영상 처리 이해도는 카메라 모듈 왜곡 보정 및 이미지 품질 평가 등 광학 모듈 검증 업무에 일부 활용할 수 있다.",
+    "주력인 YOLO 기반 엣지 디바이스 객체 탐지, TensorRT 가속화, ROS2 관제 역량은 렌즈 및 광학 중심 하드웨어 제조 업종과 직접적인 접점이 적다.",
+    "딥러닝 애플리케이션 개발보다는 광학 설계 및 렌즈 생산 중심 사업 구조라 AI SW 개발자로서의 기술적 일치도가 낮다."
+   ],
+   "roles": [
+    "광학 비전 영상처리 개발자",
+    "전장 모듈 검증 엔지니어"
+   ],
+   "caution": "소프트웨어 R&D보다 광학 렌즈 설계·하드웨어 생산이 중심이므로 SW/AI 전문 연구 인력의 비중을 살펴야 한다.",
+   "web_facts": [],
+   "web": {
+    "status": "unreachable",
+    "status_text": "홈페이지에 접속하지 못함",
+    "homepage": "http://www.sekonix.com/",
+    "fetched_at": "2026-10-14T14:10+09:00",
+    "sources": []
+   }
+  },
+  {
+   "corp_code": "00234227",
+   "name": "유진로봇",
+   "legal_name": "(주) 유진로봇",
+   "stock_code": "056080",
+   "market": "코스닥",
+   "industry_code": "292",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "인천광역시 연수구 하모니로187번길 33 송도동",
+   "region": "인천광역시",
+   "homepage": "www.yujinrobot.com",
+   "est_year": "1993",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9C%A0%EC%A7%84%EB%A1%9C%EB%B4%87",
+   "fiscal_year": 2025,
+   "revenue": 28189374133,
+   "op_income": -5033460702,
+   "employees": 142,
+   "avg_salary": 71810669,
+   "score": 60,
+   "sub": {
+    "tech": 55,
+    "domain": 65,
     "growth": 60,
     "env": 65
    },
-   "business": "차량용 카메라 렌즈, 프로젝션, ADAS 카메라 모듈을 개발 및 생산하는 광학 전장 전문 기업입니다.",
+   "business": "유진로봇은 자율주행 AMR과 공장 자동화 설비를 구축하여 스마트팩토리 토탈 솔루션을 공급하는 국내 1세대 로봇 기업이다.",
+   "fit_tags": [
+    "자율주행",
+    "스마트팩토리"
+   ],
+   "reasons": [
+    "지원자가 수행한 ROS2 기반 자율주행 로봇 관제 시스템 설계는 유진로봇의 GoCart AMR 및 내비게이션 솔루션 개발 요구사항과 유사하다.",
+    "인천광역시 본사 소재지로 대전 거주지에서 출퇴근하기에는 물리적 거리가 멀다."
+   ],
+   "roles": [
+    "자율주행 SW",
+    "로봇 관제 엔지니어"
+   ],
+   "caution": "인천 근무지로 인해 대전 거주를 유지할 수 없으므로 거주지 변경에 대한 부담을 고려해야 한다.",
+   "web_facts": [
+    "35년간 제조업 분야에서 공장 자동화 설비 개발 노하우를 바탕으로 최적의 자동화 시스템을 공급한다.",
+    "자체 개발한 AMR GoCart를 통해 완성한 물류 자동화 시스템과 레트로핏 패키지를 제공한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.yujinrobot.com/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://yujinrobot.com/",
+      "title": "유진로봇 | 자율주행 AMR과 자동화 설비로 스마트팩토리 토탈 솔루션 구현"
+     },
+     {
+      "url": "https://yujinrobot.com/company",
+      "title": "유진로봇 | 유진로봇 기업소개"
+     },
+     {
+      "url": "https://yujinrobot.com/company/vision-mission",
+      "title": "유진로봇 | 기업비전 & 미션 소개"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00867098",
+   "name": "티로보틱스",
+   "legal_name": "(주)티로보틱스",
+   "stock_code": "117730",
+   "market": "코스닥",
+   "industry_code": "29271",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "경기도 오산시 가장산업서북로 103-37 (지곶동)",
+   "region": "경기도",
+   "homepage": "www.t-robotics.net/",
+   "est_year": "2004",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8B%B0%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 43812661900,
+   "op_income": -11908451001,
+   "employees": 121,
+   "avg_salary": 58202116,
+   "score": 60,
+   "sub": {
+    "tech": 55,
+    "domain": 60,
+    "growth": 65,
+    "env": 70
+   },
+   "business": "티로보틱스는 반도체 진공로봇과 스마트 물류용 자율이동로봇(AMR)을 제조하고 시스템 엔지니어링을 제공하는 로봇 기업이다.",
+   "fit_tags": [
+    "로보틱스",
+    "자율주행",
+    "스마트팩토리"
+   ],
+   "reasons": [
+    "ROS2 및 자율주행 내비게이션 관련 지식이 티로보틱스의 AMR 및 물류 자동화 솔루션 소프트웨어 개발에 기여할 수 있다.",
+    "지원자의 주력 연구 분야인 엣지 비전 AI 및 화재 탐지 도메인보다는 하드웨어 제조 및 공장 자동화 제어 비중이 더 높다."
+   ],
+   "roles": [
+    "로봇 SW",
+    "제어 엔지니어"
+   ],
+   "caution": "경기도 오산 및 성남 오피스 근무이므로 대전 거주 환경과의 거리를 고려해야 한다.",
+   "web_facts": [
+    "고도화된 초정밀 자율주행 로봇기술로 첨단 물류 자동화 솔루션을 제공한다.",
+    "진공로봇, AMR, 헬스케어 재활로봇 등 인공지능과 비전인식 미래 기술을 결합하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.t-robotics.net/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://www.t-robotics.net/",
+      "title": "T-ROBOTICS"
+     },
+     {
+      "url": "https://www.t-robotics.net/company_ceo.do",
+      "title": "T-ROBOTICS"
+     },
+     {
+      "url": "https://www.t-robotics.net/company_location.do",
+      "title": "T-ROBOTICS"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01458161",
+   "name": "티엑스알로보틱스",
+   "legal_name": "주식회사 티엑스알로보틱스",
+   "stock_code": "484810",
+   "market": "코스닥",
+   "industry_code": "291",
+   "sector": "일반 목적용 기계",
+   "related": true,
+   "address": "경기도 부천시 원미구 옥산로 216",
+   "region": "경기도",
+   "homepage": "www.txr.kr",
+   "est_year": "2017",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%8B%B0%EC%97%91%EC%8A%A4%EC%95%8C%EB%A1%9C%EB%B3%B4%ED%8B%B1%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 56632898384,
+   "op_income": -771918665,
+   "employees": 130,
+   "avg_salary": 60930769,
+   "score": 60,
+   "sub": {
+    "tech": 55,
+    "domain": 60,
+    "growth": 65,
+    "env": 70
+   },
+   "business": "티엑스알로보틱스는 물류 자동화 소팅 시스템과 전기차 소화용 자율주행로봇 등 스마트 물류 및 제조 자동화 턴키 솔루션을 공급하는 기업이다.",
+   "fit_tags": [
+    "로보틱스",
+    "자율주행",
+    "안전·재난"
+   ],
+   "reasons": [
+    "전기차 소화용 자율주행로봇 및 소방 로봇 개발 영역은 지원자가 연구해 온 화재 탐지 및 안전·재난 응용 분야와 일부 접점이 있다.",
+    "다만 회사의 핵심 사업은 물류 소팅 시스템 및 컨베이어 기반 하드웨어 자동화에 치중되어 있어 심도 있는 비전 AI 연구를 수행하기에는 한계가 있다."
+   ],
+   "roles": [
+    "로봇 SW",
+    "자동화 시스템 엔지니어"
+   ],
+   "caution": "서울 마곡, 부천, 부산 등 여러 사옥을 운영 중이므로 실제 배정되는 근무지를 확인해야 한다.",
+   "web_facts": [
+    "최첨단 물류 로봇 자동화 솔루션을 통해 통합 물류 및 제조 자동화 턴키 솔루션을 제공한다.",
+    "틸트 트레이 소터 및 화재 진압용 자율주행로봇 등 물류자동화 설비 라인업을 확대하고 있다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.txr.kr/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://www.txr.kr/ko/",
+      "title": "티엑스알로보틱스"
+     },
+     {
+      "url": "https://www.txr.kr/ko/company/overview.php",
+      "title": "티엑스알로보틱스 | TXR ROBOTICS"
+     },
+     {
+      "url": "https://www.txr.kr/ko/company/certificate.php",
+      "title": "티엑스알로보틱스 | TXR ROBOTICS"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00536523",
+   "name": "로보스타",
+   "legal_name": "(주)로보스타",
+   "stock_code": "090360",
+   "market": "코스닥",
+   "industry_code": "29280",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "경기도 안산시 상록구  수인로 700",
+   "region": "경기도",
+   "homepage": "robostar.co.kr",
+   "est_year": "1999",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A1%9C%EB%B3%B4%EC%8A%A4%ED%83%80",
+   "fiscal_year": 2025,
+   "revenue": 75735139041,
+   "op_income": -5660781243,
+   "employees": 204,
+   "avg_salary": 51058824,
+   "score": 60,
+   "sub": {
+    "tech": 60,
+    "domain": 55,
+    "growth": 65,
+    "env": 65
+   },
+   "business": "산업용 직교·다관절 로봇 및 반도체 이송 로봇을 전문으로 개발·제조하는 로봇 기업이다.",
+   "fit_tags": [
+    "로보틱스",
+    "스마트팩토리",
+    "반도체·하드웨어"
+   ],
+   "reasons": [
+    "ROS2 및 라즈베리파이 GPIO 하드웨어 제어 경험을 산업용 제조 로봇의 상위 제어 SW 개발에 연결할 수 있다.",
+    "전통적인 산업용 및 반도체 웨이퍼 이송 로봇은 정밀 모션 제어 중심이라 실시간 객체 탐지나 TensorRT 기반 추론 최적화 역량을 온전히 활용하기 어렵다.",
+    "스마트 팩토리 조직 내 딥러닝 기반 외관 검사 비전 수요가 있을 경우 커스텀 YOLO 학습 역량을 일부 적용할 여지는 있다."
+   ],
+   "roles": [
+    "로봇 제어 SW 엔지니어",
+    "산업용 비전 검사 엔지니어"
+   ],
+   "caution": "주력 분야가 주행 로봇(AMR)보다는 고정밀 산업용 로봇 팔 및 이송 장비 중심이므로 자율주행 연구와의 정합성을 확인할 필요가 있다.",
+   "web_facts": [],
+   "web": {
+    "status": "robots_unknown",
+    "status_text": "robots.txt를 확인할 수 없어 건너뜀",
+    "homepage": "http://robostar.co.kr/",
+    "fetched_at": "2026-10-14T14:08+09:00",
+    "sources": []
+   }
+  },
+  {
+   "corp_code": "00579971",
+   "name": "칩스앤미디어",
+   "legal_name": "(주)칩스앤미디어",
+   "stock_code": "094360",
+   "market": "코스닥",
+   "industry_code": "261",
+   "sector": "반도체",
+   "related": true,
+   "address": "서울특별시 강남구 테헤란로 509 엔씨타워1  7층,8층",
+   "region": "서울특별시",
+   "homepage": "www.chipsnmedia.com",
+   "est_year": "2003",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%B9%A9%EC%8A%A4%EC%95%A4%EB%AF%B8%EB%94%94%EC%96%B4",
+   "fiscal_year": 2025,
+   "revenue": null,
+   "op_income": 6964476384,
+   "employees": 86,
+   "avg_salary": 130431058,
+   "score": 60,
+   "sub": {
+    "tech": 65,
+    "domain": 55,
+    "growth": 65,
+    "env": 55
+   },
+   "business": "영상 코덱 및 비전 AI 딥러닝 가속 NPU 반도체 설계 자산을 공급하는 글로벌 IP 기업입니다.",
    "fit_tags": [
     "반도체·하드웨어",
+    "엣지AI"
+   ],
+   "reasons": [
+    "텐서RT 및 NCNN 등 추론 최적화 경험이 비전 AI 딥러닝 가속 NPU IP의 성능 평가와 최적화에 기여할 수 있습니다.",
+    "다만 웹사이트 수집 정보가 없어 구체적인 최근 기술 연동성을 파악하기 어렵습니다."
+   ],
+   "roles": [
+    "엣지 추론 최적화",
+    "비전 AI 엔지니어"
+   ],
+   "caution": "공식 홈페이지에 직접 접속하지 못해 최신 사업 방향이나 채용 프로세스를 별도로 검증해야 합니다.",
+   "web_facts": [],
+   "web": {
+    "status": "unreachable",
+    "status_text": "홈페이지에 접속하지 못함",
+    "homepage": "https://www.chipsnmedia.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": []
+   }
+  },
+  {
+   "corp_code": "01555215",
+   "name": "스마트레이더시스템",
+   "legal_name": "(주)스마트레이더시스템",
+   "stock_code": "424960",
+   "market": "코스닥",
+   "industry_code": "272",
+   "sector": "측정·시험·제어기기",
+   "related": true,
+   "address": "서울특별시 강남구 봉은사로81길 7 -",
+   "region": "서울특별시",
+   "homepage": "www.smartradarsystem.com",
+   "est_year": "2017",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%8A%A4%EB%A7%88%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8D%94%EC%8B%9C%EC%8A%A4%ED%85%9C",
+   "fiscal_year": 2025,
+   "revenue": 9397297026,
+   "op_income": -5269843048,
+   "employees": 58,
+   "avg_salary": 84051724,
+   "score": 60,
+   "sub": {
+    "tech": 60,
+    "domain": 65,
+    "growth": 55,
+    "env": 55
+   },
+   "business": "자율주행과 산업 안전 및 침입 감시용 고해상도 4D 이미징 레이다 센서를 개발하는 기업입니다.",
+   "fit_tags": [
+    "자율주행",
+    "안전·재난"
+   ],
+   "reasons": [
+    "ROS2 기반 자율주행 로봇 관제 시스템 설계 및 안전·재난 비전 탐지 경험이 자율주행 및 산업 안전 레이다 센서 응용과 연계됩니다.",
+    "다만 주력 센서가 비전 카메라가 아닌 레이다 기반이므로 알고리즘 적용 방식에 차이가 있습니다."
+   ],
+   "roles": [
+    "로봇 SW",
+    "비전 AI 엔지니어"
+   ],
+   "caution": "보안 정책으로 인해 웹사이트 수집 정보가 제한되어 있어 상세 기술 스택을 직접 확인해야 합니다.",
+   "web_facts": [],
+   "web": {
+    "status": "robots_blocked",
+    "status_text": "robots.txt가 수집을 막음",
+    "homepage": "https://www.smartradarsystem.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": []
+   }
+  },
+  {
+   "corp_code": "00946030",
+   "name": "로보티즈",
+   "legal_name": "(주)로보티즈",
+   "stock_code": "108490",
+   "market": "코스닥",
+   "industry_code": "29299",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "서울특별시 강서구 마곡중앙5로1길 37",
+   "region": "서울특별시",
+   "homepage": "www.robotis.com",
+   "est_year": "1999",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%A1%9C%EB%B3%B4%ED%8B%B0%EC%A6%88",
+   "fiscal_year": 2025,
+   "revenue": 38942547006,
+   "op_income": 3346038655,
+   "employees": 111,
+   "avg_salary": 50891928,
+   "score": 59,
+   "sub": {
+    "tech": 50,
+    "domain": 65,
+    "growth": 60,
+    "env": 70
+   },
+   "business": "로보티즈는 피지컬 AI 환경에 최적화된 로봇 전용 스마트 액추에이터와 실외 자율주행 로봇을 개발하는 로봇 전문 기업이다.",
+   "fit_tags": [
+    "로보틱스",
     "자율주행"
    ],
    "reasons": [
-    "광학 렌즈 및 카메라 모듈 하드웨어 제조가 주력인 기업으로 후보자의 핵심 강점인 YOLO 기반 엣지 AI 최적화 및 ROS2 로봇 관제 SW를 발휘할 기회가 적습니다.",
-    "인공위성 큐브위성 제작 및 위성데이터 활용 교육 수상이 하드웨어 시스템에 대한 이해도를 보여줄 수 있으나 소프트웨어 개발 직무와의 연관성은 낮습니다."
+    "지원자가 ROS2 기반 자율주행 로봇 관제 시스템 설계로 대학생논문경진대회 금상을 수상한 경력은 로보티즈의 자율주행 플랫폼 개발에 응용될 수 있다.",
+    "다만 지원자의 핵심 역량이 딥러닝 기반 엣지 비전 최적화에 집중되어 있어 액추에이터 중심의 하드웨어 기업인 로보티즈에서는 순수 소프트웨어 활용 폭이 다소 제한될 수 있다."
    ],
    "roles": [
-    "컴퓨터비전 엔지니어"
+    "로봇 SW",
+    "자율주행 알고리즘 엔지니어"
    ],
-   "caution": "소프트웨어 알고리즘 개발보다는 광학 및 기구 설계 중심의 조직 문화를 고려해야 합니다."
+   "caution": "주력 제품군이 액추에이터와 하드웨어 중심이므로 비전 AI 알고리즘 연구보다 로봇 제어 및 구동부 연동 업무 비중이 높을 수 있음을 인지해야 한다.",
+   "web_facts": [
+    "로봇전용 엑추에이터 전문기업으로 피지컬 AI 환경에 대응하는 스마트 액추에이터 솔루션을 제공한다.",
+    "DYNAMIXEL X·P·Y 시리즈를 통해 로봇 성능과 AI 학습 데이터를 뒷받침한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.robotis.com/",
+    "fetched_at": "2026-10-14T14:05+09:00",
+    "sources": [
+     {
+      "url": "https://www.robotis.com/en/",
+      "title": "ROBOTIS | Actuator for Physical AI"
+     },
+     {
+      "url": "https://www.robotis.com/en/about.php",
+      "title": "ROBOTIS | Actuator for Physical AI"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01649620",
+   "name": "아우토크립트",
+   "legal_name": "아우토크립트 주식회사",
+   "stock_code": "331740",
+   "market": "코스닥",
+   "industry_code": "58222",
+   "sector": "소프트웨어 개발·공급",
+   "related": true,
+   "address": "서울특별시 영등포구 여의공원로 115 세우빌딩, 8층",
+   "region": "서울특별시",
+   "homepage": "autocrypt.co.kr/",
+   "est_year": "2019",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%95%84%EC%9A%B0%ED%86%A0%ED%81%AC%EB%A6%BD%ED%8A%B8",
+   "fiscal_year": 2025,
+   "revenue": 25479479430,
+   "op_income": -13519713490,
+   "employees": 254,
+   "avg_salary": 55192913,
+   "score": 59,
+   "sub": {
+    "tech": 52,
+    "domain": 60,
+    "growth": 68,
+    "env": 65
+   },
+   "business": "자율주행차 V2X 통신 보안, 차량 내 통신 보안 및 충전 인프라 보안 소프트웨어를 개발한다.",
+   "fit_tags": [
+    "자율주행",
+    "모빌리티"
+   ],
+   "reasons": [
+    "자율주행 환경의 피지컬 AI 보안과 커넥티드카를 다루므로 로봇 자율주행 관제 통신 아키텍처 이해도가 유효하게 작용한다.",
+    "주요 사업이 V2X 암호화, 방화벽, 침입 탐지(IDS), 국제 표준(UN R155/R156) 인증에 집중되어 있어 객체 탐지 비전이나 엣지 AI 모델 튜닝 역량과는 거리가 있다.",
+    "when-to-leave에서 구현한 JWKS 기반 서명 검증, scrypt 해싱 등 보안 설계 경험이 소프트웨어 보안 개발의 기초로 연결될 수 있다."
+   ],
+   "roles": [
+    "차량 통신 보안 SW 개발자",
+    "모빌리티 시스템 백엔드 엔지니어"
+   ],
+   "caution": "비전 AI보다는 임베디드 네트워크 보안 및 암호화 프로토콜 지식이 핵심 요구 역량임을 감안해야 한다.",
+   "web_facts": [
+    "피지컬 AI 환경을 안전하게 보호하는 미래차 보안 전문기업을 표방한다.",
+    "AutoCrypt V2X-EE, 차량 내부 통신 보안(IVS), 전기차 충전 인증(PnC) 제품을 제공한다.",
+    "UN R155, UN R156 규정 대응을 위한 CSMS, TARA 컨설팅 및 보안 테스팅 도구를 다룬다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://autocrypt.co.kr/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://www.autocrypt.co.kr/",
+      "title": "아우토크립트 | 피지컬 AI 환경을 안전하게"
+     },
+     {
+      "url": "https://www.autocrypt.co.kr/company/",
+      "title": "글로벌 미래차 소트프웨어 기업 아우토크립트 | 회사소개"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01258710",
+   "name": "이노메트리",
+   "legal_name": "(주)이노메트리",
+   "stock_code": "302430",
+   "market": "코스닥",
+   "industry_code": "29299",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "경기도 화성시 정남면 정남산단1길 40 -",
+   "region": "경기도",
+   "homepage": "www.innometry.com",
+   "est_year": "2008",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9D%B4%EB%85%B8%EB%A9%94%ED%8A%B8%EB%A6%AC",
+   "fiscal_year": 2025,
+   "revenue": 38567691701,
+   "op_income": -5703408531,
+   "employees": 167,
+   "avg_salary": 57186491,
+   "score": 56,
+   "sub": {
+    "tech": 55,
+    "domain": 65,
+    "growth": 55,
+    "env": 40
+   },
+   "business": "2차전지 내부 결함 탐지를 위한 엑스레이 및 비전 기반 AI 비파괴 검사 시스템을 제조합니다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "반도체·하드웨어"
+   ],
+   "reasons": [
+    "화재·연기 및 도로 파손 등 결함 탐지를 연구한 경험이 2차전지 엑스레이 및 비전 비파괴 검사 시스템 개발과 결을 같이 합니다.",
+    "TensorRT 등을 활용한 엣지 추론 및 고속 실시간 진단 능력이 현장 장비에 기여할 수 있습니다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "엣지 추론 최적화"
+   ],
+   "caution": "최근 영업이익 적자 상태를 기록하고 있어 재무적 변동성을 파악할 필요가 있습니다.",
+   "web_facts": [
+    "2차전지용 적층 제조장비 및 산업용 비파괴 검사장비를 제조합니다.",
+    "46파이 양산라인에 인라인 CT 전수검사 및 이물검사를 세계 최초로 적용하였습니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.innometry.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://www.innometry.com/",
+      "title": "이노메트리"
+     },
+     {
+      "url": "https://www.innometry.com/company/xenth.html",
+      "title": "이노메트리XENTH - Brand Identity"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "00609324",
+   "name": "뷰웍스",
+   "legal_name": "(주)뷰웍스",
+   "stock_code": "100120",
+   "market": "코스닥",
+   "industry_code": "27199",
+   "sector": "의료·정밀기기",
+   "related": true,
+   "address": "경기도 안양시 동안구 부림로 17041-3",
+   "region": "경기도",
+   "homepage": "www.vieworks.com",
+   "est_year": "1999",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EB%B7%B0%EC%9B%8D%EC%8A%A4",
+   "fiscal_year": 2025,
+   "revenue": 239334580000,
+   "op_income": 21420223360,
+   "employees": 486,
+   "avg_salary": 70185185,
+   "score": 56,
+   "sub": {
+    "tech": 60,
+    "domain": 55,
+    "growth": 60,
+    "env": 45
+   },
+   "business": "고해상도 산업용 머신비전 카메라 및 의료 영상 센서를 자체 개발하는 영상 솔루션 전문 기업입니다.",
+   "fit_tags": [
+    "컴퓨터비전",
+    "반도체·하드웨어"
+   ],
+   "reasons": [
+    "OpenCV와 Python을 활용한 컴퓨터비전 역량 및 실시간 영상 감지 논문 실적이 산업용 머신비전 카메라 소프트웨어 개발에 직접 활용됩니다.",
+    "고해상도 이미지 처리 및 엣지 환경에 대한 이해도가 요구되는 직무와 잘 맞습니다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "백엔드"
+   ],
+   "caution": "경기도 안양시 소재로 대전 거주지에서 출퇴근이 불가능하여 거주 이동 대책이 필요합니다.",
+   "web_facts": [
+    "X-ray detector와 industrial camera 등 이미징 솔루션을 제공합니다.",
+    "슬라이드 스캐너에 AI를 도입하여 병리 워크플로우 자동화를 추진하고 있습니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://www.vieworks.com/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://www.vieworks.com/",
+      "title": "Vieworks | Imaging Expert"
+     },
+     {
+      "url": "https://vision.vieworks.com:443/",
+      "title": "Vieworks | Machine Vision"
+     },
+     {
+      "url": "https://www.vieworks.com/en/company/about",
+      "title": "About Us | Vieworks"
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01429220",
+   "name": "피아이이",
+   "legal_name": "(주)피아이이",
+   "stock_code": "452450",
+   "market": "코스닥",
+   "industry_code": "29299",
+   "sector": "특수 목적용 기계",
+   "related": true,
+   "address": "경기도 화성시 동탄기흥로 614 더퍼스트타워2차 19층",
+   "region": "경기도",
+   "homepage": "piegroup.co.kr",
+   "est_year": "2018",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%ED%94%BC%EC%95%84%EC%9D%B4%EC%9D%B4",
+   "fiscal_year": 2025,
+   "revenue": 65088392269,
+   "op_income": -21217301485,
+   "employees": 199,
+   "avg_salary": 59502513,
+   "score": 52,
+   "sub": {
+    "tech": 60,
+    "domain": 50,
+    "growth": 50,
+    "env": 40
+   },
+   "business": "AI 비전검사 솔루션 및 스마트 팩토리 플랫폼을 개발하는 기업입니다.",
+   "fit_tags": [
+    "스마트팩토리",
+    "컴퓨터비전"
+   ],
+   "reasons": [
+    "임창건의 YOLO 객체 탐지 및 엣지 추론 최적화 기술은 스마트 팩토리 환경의 비전 검사 소프트웨어에 직접 활용될 수 있습니다.",
+    "다만 주력 연구 분야가 화재·안전 재난 및 로봇 관제인 점에서 도메인 직접 연관성은 보통 수준입니다."
+   ],
+   "roles": [
+    "비전 AI 엔지니어",
+    "엣지 추론 최적화"
+   ],
+   "caution": "본사가 경기도에 위치해 있어 대전 거주 시 근무지 이동이나 거주 형태를 확인해야 합니다.",
+   "web_facts": [
+    "AI 비전검사 솔루션 기업입니다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://piegroup.co.kr/",
+    "fetched_at": "2026-10-14T14:13+09:00",
+    "sources": [
+     {
+      "url": "https://piegroup.co.kr/",
+      "title": ""
+     }
+    ]
+   }
+  },
+  {
+   "corp_code": "01135640",
+   "name": "이삭엔지니어링",
+   "legal_name": "이삭엔지니어링(주)",
+   "stock_code": "351330",
+   "market": "코스닥",
+   "industry_code": "62021",
+   "sector": "컴퓨터 프로그래밍·SI",
+   "related": true,
+   "address": "경기도 군포시 군포첨단산업1로 15",
+   "region": "경기도",
+   "homepage": "isaac-eng.com",
+   "est_year": "2006",
+   "dart_url": "https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&textCrpNm=%EC%9D%B4%EC%82%AD%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81",
+   "fiscal_year": 2025,
+   "revenue": 78986196809,
+   "op_income": -7182250667,
+   "employees": 155,
+   "avg_salary": 56129032,
+   "score": 51,
+   "sub": {
+    "tech": 45,
+    "domain": 50,
+    "growth": 58,
+    "env": 60
+   },
+   "business": "철강, 반도체 플랜트 공정 자동화 엔지니어링 및 스마트팩토리 OT 솔루션을 제공한다.",
+   "fit_tags": [
+    "스마트팩토리"
+   ],
+   "reasons": [
+    "공장 설비 모니터링 IoT 및 AIoT 시스템을 구축하므로 Jetson 및 라즈베리파이 기반 엣지 디바이스 제어 경험이 일부 부합한다.",
+    "이력의 핵심인 객체 탐지 비전 AI나 ROS2 로봇 자율주행보다는 공정 제어 및 설비 진단 등 플랜트 엔지니어링 OT 비중이 훨씬 크다.",
+    "when-to-leave 프로젝트에서 다룬 웹 풀스택 및 API 연동 역량을 IoT 관제 화면 구축에 응용할 수 있으나 주력 사업 영역과 완벽히 일치하진 않는다."
+   ],
+   "roles": [
+    "IoT 관제 SW 개발자",
+    "공장 자동화 엔지니어"
+   ],
+   "caution": "비전 AI나 로보틱스 연구 인력보다는 PLC 및 플랜트 OT 엔지니어 중심의 조직 구성인지 확인해야 한다.",
+   "web_facts": [
+    "철강 설비, 반도체 플랜트, Digital Twin, Cloud based AIoT 시스템 엔지니어링 서비스를 제공한다.",
+    "기존 OT 전문 기술에 IT 기술을 융합한 Hybrid OT Solution Provider를 지향한다.",
+    "군포첨단산업단지 신사옥과 강남 논현동 Big Data AI R&D 센터를 운영한다."
+   ],
+   "web": {
+    "status": "ok",
+    "status_text": "수집함",
+    "homepage": "https://isaac-eng.com/",
+    "fetched_at": "2026-10-14T14:16+09:00",
+    "sources": [
+     {
+      "url": "https://www.isaac-eng.com/",
+      "title": "이삭엔지니어링(주)"
+     },
+     {
+      "url": "https://www.isaac-eng.com/about/isaac-history/",
+      "title": "회사소개 – 이삭엔지니어링(주)"
+     },
+     {
+      "url": "https://www.isaac-eng.com/about/company-identity/",
+      "title": "CI소개 – 이삭엔지니어링(주)"
+     }
+    ]
+   }
   }
  ]
 }

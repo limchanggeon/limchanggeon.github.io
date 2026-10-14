@@ -120,6 +120,19 @@
 .errbox { margin-top: 1.75rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; display: grid; gap: .6rem; }
 .errbox code { font-family: var(--f-mono); background: var(--surface-2); padding: .15rem .4rem; border-radius: 5px; font-size: .875rem; }
 @media (prefers-reduced-motion: reduce) { .scan .sweep { animation: none; left: 39%; } .gauge .fg, .brow .track-bar i { transition: none; } }
+
+/* 공식 홈페이지 수집 정보 (6단계) */
+.webbox { display: grid; gap: .7rem; }
+.webbox .whead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem .8rem; align-items: baseline; }
+.webbox .wstat { font-size: .875rem; color: var(--muted); }
+.webbox .wstat b { color: var(--cool); font-weight: 600; }
+.webbox ul.wf { display: grid; gap: .45rem; }
+.webbox ul.wf li { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: .6rem; }
+.webbox ul.wf li::before { content: ""; width: 7px; height: 7px; margin-top: .65rem; border-radius: 50%; background: var(--cool); }
+.webbox .wsrc { display: flex; flex-wrap: wrap; gap: .35rem .9rem; font-size: .8125rem; }
+.webbox .wsrc a { color: var(--cool); text-decoration: none; overflow-wrap: anywhere; }
+.webbox .wsrc a:hover { text-decoration: underline; }
+.webbox .wnone { font-size: .9375rem; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -226,6 +239,26 @@
     if (!indexPs.length) return null;
     return Math.round(100 * indexPs.filter(function (p) { return p < score; }).length / indexPs.length);
   }
+  /* 공식 홈페이지 수집 정보: 확인한 사실 + 출처 링크 */
+  function webPanel(c, wrap) {
+    var w = c.web;
+    if (!w) return wrap ? '<div class="panel webbox"><p class="side-h" style="margin:0">공식 홈페이지 수집</p><p class="wnone">이 분석은 홈페이지 수집 기능을 붙이기 전에 만들어졌어요. 다시 분석하면 수집합니다.</p></div>' : '';
+    var when = (w.fetched_at || '').replace('T', ' ').slice(0, 16);
+    var seenTitle = {};
+    var src = (w.sources || []).map(function (s) {
+      var label = s.title || s.url;
+      if (seenTitle[label]) { try { label = decodeURIComponent(new URL(s.url).pathname) || s.url; } catch (e) { label = s.url; } }
+      seenTitle[s.title || s.url] = 1;
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(label.length > 40 ? label.slice(0, 40) + '…' : label) + ' ↗</a>';
+    }).join('');
+    var facts = (c.web_facts || []).length ? '<ul class="wf">' + c.web_facts.map(function (f) { return '<li><span>' + esc(f) + '</span></li>'; }).join('') + '</ul>' : '';
+    var body = w.status === 'ok'
+      ? facts + (src ? '<div class="wsrc">' + src + '</div>' : '')
+      : '<p class="wnone">' + esc(w.status_text) + (w.homepage ? ' · ' + esc(w.homepage) : '') + '</p>';
+    var inner = '<div class="whead"><p class="side-h" style="margin:0">공식 홈페이지에서 확인한 내용</p><span class="wstat"><b>' + esc(w.status_text) + '</b>' + (when ? ' · ' + esc(when) + ' 수집' : '') + '</span></div>' + body;
+    return wrap ? '<div class="panel webbox">' + inner + '</div>' : '<div class="webbox" style="margin-top:1rem">' + inner + '</div>';
+  }
+
   function money(v) {
     if (typeof v !== 'number') return '정보 없음';
     var eok = v / 1e8;
@@ -364,6 +397,7 @@
           }).join('') + '</div><p class="calc">' + calc + '</p></div>' +
           '<div class="panel"><p class="side-h">이렇게 판단했어요</p><ul class="reasons">' + c.reasons.map(function (r) { return '<li><span>' + esc(r) + '</span></li>'; }).join('') + '</ul></div>' +
         '</div>' +
+        webPanel(c, true) +
         '<div class="panel"><dl class="kv">' +
           '<div><dt>추천 직무</dt><dd>' + c.roles.map(esc).join(', ') + '</dd></div>' +
           '<div><dt>본사</dt><dd>' + esc(c.address || '정보 없음') + '</dd></div>' +

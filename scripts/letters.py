@@ -41,6 +41,8 @@ def company_context(c):
     ]
     if c.get("employees"):
         lines.append(f"직원 수: {c['employees']}명")
+    if c.get("web_facts"):
+        lines.append("회사 공식 홈페이지에서 확인한 사실: " + " / ".join(c["web_facts"]))
     if c.get("reasons"):
         lines.append("이력과 맞닿는 지점(사전 분석): " + " / ".join(c["reasons"]))
     if c.get("caution"):

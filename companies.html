@@ -85,6 +85,19 @@
 .empty h2 { font-size: 1.2rem; }
 .empty code { font-family: var(--f-mono); font-size: .875rem; background: var(--surface-2); padding: .2rem .45rem; border-radius: 6px; }
 .disclaimer { margin-top: 1.5rem; font-size: .875rem; color: var(--muted); line-height: 1.7; }
+
+/* 공식 홈페이지 수집 정보 (6단계) */
+.webbox { display: grid; gap: .7rem; }
+.webbox .whead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem .8rem; align-items: baseline; }
+.webbox .wstat { font-size: .875rem; color: var(--muted); }
+.webbox .wstat b { color: var(--cool); font-weight: 600; }
+.webbox ul.wf { display: grid; gap: .45rem; }
+.webbox ul.wf li { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: .6rem; }
+.webbox ul.wf li::before { content: ""; width: 7px; height: 7px; margin-top: .65rem; border-radius: 50%; background: var(--cool); }
+.webbox .wsrc { display: flex; flex-wrap: wrap; gap: .35rem .9rem; font-size: .8125rem; }
+.webbox .wsrc a { color: var(--cool); text-decoration: none; overflow-wrap: anywhere; }
+.webbox .wsrc a:hover { text-decoration: underline; }
+.webbox .wnone { font-size: .9375rem; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -212,6 +225,26 @@
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
 
+  /* 공식 홈페이지 수집 정보: 확인한 사실 + 출처 링크 */
+  function webPanel(c, wrap) {
+    var w = c.web;
+    if (!w) return wrap ? '<div class="panel webbox"><p class="side-h" style="margin:0">공식 홈페이지 수집</p><p class="wnone">이 분석은 홈페이지 수집 기능을 붙이기 전에 만들어졌어요. 다시 분석하면 수집합니다.</p></div>' : '';
+    var when = (w.fetched_at || '').replace('T', ' ').slice(0, 16);
+    var seenTitle = {};
+    var src = (w.sources || []).map(function (s) {
+      var label = s.title || s.url;
+      if (seenTitle[label]) { try { label = decodeURIComponent(new URL(s.url).pathname) || s.url; } catch (e) { label = s.url; } }
+      seenTitle[s.title || s.url] = 1;
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(label.length > 40 ? label.slice(0, 40) + '…' : label) + ' ↗</a>';
+    }).join('');
+    var facts = (c.web_facts || []).length ? '<ul class="wf">' + c.web_facts.map(function (f) { return '<li><span>' + esc(f) + '</span></li>'; }).join('') + '</ul>' : '';
+    var body = w.status === 'ok'
+      ? facts + (src ? '<div class="wsrc">' + src + '</div>' : '')
+      : '<p class="wnone">' + esc(w.status_text) + (w.homepage ? ' · ' + esc(w.homepage) : '') + '</p>';
+    var inner = '<div class="whead"><p class="side-h" style="margin:0">공식 홈페이지에서 확인한 내용</p><span class="wstat"><b>' + esc(w.status_text) + '</b>' + (when ? ' · ' + esc(when) + ' 수집' : '') + '</span></div>' + body;
+    return wrap ? '<div class="panel webbox">' + inner + '</div>' : '<div class="webbox" style="margin-top:1rem">' + inner + '</div>';
+  }
+
   function money(v) {
     if (typeof v !== 'number') return '–';
     var eok = v / 1e8;
@@ -275,6 +308,7 @@
             '<div><dt>본사 주소</dt><dd>' + esc(c.address || '–') + '</dd></div>' +
             '<div><dt>업종 코드</dt><dd>' + esc(c.industry_code) + ' (' + esc(c.sector) + ')</dd></div>' +
           '</dl>' +
+          webPanel(c, false) +
           '<p class="caution"><b>확인할 점</b> ' + esc(c.caution) + '</p>' +
           '<div class="btn-row">' +
             '<a class="btn primary" href="fit.html#' + c.corp_code + '">적합도 자세히</a>' +
